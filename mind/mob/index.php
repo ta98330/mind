@@ -1,3 +1,7 @@
+<?php
+    require "../spheader.php";
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -75,6 +79,17 @@
               s0.parentNode.insertBefore(ns, s0);
             })(document,'script');
         </script>
+    
+    
+        <section id="login">
+            <h1>ログイン</h1>
+            <form class="form" name="iform" action="login.php" method="post">
+              ID<br><input type="number" name="id" required><br>
+              パスワード<br><input type="password" name="pass" required><br>
+              <input type="submit" value="ログイン">
+            </form>
+        </section>
+    
         
         <form name="timer">
             <input type="text" value="0">分
@@ -82,6 +97,39 @@
             <input type="button" value="スタート" onclick="cntStart()">
             <input type="button" value="ストップ" onclick="cntStop()">
         </form>
+        
+        
+        <section>
+            <h1>学生出席確認検索</h1>
+            <form action="../test.php" method="post">
+                ID<input type="text" name="id"><br />
+                感想
+                <select name="evaluation">
+                    <option value="実感アリ">実感アリ</option>
+                    <option value="普通">普通</option>
+                    <option value="実感ナシ">実感ナシ</option>
+                </select>
+                
+                <input type="submit">
+            </form>
+        
+        
+        
+        </section>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     </body>
 </html>
