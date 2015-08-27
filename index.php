@@ -1,9 +1,10 @@
 <?php
     require "spheader.php";
-    
+    /*
     if($_SESSION['login'] != "ログインしていません．"){
         header('Location:top.php');
     }
+    */
 ?>
 
 <!DOCTYPE html>
