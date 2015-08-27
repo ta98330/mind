@@ -1,5 +1,9 @@
 <?php
-    require "../spheader.php";
+    require "spheader.php";
+    
+    if($_SESSION['login'] != "ログインしていません．"){
+        header('Location:top.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -9,10 +13,12 @@
         <meta name="viewport" content="width=device-width, initial=1.0, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
         
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         
-        <link rel="stylesheet" href="mobile.css">
+        <link rel="stylesheet" href="base.css">
         
         <link rel="apple-touch-icon" href="images/clip.png" />
         
@@ -81,42 +87,23 @@
         </script>
     
     
-        <section id="login">
-            <h1>ログイン</h1>
-            <form class="form" name="iform" action="login.php" method="post">
-              ID<br><input type="number" name="id" required><br>
-              パスワード<br><input type="password" name="pass" required><br>
-              <input type="submit" value="ログイン">
-            </form>
-        </section>
+    
+        <div class = "container">
+            <div class="wrapper">
+                <form action="login.php" method="post" name="Login_Form" class="form-signin">       
+                    <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+                      <hr class="colorgraph"><br>
+
+                      <input type="number" class="form-control" name="id" placeholder="UserID" required="" autofocus="">
+                      <input type="password" class="form-control" name="pass" placeholder="Password" required=""/>     		  
+
+                      <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>  			
+                </form>			
+            </div>
+        </div>
     
         
-        <form name="timer">
-            <input type="text" value="0">分
-            <input type="text" value="0">秒<br>
-            <input type="button" value="スタート" onclick="cntStart()">
-            <input type="button" value="ストップ" onclick="cntStop()">
-        </form>
-        
-        
-        <section>
-            <h1>学生出席確認検索</h1>
-            <form action="../test.php" method="post">
-                ID<input type="text" name="id"><br />
-                感想
-                <select name="evaluation">
-                    <option value="実感アリ">実感アリ</option>
-                    <option value="普通">普通</option>
-                    <option value="実感ナシ">実感ナシ</option>
-                </select>
-                
-                <input type="submit">
-            </form>
-        
-        
-        
-        </section>
-        
+       
         
         
         
