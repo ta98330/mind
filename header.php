@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial=1.0, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
         
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         
-        <link rel="stylesheet" href="mobile.css">
+        <link rel="stylesheet" href="base.css">
         
         <link rel="apple-touch-icon" href="images/clip.png" />
         
@@ -51,4 +53,3 @@
         <script src="timer.js"></script>
         
     </head>
-    
