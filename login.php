@@ -1,5 +1,8 @@
 <?php
 session_start();
+    /*if(empty($_SESSION['login'])){
+        header('Location: logout.php');
+    }*/
 
     if($_SESSION['login'] == "ログイン中！"){
         //ログアウト

@@ -4,63 +4,24 @@
 全体的なスタイル
 ==================================*/
 
-.wrapper {    
-	margin-top: 80px;
-	margin-bottom: 20px;
-}
-
-.form-signin {
-  max-width: 420px;
-  padding: 30px 38px 66px;
-  margin: 0 auto;
-  background-color: #eee;
-  border: 3px dotted rgba(0,0,0,0.1);  
-  }
-
-.form-signin-heading {
-  text-align:center;
-  margin-bottom: 30px;
-}
-
-.form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-}
-
-input[type="text"] {
-  margin-bottom: 0px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-input[type="password"] {
-  margin-bottom: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.colorgraph {
-  height: 7px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-
-
-
 
 body{
-    background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
-    padding:50px;
-    height: 100vh;
+            background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+    padding:10px;
+    
+    min-height: 100vh;
+    
 }
 
+.container{
+    width: 100%;
+    
+}
+
+
+/*=================================
+メニューバー
+==================================*/
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
@@ -111,3 +72,104 @@ body{
         border-top:0 none;
     }
 }
+
+
+
+/*=================================
+youtube
+==================================*/
+
+
+
+.video-wrap {
+  position: relative;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  padding-top: 69px;
+  padding-bottom: 50%;
+  overflow: hidden;
+}
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+
+/*=================================
+セルフ
+==================================*/
+
+#pro_con{
+    
+    
+}
+
+#pro_con h1{
+    font-size: 150%;
+    
+}
+
+#main {
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 3px;
+}
+
+#main h1 {
+    font-size: 200%;
+    
+}
+
+
+.eventlist{
+    font-size: 16px;
+    
+}
+
+.eventlist h2{
+    font-size: 110%;
+    margin: 0;
+    border-bottom: 2px solid deepskyblue;
+    background-color: deepskyblue;
+}
+
+.eventlist li{
+    border: 2px solid deepskyblue;
+    background-color: floralwhite;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+
+.eventlist li p{
+    margin-left: 5px;
+    
+}
+
+
+#impression{
+    font-size: 16px;
+    
+}
+
+#impression label:hover{
+    color: orangered;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
