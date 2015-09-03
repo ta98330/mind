@@ -12,21 +12,19 @@ session_start();
         $_SESSION['login'] = "ログインしていません．";
     }
 
-    if($_POST['id'] == NULL){
+    if(empty($_POST['username'])){
         require "header.php";//ヘッダー読み込み
         echo "<section id='passage' class='container'>";
-        echo '<p>ログインに失敗しました．<br />IDを入力して下さい．<br /><a href="index.php">戻る</a></p>';
+        echo "<p class='alert alert-danger' role='alert'>ログインに失敗しました．<br />UserNameを入力して下さい．<br /><a href='index.php'>戻る</a></p>";
         echo "<section>";
         require "footer.php"; //フッター読み込み
     }
-    
+    else{
 
 
     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
-    /*$st = $pdo->prepare("SELECT * FROM mf_user WHERE id = ? AND pass = ?");
-    $st->execute(array($_POST['id'], $_POST['pass']));*/
-
-    $st = $pdo->query("SELECT * FROM mf_user WHERE id = '{$_POST['id']}' AND pass = '{$_POST['pass']}'");
+    
+    $st = $pdo->query("SELECT * FROM mf_user WHERE name = '{$_POST['username']}' AND pass = '{$_POST['pass']}'");
         
     while ($row = $st->fetch()) {
         $id = htmlspecialchars($row['id']);
@@ -35,7 +33,7 @@ session_start();
         
     }
 
-    if($_POST['id'] == @$id){//while文から結果が得られた->idとpassが一致
+    if($_POST['username'] == @$name){//while文から結果が得られた->idとpassが一致
         $_SESSION['userId'] = $id;
         $_SESSION['userName'] = $name;
         $_SESSION['userPass'] = $pass;
@@ -46,11 +44,9 @@ session_start();
     else{
         require "header.php";//ヘッダー読み込み
         echo "<section id='passage' class='container'>";
-        echo '<p>ログインに失敗しました．<br />IDとパスワードを確認して下さい．<br /><a href="index.php">戻る</a></p>';
-        
-        echo $_SESSION['userId'],$_SESSION['userName'],$_SESSION['userPass'],$_SESSION['login'];
+        echo "<p class='alert alert-danger' role='alert'>ログインに失敗しました．<br />UserNameとパスワードを確認して下さい．<br /><a href='index.php'>戻る</a></p>";
         
         echo "<section>";
         require "footer.php"; //フッター読み込み
     }
-    
+    }

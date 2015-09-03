@@ -1,7 +1,7 @@
 <?php
     require "spheader.php";
     
-    if($_SESSION['login'] == "ログインしていません．"/* || $_SESSION['userName'] == NULL*/){
+    if($_SESSION['login'] == "ログインしていません．" || empty($_SESSION['login'])){
         header('Location: index.php');
     }
 
@@ -51,6 +51,16 @@
                                     <div class="col-md-12" id="pro_con">
                                         <h1>設定</h1>
                                         <?= "<p>{$_SESSION['userName']}さん<p>"?>
+                                        <h2>パスワード変更</h2>
+                                        <form class="form" role="form" method="post" name="pass_insert" action="pass_update.php" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputPassword1">現在のパスワード</label>
+                                                <input type="password" class="form-control" name="pass" placeholder="現在のパスワード" required>
+                                                <label class="sr-only" for="exampleInputPassword2">新しいパスワード</label>
+                                                <input type="password" class="form-control" name="newPass" placeholder="新しいパスワード" required>
+                                                <button type="submit" class="btn btn-primary btn-block">変更</button>
+                                            </div>
+                                        </form>
                                          
                                     </div>
                              </div>
@@ -70,6 +80,18 @@
         <div class="progress progress-striped active">
           <div class="progress-bar" style="width: <?='90'?>%"></div>
         </div>
+        
+        <?php
+        echo "sessionlogin ",$_SESSION['login'];
+        echo " name",$_SESSION['userName']
+        
+        
+        ?>
+        
+        
+        
+        
+        
 
         <div class="container" style="padding-top: 20px 0;" id="main">
             
@@ -80,7 +102,7 @@
             </ul>
             
             <div class="tab-content">
-                <div class="tab-pane active" id="start">
+                <div class="tab-pane" id="start">
                     <h1>スタート</h1>
                     <p>Mindfulnessを開始</p>
                     
@@ -193,9 +215,9 @@
                         <?php
                         $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
-                        $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['userId']}'");
+                        $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['userId']}' ORDER BY datetime DESC");
 
-                        while ($row = $st->fetch()) {
+                        while (@$row = $st->fetch()) {
                             $datetime = htmlspecialchars($row['datetime']);
                             $content = nl2br(htmlspecialchars($row['content']));
                             
@@ -212,17 +234,157 @@
                     
                 </div>
                 
-                <div class="tab-pane" id="graf">
+                <div class="tab-pane active" id="graf">
                     <h1>グラフ</h1>
                     <p>気分の変動</p>
                     
+                    <div class="form-group form-inline">
+                        <form action="" method="post">
+                            <label for="sell_emotion">感情:</label>
+                            <select class="form-control" id="sell_emotion">
+                                <option value="ang">怒り</option>
+                                <option value="sad">悲しみ</option>
+                                <option value="joy">喜び</option>
+                                <option value="stress">ストレス</option>
+                                <option value="all">すべて</option>
+                            </select>
+
+                            <label for="sell_range">表示範囲:</label>
+                            <select class="form-control" id="sell_range">
+                                <option value="week">週</option>
+                                <option value="mon">月</option>
+                            </select>
+
+                            <?php
+                            $now = date("Y-m");
+                            echo "<input name='period' type='month' min='2015-09' max='$now'>";
+                            ?>
+
+                            <input type="submit" value="選択" class="btn btn-primary">
+                        </form>
+
+                    </div>
                     
+                    <?php
+                    $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
+                    
+                    $st = $pdo->query("SELECT FROM mf_impressions WHERE id = '{$_POST['userId']}'");
+                    while ($row = $st->fetch()) {
+                        $rep = htmlspecialchars($row['rep']);
+                        $datetime = htmlspecialchars($row['datetime']);
+                        $bfaf = htmlspecialchars($row['bfaf']);
+                        $ang = htmlspecialchars($row['ang']);
+                        $sad = htmlspecialchars($row['sad']);
+                        $joy = htmlspecialchars($row['joy']);
+                        $stress = htmlspecialchars($row['stress']);
+                        
+                        $瞑想前{} = $var;
+                        
+                        
+                        
+                    }
+                    
+                    
+                    
+                    include_once('GoogChart.class.php');
+                    
+                    $chart = new GoogChart();
+
+                    $color = array(//色
+                        '#99C754',
+                        '#54C7C5',
+                        '#999999',
+                    );
+                    
+                    // Set multiple graph data
+                    $dataMultiple = array( 
+                        '瞑想前' => array(
+                            'IE7' => 1,
+                            'IE6' => 2,
+                            'IE5' => 3,
+                            'Firefox' => 4,
+                            'Mozilla' => 1,
+                            'Safari' => 2,
+                            'Opera' => 3,
+                        ),
+                        '瞑想後' => array(
+                            'IE7' => 22,
+                            'IE6' => 30.7,
+                            'IE5' => 1.7,
+                            'Firefox' => 36.5,
+                            'Mozilla' => 1.1,
+                            'Safari' => 2,
+                            'Opera' => 1.4,
+                        ),
+                    );
+                    
+
+
+                    $chart->setChartAttrs( array(
+                        'type' => 'line',
+                        'title' => 'Browser market 2008',
+                        'data' => $dataMultiple,
+                        'size' => array( 550, 200 ),
+                        'color' => $color,
+                        'labelsXY' => true,
+                        ));
+                    // Print chart
+                    echo $chart;
+
+                    
+                    
+                    ?>
                     
                     <form>
                         <div class="form-group">
                             
                         </div>
                     </form>
+                    
+                    
+                    
+                    
+                    
+                    <ul class="nav nav-tabs nav-justified">
+                        <li class="active"><a href="#week" data-toggle="tab">週</a></li>
+                        <li><a href="#mon" data-toggle="tab">月</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="week">
+                            <form>
+                                <div class="form-group form-inline">
+                                    <?php
+                                    $nowweek = date("Y-m-d");
+                                    echo "<input name='period' type='week' min='2015-09-01' max='$nowweek'>";
+                                    ?>
+                                    <input type="submit" value="選択" class="btn btn-primary">
+                                </div>
+                            </form>
+                        
+                        
+                        
+                        
+                        
+                        
+                        </div>
+                        
+                        <div class="tab-pane" id="mon">
+                        
+                        <?php
+                        $nowmon = date("Y-m");
+                        echo "<input name='period' type='month' min='2015-09' max='$nowmon'>";
+                        ?>
+                        
+                        
+                        
+                        
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                    
                     
                     
                     

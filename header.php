@@ -1,3 +1,10 @@
+<?php
+if(empty($_SESSION['userName'])){
+    $_SESSION['login'] = "ログインしていません．";
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 	<head>

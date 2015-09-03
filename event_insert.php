@@ -14,5 +14,5 @@ if(!empty($_POST['eventContent'])){
 
 
 
-header('Location: top.php');
+header('Location: top.php#event');
 ?>

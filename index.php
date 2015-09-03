@@ -25,7 +25,39 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#top">Link</a></li>
+                <li class="dropdown"  id="signup">
+                  <a href="#signup" class="dropdown-toggle" data-toggle="dropdown"><b>SignUp</b> <span class="caret"></span></a>
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                             <div class="row">
+                                    <div class="col-md-12">
+                                         SignUp
+                                         <form class="form" role="form" method="post" action="signin.php" accept-charset="UTF-8" id="login-nav">
+                                                <div class="form-group">
+                                                     <label class="sr-only" for="exampleinputformat">User Name</label>
+                                                     <input type="text" class="form-control" name="username" placeholder="User Name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                                     <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                                     <input type="email" class="form-control" name="address" id="exampleInputEmail2" placeholder="Email address" required>
+                                                                </div>
+                                                <div class="form-group">
+                                                     <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                     <input type="password" class="form-control" name="pass" placeholder="Password" required>
+                                                </div>
+                                                <div class="form-group">
+                                                     <button type="submit" class="btn btn-primary btn-block">SignUp</button>
+                                                </div>
+                                         </form>
+                                    </div>
+                             </div>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                
+                <li><a href="#top">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -52,8 +84,8 @@
                                         ログイン
                                          <form class="form" role="form" method="post" action="login.php" accept-charset="UTF-8" id="login-nav">
                                                 <div class="form-group">
-                                                     <label class="sr-only" for="exampleinputformat">ID</label>
-                                                     <input type="text" class="form-control" name="id" placeholder="ID" required>
+                                                     <label class="sr-only" for="exampleinputformat">UserName</label>
+                                                     <input type="text" class="form-control" name="username" placeholder="UserName" required>
                                                 </div>
                                                 <div class="form-group">
                                                      <label class="sr-only" for="exampleInputPassword2">Password</label>
@@ -66,7 +98,7 @@
                                          </form>
                                     </div>
                                     <div class="bottom text-center">
-                                        New here ? <a href="#"><b>Join Us</b></a>
+                                        New here ? <a href="#signup" data-toggle="dropdown"><b>Join Us</b></a>
                                     </div>
                              </div>
                         </li>
