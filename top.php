@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li><p class="navbar-text" id="date"><?=date('n月 j日 (D)')?></p></li>
-                <li class="active"><a href="#">Link</a></li>
+                <li><a href="#">NEWS</a></li>
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -81,9 +81,10 @@
           <div class="progress-bar" style="width: <?='90'?>%"></div>
         </div>
         
-        <?php
+        <?php//デバッグ用
         echo "sessionlogin ",$_SESSION['login'];
-        echo " name",$_SESSION['userName']
+        echo " name",$_SESSION['userName'];
+        echo " id ",$_SESSION['userId'];
         
         
         ?>
@@ -265,75 +266,7 @@
 
                     </div>
                     
-                    <?php
-                    $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
-                    
-                    $st = $pdo->query("SELECT FROM mf_impressions WHERE id = '{$_POST['userId']}'");
-                    while ($row = $st->fetch()) {
-                        $rep = htmlspecialchars($row['rep']);
-                        $datetime = htmlspecialchars($row['datetime']);
-                        $bfaf = htmlspecialchars($row['bfaf']);
-                        $ang = htmlspecialchars($row['ang']);
-                        $sad = htmlspecialchars($row['sad']);
-                        $joy = htmlspecialchars($row['joy']);
-                        $stress = htmlspecialchars($row['stress']);
-                        
-                        $瞑想前{} = $var;
-                        
-                        
-                        
-                    }
-                    
-                    
-                    
-                    include_once('GoogChart.class.php');
-                    
-                    $chart = new GoogChart();
-
-                    $color = array(//色
-                        '#99C754',
-                        '#54C7C5',
-                        '#999999',
-                    );
-                    
-                    // Set multiple graph data
-                    $dataMultiple = array( 
-                        '瞑想前' => array(
-                            'IE7' => 1,
-                            'IE6' => 2,
-                            'IE5' => 3,
-                            'Firefox' => 4,
-                            'Mozilla' => 1,
-                            'Safari' => 2,
-                            'Opera' => 3,
-                        ),
-                        '瞑想後' => array(
-                            'IE7' => 22,
-                            'IE6' => 30.7,
-                            'IE5' => 1.7,
-                            'Firefox' => 36.5,
-                            'Mozilla' => 1.1,
-                            'Safari' => 2,
-                            'Opera' => 1.4,
-                        ),
-                    );
-                    
-
-
-                    $chart->setChartAttrs( array(
-                        'type' => 'line',
-                        'title' => 'Browser market 2008',
-                        'data' => $dataMultiple,
-                        'size' => array( 550, 200 ),
-                        'color' => $color,
-                        'labelsXY' => true,
-                        ));
-                    // Print chart
-                    echo $chart;
-
-                    
-                    
-                    ?>
+                    <?php require "chartmake.php" //フッター読み込み?>
                     
                     <form>
                         <div class="form-group">
