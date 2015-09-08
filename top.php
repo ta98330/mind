@@ -20,7 +20,7 @@
             <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a href="#start" data-toggle="tab">スタート</a></li>
                 <li><a href="#event" data-toggle="tab">出来事</a></li>
-                <li><a href="#graf" data-toggle="tab">グラフ</a></li>
+                <li><a href="#graph" data-toggle="tab">グラフ</a></li>
             </ul>
             
             <div class="tab-content">
@@ -67,6 +67,24 @@
                             <div class="checkbox-inline">
                                 <input type="radio" value="4" name="sad" id="sad4">
                                 <label for="sad4">4</label>
+                            </div>
+                            
+                            <p class="control-label"><b>不安</b></p>
+                            <div class="checkbox-inline">
+                                <input required="required" type="radio" value="1" name="anxiety" id="anxiety1">
+                                <label for="anxiety1">1</label>
+                            </div>
+                            <div class="checkbox-inline">
+                                <input type="radio" value="2" name="anxiety" id="anxiety2">
+                                <label for="anxiety2">2</label>
+                            </div>
+                            <div class="checkbox-inline">
+                                <input type="radio" value="3" name="anxiety" id="anxiety3">
+                                <label for="anxiety3">3</label>
+                            </div>
+                            <div class="checkbox-inline">
+                                <input type="radio" value="4" name="anxiety" id="anxiety4">
+                                <label for="anxiety4">4</label>
                             </div>
 
                             <p class="control-label"><b>喜び</b></p>
@@ -158,20 +176,21 @@
                     
                 </div><!--出来事-->
                 
-                <div class="tab-pane" id="graf">
+                <div class="tab-pane" id="graph">
                     <h1>グラフ</h1>
                     <p>気分の変動</p>
                     <p class='alert alert-danger' role='alert'>現在利用できません．</p>
-                    <!--
+                    
                     <div class="form-group form-inline">
-                        <form action="" method="post">
+                        <form action="chartmake.php" method="post">
                             <label for="sell_emotion">感情:</label>
-                            <select class="form-control" id="sell_emotion">
+                            <select class="form-control" name="emotion" id="sell_emotion">
                                 <option value="ang">怒り</option>
                                 <option value="sad">悲しみ</option>
+                                <option value="anxiety">不安</option>
                                 <option value="joy">喜び</option>
                                 <option value="stress">ストレス</option>
-                                <option value="all">すべて</option>
+                                <!--<option value="all">すべて</option>-->
                             </select>
 
                             <label for="sell_range">表示範囲:</label>
@@ -190,7 +209,7 @@
 
                     </div>
                     
-                    <?php require "chartmake.php" //フッター読み込み?>
+                    <?php require "chartmake.php" ?>
                     
                     <form>
                         <div class="form-group">
@@ -238,7 +257,7 @@
                         </div>
                         
                         
-                    </div>-->
+                    </div>
                     
                 </div><!--グラフ-->
                 

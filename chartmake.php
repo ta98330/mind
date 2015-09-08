@@ -1,10 +1,13 @@
 <?php
 //開発時のみ有効にする
-//require "spheader.php";
-//require "header.php";//ヘッダー読み込み
+require "spheader.php";
+require "header.php";//ヘッダー読み込み
 
 $rangestr = '2015-09-04';
 $rangeend = '2015-09-07';
+
+$emotion = $_POST['emotion'];
+
 
 
 $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
@@ -18,8 +21,12 @@ while ($row = $st->fetch()) {
     $bfaf = htmlspecialchars($row['bfaf']);
     $ang = htmlspecialchars($row['ang']);
     $sad = htmlspecialchars($row['sad']);
+    $anxiety = htmlspecialchars($row['anxiety']);
     $joy = htmlspecialchars($row['joy']);
     $stress = htmlspecialchars($row['stress']);
+    
+    $sellemotion = htmlspecialchars($row[$emotion]);
+    echo $ang," ",$sellemotion," ";
 
     //echo $rep,$datetime,$bfaf,$ang,$sad,$joy,$stress;
     
@@ -29,7 +36,7 @@ while ($row = $st->fetch()) {
     
     
     
-    $before["$month$day $rep"] = $ang*25;
+    $before["$month$day $rep 回目"] = $sellemotion*25;
 }
 
 //瞑想後
@@ -41,8 +48,11 @@ while ($row = $st->fetch()) {
     $bfaf = htmlspecialchars($row['bfaf']);
     $ang = htmlspecialchars($row['ang']);
     $sad = htmlspecialchars($row['sad']);
+    $anxiety = htmlspecialchars($row['anxiety']);
     $joy = htmlspecialchars($row['joy']);
     $stress = htmlspecialchars($row['stress']);
+    
+    $sellemotion = htmlspecialchars($row[$emotion]);
 
     //echo $rep,$datetime,$bfaf,$ang,$sad,$joy,$stress;
     
@@ -52,9 +62,21 @@ while ($row = $st->fetch()) {
     
     
     
-    $after["$month$day $rep"] = $ang*25;
+    $after["$month$day $rep 回目"] = $sellemotion*25;
 
 }
+
+if($emotion == ang)
+    $emotion = '怒り';
+elseif($emotion == sad)
+    $emotion = '悲しみ';
+elseif($emotion == anxiety)
+    $emotion = '不安';
+elseif($emotion == joy)
+    $emotion = '喜び';
+else
+    $emotion = 'ストレス';
+
 
 
 echo "<br /><p>before ";
@@ -94,9 +116,11 @@ echo "</p>";
 
 
 
+
+
 $chart->setChartAttrs( array(
     'type' => 'line',
-    'title' => 'Browser market 2008',
+    'title' => "{$emotion}のグラフ",
     'data' => $dataMultiple,
     'size' => array( 550, 200 ),
     'color' => $color,

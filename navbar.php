@@ -28,6 +28,20 @@
                                     <div class="col-md-12" id="pro_con">
                                         <h1>設定</h1>
                                         <?= "<p>{$_SESSION['userName']}さん<p>"?>
+                                        
+                                        <h2>通知設定(GoogleChromeにのみ対応しています)</h2>
+                                        <div id="bpush_button" style="display: inline-block;" 
+                                             data-site="214" data-back="http://buturi.heteml.jp/student/2015/misawa/test/mind/"
+                                             data-height="20" data-width="60"></div>
+                                        <script>
+                                        (function(d,s,ns){
+                                          var ns = d.createElement(s);
+                                            ns.async=1;ns.src="//bpush.net/connect/button.js";
+                                            var s0=d.getElementsByTagName(s)[0];
+                                          s0.parentNode.insertBefore(ns, s0);
+                                        })(document,'script');
+                                        </script>
+                                        
                                         <h2>パスワード変更</h2>
                                         <form class="form" role="form" method="post" name="pass_insert" action="pass_update.php" accept-charset="UTF-8" id="login-nav">
                                             <div class="form-group">
