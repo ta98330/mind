@@ -57,6 +57,6 @@ if(empty($_SESSION['userName'])){
             */
         }
         </script>
-        <script src="timer.js"></script>
+        <script src="mind.js"></script>
         
     </head>

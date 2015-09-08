@@ -28,7 +28,7 @@
                     <h1>スタート</h1>
                     <p>Mindfulnessを開始</p>
                     
-                    <div class=”video-wrap”><iframe src="https://www.youtube.com/embed/2W2EvcXrb3A" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="embed-responsive embed-responsive-16by9"><iframe src="https://www.youtube.com/embed/2W2EvcXrb3A" frameborder="0" allowfullscreen></iframe></div>
                     
                     <h2>今の気分は？</h2>
                     <form action="impressions.php" method="post">
