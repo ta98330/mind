@@ -1,16 +1,16 @@
 <?php
 //開発時のみ有効にする
-require "spheader.php";
-require "header.php";//ヘッダー読み込み
+//require "spheader.php";
+//require "header.php";//ヘッダー読み込み
 
-
-
+$rangestr = '2015-09-04';
+$rangeend = '2015-09-07';
 
 
 $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
 //瞑想前
-$st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['userId']}' AND bfaf = 'bf'");
+$st = $pdo->query("select * from mf_impressions where id = '{$_SESSION['userId']}' AND bfaf = 'bf' and datetime between '2015-09-04' and '2015-09-04' + interval 7 day");
 $before = array( );
 while ($row = $st->fetch()) {
     $rep = htmlspecialchars($row['rep']);
@@ -33,7 +33,7 @@ while ($row = $st->fetch()) {
 }
 
 //瞑想後
-$st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['userId']}' AND bfaf = 'af'");
+$st = $pdo->query("select * from mf_impressions where id = '{$_SESSION['userId']}' AND bfaf = 'af' and datetime between '2015-09-04' and '2015-09-04' + interval 7 day");
 $after = array( );
 while ($row = $st->fetch()) {
     $rep = htmlspecialchars($row['rep']);
@@ -74,8 +74,8 @@ include_once('GoogChart.class.php');
 $chart = new GoogChart();
 
 $color = array(//色
-    '#99C754',
-    '#54C7C5',
+    '#00BFFF',
+    '#FF4500',
     '#999999',
 );
 

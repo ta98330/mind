@@ -106,12 +106,13 @@ youtube
 セルフ
 ==================================*/
 
+
 #pro_con{
     
     
 }
 
-#pro_con h1{
+#pro_con h1,h2{
     font-size: 150%;
     
 }
@@ -126,7 +127,9 @@ youtube
     
 }
 
-
+/*=================================
+出来事
+==================================*/
 .eventlist{
     font-size: 16px;
     
@@ -143,13 +146,23 @@ youtube
     border: 2px solid deepskyblue;
     background-color: floralwhite;
     border-radius: 5px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
 }
 
 .eventlist li p{
     margin-left: 5px;
     
 }
+
+li.pm{
+    border-color: tomato;
+}
+
+.pm h2{
+    background-color: tomato;
+    border-bottom-color: tomato;
+}
+
 
 
 #impression{
