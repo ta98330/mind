@@ -6,7 +6,8 @@
 
 
 body{
-            background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+                    background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+    background-attachment: fixed;
     padding:10px;
     
     min-height: 100vh;
@@ -82,12 +83,12 @@ body{
 
 
 #pro_con{
-    
+    padding-bottom: 20px;
     
 }
 
 #pro_con h1,h2{
-    font-size: 150%;
+    font-size: 130%;
     
 }
 
@@ -150,8 +151,21 @@ li.pm{
 }
 
 
+/*=================================
+グラフ
+==================================*/
+#graph img {
+    margin-bottom: 10px;
+    
+    
+    
+}
 
-
+#chartimg {
+    overflow-x: auto;
+    
+    
+}
 
 
 

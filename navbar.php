@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#pagetop">Mindfulness</a>
+              <a class="navbar-brand" href="index.php">Mindfulness</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,6 +52,9 @@
                                                 <button type="submit" class="btn btn-primary btn-block">変更</button>
                                             </div>
                                         </form>
+                                        
+                                        <h2>管理者メールアドレス</h2>
+                                        <img class="img-responsive" src="images/mail.gif" alt="">
                                          
                                     </div>
                              </div>
@@ -76,10 +79,6 @@
                                                      <label class="sr-only" for="exampleinputformat">User Name</label>
                                                      <input type="text" class="form-control" name="username" placeholder="User Name" required>
                                                 </div>
-                                                <div class="form-group">
-                                                                     <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                                     <input type="email" class="form-control" name="address" id="exampleInputEmail2" placeholder="Email address" required>
-                                                                </div>
                                                 <div class="form-group">
                                                      <label class="sr-only" for="exampleInputPassword2">Password</label>
                                                      <input type="password" class="form-control" name="pass" placeholder="Password" required>
@@ -108,7 +107,7 @@
                                                 <div class="form-group">
                                                      <label class="sr-only" for="exampleInputPassword2">Password</label>
                                                      <input type="password" class="form-control" name="pass" placeholder="Password" required>
-                                                     <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                                     <!--<div class="help-block text-right"><a href="">Forget the password ?</a></div>-->
                                                 </div>
                                                 <div class="form-group">
                                                      <button type="submit" class="btn btn-primary btn-block">ログイン</button>

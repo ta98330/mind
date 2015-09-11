@@ -9,17 +9,17 @@ if($_SESSION['login'] == "ログイン中！" || empty($_SESSION['login'])){
     $_SESSION['login'] = "ログインしていません．";
 }
 
-if((!empty($_POST['username']))&&(!empty($_POST['address']))&&(!empty($_POST['pass']))){
+if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
     
-    $st = $pdo->query("SELECT * FROM mf_user WHERE address = '{$_POST['address']}'");//アドレスの重複を確認
+    $st = $pdo->query("SELECT * FROM mf_user WHERE name = '{$_POST['username']}'");//ユーザーネームの重複を確認
     
     $duplicate = "clear";
     while ($row = $st->fetch()) {
         $duplicate = "duplicate";
         require "header.php";//ヘッダー読み込み
         echo "<section id='passage'>";
-        echo "<div class='alert alert-danger' role='alert'>このメールアドレスはすでに登録されています．<br /><a href='index.php'>戻る</a></div>";
+        echo "<div class='alert alert-danger' role='alert'>このユーザーネームはすでに使われています．<br />別の名前で作成してください．<br /><a href='index.php'>戻る</a></div>";
         echo "</section>";
         require "footer.php"; //フッター読み込み
     }
@@ -31,7 +31,7 @@ if((!empty($_POST['username']))&&(!empty($_POST['address']))&&(!empty($_POST['pa
             $id =  htmlspecialchars($row['id']) + 1;
         }
         
-        $st = $pdo->query("INSERT INTO mf_user VALUES($id,'{$_POST['username']}','{$_POST['pass']}','{$_POST['address']}')");//新規ユーザー情報の追加
+        $st = $pdo->query("INSERT INTO mf_user(id, name, pass) VALUES($id,'{$_POST['username']}','{$_POST['pass']}')");//新規ユーザー情報の追加
         
         
         

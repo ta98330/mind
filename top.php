@@ -179,108 +179,57 @@
                 <div class="tab-pane" id="graph">
                     <h1>グラフ</h1>
                     <p>気分の変動</p>
-                    <p class='alert alert-danger' role='alert'>現在利用できません．</p>
                     
-                    <div class="form-group form-inline">
-                        <form action="chartmake.php" method="post">
-                            <label for="sell_emotion">感情:</label>
-                            <select class="form-control" name="emotion" id="sell_emotion">
-                                <option value="ang">怒り</option>
-                                <option value="sad">悲しみ</option>
-                                <option value="anxiety">不安</option>
-                                <option value="joy">喜び</option>
-                                <option value="stress">ストレス</option>
-                                <!--<option value="all">すべて</option>-->
-                            </select>
-
-                            <label for="sell_range">表示範囲:</label>
-                            <select class="form-control" id="sell_range">
-                                <option value="week">週</option>
-                                <option value="mon">月</option>
-                            </select>
-
-                            <?php
-                            $now = date("Y-m");
-                            echo "<input name='period' type='month' min='2015-09' max='$now'>";
-                            ?>
-
-                            <input type="submit" value="選択" class="btn btn-primary">
-                        </form>
-
-                    </div>
-                    
-                    <?php require "chartmake.php" ?>
-                    
-                    <form>
-                        <div class="form-group">
-                            
-                        </div>
-                    </form>
-                    
-                    
-                    
-                    
+                    <?php include_once("chartmake.php"); /*グラフ作成ファイル読み込み*/ ?>
                     
                     <ul class="nav nav-tabs nav-justified">
-                        <li class="active"><a href="#week" data-toggle="tab">週</a></li>
-                        <li><a href="#mon" data-toggle="tab">月</a></li>
+                        <li class="active"><a href="#ang" data-toggle="tab">怒り</a></li>
+                        <li><a href="#sad" data-toggle="tab">悲しみ</a></li>
+                        <li><a href="#anxiety" data-toggle="tab">不安</a></li>
+                        <li><a href="#joy" data-toggle="tab">喜び</a></li>
+                        <li><a href="#stress" data-toggle="tab">ストレス</a></li>
+                        <li><a href="#allemo" data-toggle="tab">すべて</a></li>
                     </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="week">
-                            <form>
-                                <div class="form-group form-inline">
-                                    <?php
-                                    $nowweek = date("Y-m-d");
-                                    echo "<input name='period' type='week' min='2015-09-01' max='$nowweek'>";
-                                    ?>
-                                    <input type="submit" value="選択" class="btn btn-primary">
-                                </div>
-                            </form>
-                        
-                        
-                        
-                        
-                        
-                        
+
+                    <div class="tab-content" id="chartimg">
+                        <div class="tab-pane active" id="ang">
+                            <?php chart('ang'); ?>
                         </div>
-                        
-                        <div class="tab-pane" id="mon">
-                        
-                        <?php
-                        $nowmon = date("Y-m");
-                        echo "<input name='period' type='month' min='2015-09' max='$nowmon'>";
-                        ?>
-                        
-                        
-                        
-                        
+                        <div class="tab-pane" id="sad">
+                            <?php chart('sad'); ?>
                         </div>
-                        
-                        
+                        <div class="tab-pane" id="anxiety">
+                            <?php chart('anxiety'); ?>
+                        </div>
+                        <div class="tab-pane" id="joy">
+                            <?php chart('joy'); ?>
+                        </div>
+                        <div class="tab-pane" id="stress">
+                            <?php chart('stress'); ?>
+                        </div>
+                        <div class="tab-pane" id="allemo">
+                            <?php
+                                chart('ang');
+                                chart('sad');
+                                chart('anxiety');
+                                chart('joy');
+                                chart('stress');
+                            ?>
+                        </div>
                     </div>
+                    
+                    
+
+                    
+                    
+                    
+                         
+                    
+                        
                     
                 </div><!--グラフ-->
                 
             </div><!--class="tab-content"-->
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
         </div><!-- id="main"-->
         
