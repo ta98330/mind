@@ -10,6 +10,8 @@ if(empty($_SESSION['userName'])){
 	<head>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
         
         <link href="css/bootstrap.min.css" rel="stylesheet">
