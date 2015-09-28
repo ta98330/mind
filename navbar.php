@@ -30,16 +30,15 @@
                                         <?= "<p>{$_SESSION['userName']}さん<p>"?>
                                         
                                         <h2>通知設定(GoogleChromeにのみ対応しています)</h2>
-                                        <div id="bpush_button" style="display: inline-block;" 
-                                             data-site="214" data-back="http://buturi.heteml.jp/student/2015/misawa/test/mind/"
-                                             data-height="20" data-width="60"></div>
+                                        <div class="pushnate-notification-button" data-site-id="12"></div>
                                         <script>
-                                        (function(d,s,ns){
-                                          var ns = d.createElement(s);
-                                            ns.async=1;ns.src="//bpush.net/connect/button.js";
-                                            var s0=d.getElementsByTagName(s)[0];
-                                          s0.parentNode.insertBefore(ns, s0);
-                                        })(document,'script');
+                                        (function(w, d, s, path) {
+                                          tag = d.createElement(s);
+                                          firstTag = d.getElementsByTagName(s)[0];
+                                          tag.async = 1;
+                                          tag.src = path;
+                                          firstTag.parentNode.insertBefore(tag, firstTag);
+                                        })(window, document, 'script', 'https://pushnate.com/pnbt.js');
                                         </script>
                                         
                                         <h2>パスワード変更</h2>

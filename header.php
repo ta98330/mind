@@ -14,14 +14,24 @@ if(empty($_SESSION['userName'])){
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
         
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="shortcut icon" href="images/mind6.png">
+        <link rel="apple-touch-icon" href="images/mind6.png" />
+        
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>-->
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        
         
         <link rel="stylesheet" href="base.css">
         
-        <link rel="apple-touch-icon" href="images/clip.png" />
+        
         
         <title>Mindfulness</title>
         
