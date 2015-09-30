@@ -8,7 +8,7 @@
 ?>
 <body>
     <!--ページ領域-->
-    <div data-role="page" data-title="jQuery Mobile TIPS">
+    <div data-role="page">
         
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">
@@ -27,7 +27,7 @@
                 <div class="ui-field-contain"><!--瞑想前評定-->
                     <input type="hidden" name="bfaf" value="af">
                     <fieldset data-role="controlgroup" data-type="horizontal">
-                        <legend>怒り</legend>
+                        <legend>怒り:</legend>
                         <input required type="radio" value="1" name="ang" id="ang1">
                         <label for="ang1">感じない</label>
                         <input type="radio" value="2" name="ang" id="ang2">
@@ -38,7 +38,7 @@
                         <label for="ang4">感じる</label>
                     </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal">
-                        <legend>悲しみ</legend>
+                        <legend>悲しみ:</legend>
                         <input required type="radio" value="1" name="sad" id="sad1">
                         <label for="sad1">感じない</label>
                         <input type="radio" value="2" name="sad" id="sad2">
@@ -49,7 +49,7 @@
                         <label for="sad4">感じる</label>
                     </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal">
-                        <legend>不安</legend>
+                        <legend>不安:</legend>
                         <input required type="radio" value="1" name="anxiety" id="anxiety1">
                         <label for="anxiety1">感じない</label>
                         <input type="radio" value="2" name="anxiety" id="anxiety2">
@@ -60,7 +60,7 @@
                         <label for="anxiety4">感じる</label>
                     </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal">
-                        <legend>喜び</legend>
+                        <legend>喜び:</legend>
                         <input required type="radio" value="1" name="joy" id="joy1">
                         <label for="joy1">感じない</label>
                         <input type="radio" value="2" name="joy" id="joy2">
@@ -71,7 +71,7 @@
                         <label for="joy4">感じる</label>
                     </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal">
-                        <legend>ストレス</legend>
+                        <legend>ストレス:</legend>
                         <input required type="radio" value="1" name="stress" id="stress1">
                         <label for="stress1">感じない</label>
                         <input type="radio" value="2" name="stress" id="stress2">
@@ -87,5 +87,5 @@
 
         </div>
     </div>
-
-<?php require "footer.php" //フッター読み込み?>
+</body>
+</html>

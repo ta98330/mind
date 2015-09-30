@@ -8,7 +8,7 @@
 ?>
 <body>
     <!--ページ領域-->
-    <div data-role="page" data-title="jQuery Mobile TIPS">
+    <div data-role="page">
         
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">
@@ -18,7 +18,7 @@
     
         <div role="main" class="ui-content">
 
-            <h1>出来事</h1>
+            <h2>出来事</h2>
             <p>今日の出来事を記録しましょう</p>
 
             <form action="event_insert.php" method="post">
@@ -29,7 +29,7 @@
                 <input type="submit" value="記録">
             </form>
 
-            <h2>1周間の出来事</h2>
+            <h3>1週間の出来事</h3>
             <ul class="eventlist">
 
                 <?php

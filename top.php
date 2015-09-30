@@ -8,10 +8,10 @@
 ?>
     
     <body>
-        <?php require "navbar.php";//ナビゲーションバー読み込み?>
+        
         
         <!--ページ領域-->
-        <div data-role="page" data-title="jQuery Mobile TIPS">
+        <div data-role="page">
 
             <!--ヘッダー領域-->
             <div data-role="header" data-theme="b" data-position="fixed">
@@ -21,10 +21,12 @@
             <!--メイン領域-->
             <div role="main" class="ui-content" data-dom-cache="true">
                 
-                <a href="#bfemo" data-rel="popup" class="ui-btn ui-btn-inline">スタート</a>
-                <a href="event.php" class="ui-btn ui-btn-inline">出来事</a>
-                <a href="graph.php" class="ui-btn ui-btn-inline">グラフ</a>
-                <a href="logout.php" data-ajax="false" class="ui-btn ui-btn-inline">ログアウト</a>
+                <div id="strmenus">
+                    <a href="#bfemo" data-rel="popup" class="ui-btn ui-btn-inline strbtn">スタート</a>
+                    <a href="event.php" class="ui-btn ui-btn-inline strbtn">出来事</a>
+                    <a href="graph.php" class="ui-btn ui-btn-inline strbtn">グラフ</a>
+                    <a href="logout.php" class="ui-btn ui-btn-inline strbtn">ログアウト</a>
+                </div>
                 
                 <div id="bfemo" data-role="popup">
                     <h2 id="emoselModal-title">瞑想前の今の気分は？</h2>
@@ -32,7 +34,7 @@
                         <div class="ui-field-contain"><!--瞑想前評定-->
                             <input type="hidden" name="bfaf" value="bf">
                             <fieldset data-role="controlgroup" data-type="horizontal">
-                                <legend>怒り</legend>
+                                <legend>怒り:</legend>
                                 <input required type="radio" value="1" name="ang" id="ang1">
                                 <label for="ang1">感じない</label>
                                 <input type="radio" value="2" name="ang" id="ang2">
@@ -43,7 +45,7 @@
                                 <label for="ang4">感じる</label>
                             </fieldset>
                             <fieldset data-role="controlgroup" data-type="horizontal">
-                                <legend>悲しみ</legend>
+                                <legend>悲しみ:</legend>
                                 <input required type="radio" value="1" name="sad" id="sad1">
                                 <label for="sad1">感じない</label>
                                 <input type="radio" value="2" name="sad" id="sad2">
@@ -54,7 +56,7 @@
                                 <label for="sad4">感じる</label>
                             </fieldset>
                             <fieldset data-role="controlgroup" data-type="horizontal">
-                                <legend>不安</legend>
+                                <legend>不安:</legend>
                                 <input required type="radio" value="1" name="anxiety" id="anxiety1">
                                 <label for="anxiety1">感じない</label>
                                 <input type="radio" value="2" name="anxiety" id="anxiety2">
@@ -65,7 +67,7 @@
                                 <label for="anxiety4">感じる</label>
                             </fieldset>
                             <fieldset data-role="controlgroup" data-type="horizontal">
-                                <legend>喜び</legend>
+                                <legend>喜び:</legend>
                                 <input required type="radio" value="1" name="joy" id="joy1">
                                 <label for="joy1">感じない</label>
                                 <input type="radio" value="2" name="joy" id="joy2">
@@ -76,7 +78,7 @@
                                 <label for="joy4">感じる</label>
                             </fieldset>
                             <fieldset data-role="controlgroup" data-type="horizontal">
-                                <legend>ストレス</legend>
+                                <legend>ストレス:</legend>
                                 <input required type="radio" value="1" name="stress" id="stress1">
                                 <label for="stress1">感じない</label>
                                 <input type="radio" value="2" name="stress" id="stress2">
@@ -129,11 +131,5 @@
 
         </div>
 
-        
-        
-        
-        
-     
-    
-        
-        <?php require "footer.php" //フッター読み込み?>
+</body>
+</html>
