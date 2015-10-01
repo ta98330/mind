@@ -13,12 +13,11 @@
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">
             <a href="top.php" class="ui-btn ui-btn-a ui-btn-left">Home</a>
-            <h1>Mindfulness</h1>
+            <h1>出来事</h1>
         </div>
     
         <div role="main" class="ui-content">
 
-            <h2>出来事</h2>
             <p>今日の出来事を記録しましょう</p>
 
             <form action="event_insert.php" method="post">
@@ -52,7 +51,7 @@
                         echo "<li class='pm'>";
                     }
 
-                    echo "<h2>",date('Y年n月j日　a g:i', strtotime($datetime)),"</h2>";
+                    echo "<h4>",date('n月j日　a g:i', strtotime($datetime)),"</h4>";
                     echo "<p>$content</p>";
                     echo "</li>\n";
                 }

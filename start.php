@@ -12,7 +12,6 @@
         
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">
-            <a href="top.php" class="ui-btn ui-btn-a ui-btn-left">Home</a>
             <h1>Mindfulness</h1>
         </div>
    
@@ -20,9 +19,9 @@
             <h1>スタート</h1>
             <p>Mindfulnessを開始</p>
 
-            <div class="embed-responsive embed-responsive-16by9"><iframe src="https://www.youtube.com/embed/2W2EvcXrb3A" frameborder="0" allowfullscreen></iframe></div>
+            <div class="youtube"><iframe src="https://www.youtube.com/embed/2W2EvcXrb3A" frameborder="0" allowfullscreen></iframe></div>
 
-            <h2 id="emoselModal-title">瞑想後の今の気分は？</h2>
+            <h2>瞑想後の今の気分は？</h2>
             <form action="impressions.php" method="post">
                 <div class="ui-field-contain"><!--瞑想前評定-->
                     <input type="hidden" name="bfaf" value="af">

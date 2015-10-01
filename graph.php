@@ -14,7 +14,7 @@
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">
             <a href="top.php" class="ui-btn ui-btn-a ui-btn-left">Home</a>
-            <h1>Mindfulness</h1>
+            <h1>グラフ</h1>
         </div>
 
         <div role="main" class="ui-content">
