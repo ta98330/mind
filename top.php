@@ -30,8 +30,6 @@
                     <a href="event.php" class="ui-btn ui-btn-inline strbtn">出来事</a>
                     <a href="graph.php" class="ui-btn ui-btn-inline strbtn">グラフ</a>
                     <a href="config.php" class="ui-btn ui-btn-inline strbtn">設定</a>
-                    
-                    <a href="#sub" data-role="button">サブ画面へ</a>
                 </div>
                 
                 <div id="bfemo" data-role="popup">
