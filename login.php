@@ -43,6 +43,7 @@ session_start();
     }
     else{
         require "header.php";//ヘッダー読み込み
+        echo "<body>";
         echo "<section id='passage' class='container'>";
         echo "<p class='alert alert-danger' role='alert'>ログインに失敗しました．<br />UserNameとパスワードを確認して下さい．<br /><a href='index.php'>戻る</a></p>";
         

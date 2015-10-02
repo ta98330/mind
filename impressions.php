@@ -17,7 +17,7 @@
         $rep = 0;
         
         
-        $st = $pdo->query("SELECT * FROM mf_impressions WHERE datetime = (SELECT MAX(datetime) FROM mf_impressions) AND (datetime BETWEEN '$today 00:00:00' AND '$today 23:59:59')");//本日最後のデータを検索
+        $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' AND (datetime BETWEEN '$today 00:00:00' AND '$today 23:59:59') AND datetime = (SELECT MAX(datetime) FROM mf_impressions)");//本日最後のデータを検索
         
         while ($row = $st->fetch()) {
             $rep = htmlspecialchars($row['rep']);

@@ -10,7 +10,7 @@
     
     <body>
         <!--ページ領域-->
-        <div data-role="page">
+        <div data-role="page" data-url="/index.php">
             <!--ヘッダー領域-->
             <div data-role="header" data-theme="b">
                 <h1>Mindfulness</h1>
@@ -24,7 +24,7 @@
             
                 <div id="login" data-role="popup">
                     <h3>ログイン</h3>
-                    <form method="post" action="login.php">
+                    <form method="post" action="login.php" data-ajax="false">
                         <input type="text" name="username" placeholder="UserName" required>
                         <input type="password" name="pass" placeholder="Password" required>
                         <input type="submit" class="login loginmodal-submit" value="ログイン">
