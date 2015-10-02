@@ -1,7 +1,7 @@
 <?php
     require "spheader.php";//ヘッダー読み込み 
         
-    if($_SESSION['login'] == "ログインしていません．"){
+    if($_SESSION['mf_login'] == "ログインしていません．"){
         header('Location: index.php');
     }
         
@@ -28,7 +28,7 @@
         
         
         //記録
-        $st = $pdo->query("INSERT INTO mf_impressions VALUES({$_SESSION['userId']},'$rep','$now','{$_POST['bfaf']}',{$_POST['ang']},{$_POST['sad']},{$_POST['anxiety']},{$_POST['joy']},{$_POST['stress']})");
+        $st = $pdo->query("INSERT INTO mf_impressions VALUES({$_SESSION['mf_userId']},'$rep','$now','{$_POST['bfaf']}',{$_POST['ang']},{$_POST['sad']},{$_POST['anxiety']},{$_POST['joy']},{$_POST['stress']})");
         
         
         
@@ -42,7 +42,7 @@
         /*
         echo "<p>感想を記録しました．</p>";
         //デバッグ
-        echo "ID ","{$_SESSION['userId']}"," 回数 ",$rep," 時間 ",$now," 前後 ",$_POST['bfaf']," 怒り ",$_POST['ang']," 悲しみ ", $_POST['sad']," 不安 ", $_POST['anxiety']," 喜び ", $_POST['joy']," ストレス ", $_POST['stress'];*/
+        echo "ID ","{$_SESSION['mf_userId']}"," 回数 ",$rep," 時間 ",$now," 前後 ",$_POST['bfaf']," 怒り ",$_POST['ang']," 悲しみ ", $_POST['sad']," 不安 ", $_POST['anxiety']," 喜び ", $_POST['joy']," ストレス ", $_POST['stress'];*/
     }
     else{
         require "header.php";//ヘッダー読み込み

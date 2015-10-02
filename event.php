@@ -1,7 +1,7 @@
 <?php
     require "spheader.php";
     
-    if($_SESSION['login'] == "ログインしていません．" || empty($_SESSION['login'])){
+    if($_SESSION['mf_login'] == "ログインしていません．" || empty($_SESSION['mf_login'])){
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
@@ -36,7 +36,7 @@
 
                 $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
-                $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['userId']}' and datetime between '$today' - interval 7 day and '$today' + interval 1 day ORDER BY datetime DESC");
+                $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '$today' - interval 7 day and '$today' + interval 1 day ORDER BY datetime DESC");
 
                 while (@$row = $st->fetch()) {
                     $datetime = htmlspecialchars($row['datetime']);

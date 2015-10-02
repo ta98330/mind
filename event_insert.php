@@ -5,7 +5,7 @@ $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}"
 
 
 if(!empty($_POST['eventContent'])){
-    $st = $pdo->query("INSERT INTO mf_events VALUES({$_SESSION['userId']},'$now','{$_POST['eventContent']}')");
+    $st = $pdo->query("INSERT INTO mf_events VALUES({$_SESSION['mf_userId']},'$now','{$_POST['eventContent']}')");
     
     
 }

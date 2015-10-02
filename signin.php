@@ -1,12 +1,12 @@
 <?php
 require "spheader.php";
 
-if($_SESSION['login'] == "ログイン中！" || empty($_SESSION['login'])){
+if($_SESSION['mf_login'] == "ログイン中！" || empty($_SESSION['mf_login'])){
     //ログアウト
-    $_SESSION['userId'] = NULL;
-    $_SESSION['userName'] = NULL;
-    $_SESSION['userPass'] = NULL;
-    $_SESSION['login'] = "ログインしていません．";
+    $_SESSION['mf_userId'] = NULL;
+    $_SESSION['mf_userName'] = NULL;
+    $_SESSION['mf_userPass'] = NULL;
+    $_SESSION['mf_login'] = "ログインしていません．";
 }
 
 if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
@@ -35,10 +35,10 @@ if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
         
         
         
-        $_SESSION['userId'] = $id;
-        $_SESSION['userName'] = $_POST['username'];
-        $_SESSION['userPass'] = $_POST['pass'];
-        $_SESSION['login'] = "ログイン中！";
+        $_SESSION['mf_userId'] = $id;
+        $_SESSION['mf_userName'] = $_POST['username'];
+        $_SESSION['mf_userPass'] = $_POST['pass'];
+        $_SESSION['mf_login'] = "ログイン中！";
         
         header('Location: top.php');
         

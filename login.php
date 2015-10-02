@@ -4,12 +4,12 @@ session_start();
         header('Location: logout.php');
     }*/
 
-    if($_SESSION['login'] == "ログイン中！"){
+    if($_SESSION['mf_login'] == "ログイン中！"){
         //ログアウト
-        $_SESSION['userId'] = NULL;
-        $_SESSION['userName'] = NULL;
-        $_SESSION['userPass'] = NULL;
-        $_SESSION['login'] = "ログインしていません．";
+        $_SESSION['mf_userId'] = NULL;
+        $_SESSION['mf_userName'] = NULL;
+        $_SESSION['mf_userPass'] = NULL;
+        $_SESSION['mf_login'] = "ログインしていません．";
     }
 
     if(empty($_POST['username'])){
@@ -34,11 +34,11 @@ session_start();
     }
 
     if($_POST['username'] == @$name){//while文から結果が得られた->idとpassが一致
-        $_SESSION['userId'] = $id;
-        $_SESSION['userName'] = $name;
-        $_SESSION['userPass'] = $pass;
+        $_SESSION['mf_userId'] = $id;
+        $_SESSION['mf_userName'] = $name;
+        $_SESSION['mf_userPass'] = $pass;
         
-        $_SESSION['login'] = "ログイン中！";
+        $_SESSION['mf_login'] = "ログイン中！";
         header('Location: top.php');
     }
     else{

@@ -1,7 +1,7 @@
 <?php
     require "spheader.php";//ヘッダー読み込み 
         
-    if($_SESSION['login'] == "ログインしていません．"){
+    if($_SESSION['mf_login'] == "ログインしていません．"){
         header('Location: index.php');
     }
         
@@ -12,12 +12,12 @@
 <section id="passage">
     <?php
     if(!empty($_POST['pass']) && !empty($_POST['newPass'])){
-        if($_SESSION['userPass'] == $_POST['pass']){
+        if($_SESSION['mf_userPass'] == $_POST['pass']){
           $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
-          $st = $pdo->prepare("UPDATE mf_user SET pass = ? WHERE id = {$_SESSION['userId']}");
+          $st = $pdo->prepare("UPDATE mf_user SET pass = ? WHERE id = {$_SESSION['mf_userId']}");
           $st->execute(array($_POST['newPass']));
 
-          $_SESSION['userPass'] = $_POST['newPass'];
+          $_SESSION['mf_userPass'] = $_POST['newPass'];
           echo '<p>パスワードを変更しました。</p>';
         }
         else

@@ -1,7 +1,7 @@
 <?php
     require "spheader.php";
     
-    if(@$_SESSION['login'] == "ログイン中！"){
+    if(@$_SESSION['mf_login'] == "ログイン中！"){
         header('Location: top.php');
     }
     require "header.php";//ヘッダー読み込み

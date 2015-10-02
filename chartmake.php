@@ -15,7 +15,7 @@ function chart($emotion){
     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
     //瞑想前
-    $st = $pdo->query("select * from mf_impressions where id = '{$_SESSION['userId']}' AND bfaf = 'bf' and datetime between '$today' - interval 5 day and '$today' + interval 1 day");
+    $st = $pdo->query("select * from mf_impressions where id = '{$_SESSION['mf_userId']}' AND bfaf = 'bf' and datetime between '$today' - interval 5 day and '$today' + interval 1 day");
     $before = array( );
     while ($row = $st->fetch()) {
         $rep = htmlspecialchars($row['rep']);
@@ -39,7 +39,7 @@ function chart($emotion){
     }
 
     //瞑想後
-    $st = $pdo->query("select * from mf_impressions where id = '{$_SESSION['userId']}' AND bfaf = 'af' and datetime between '$today' - interval 5 day and '$today' + interval 1 day");
+    $st = $pdo->query("select * from mf_impressions where id = '{$_SESSION['mf_userId']}' AND bfaf = 'af' and datetime between '$today' - interval 5 day and '$today' + interval 1 day");
     $after = array( );
     while ($row = $st->fetch()) {
         $rep = htmlspecialchars($row['rep']);

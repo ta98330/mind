@@ -1,7 +1,7 @@
 <?php
     require "spheader.php";
     
-    if($_SESSION['login'] == "ログインしていません．" || empty($_SESSION['login'])){
+    if($_SESSION['mf_login'] == "ログインしていません．" || empty($_SESSION['mf_login'])){
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み

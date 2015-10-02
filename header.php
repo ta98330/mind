@@ -1,6 +1,6 @@
 <?php
-if(empty($_SESSION['userName'])){
-    $_SESSION['login'] = "ログインしていません．";
+if(empty($_SESSION['mf_userName'])){
+    $_SESSION['mf_login'] = "ログインしていません．";
     
 }
 ?>

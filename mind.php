@@ -1,5 +1,5 @@
 <?php
-    echo "{$_SESSION['userName']}さん,";
+    echo "{$_SESSION['mf_userName']}さん,";
     $nowtime = date("G");
     $nowweek = date("w");
 
