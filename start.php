@@ -7,6 +7,7 @@
     require "header.php";//ヘッダー読み込み
 ?>
 <body>
+    <script src="js/youtube.js"></script>
     <!--ページ領域-->
     <div data-role="page">
         
@@ -19,9 +20,8 @@
             <h1>スタート</h1>
             <p>Mindfulnessを開始</p>
 
-            <div class="youtube"><iframe src="https://www.youtube.com/embed/2W2EvcXrb3A" frameborder="0" allowfullscreen></iframe></div>
             
-            <div id="sample"></div>
+            <div id="video1"></div>
 
             <a href="#afemo" data-role="button">終わる</a>
             
@@ -30,12 +30,11 @@
     
     <!--ボタン・クリックで表示されるページ-->
         <div id="afemo" data-role="page">
-            <div data-role="header" data-theme="b" data-position="fixed">
-            <a href="top.php" class="ui-btn ui-btn-a ui-btn-left">Home</a>
+            <div data-role="header" data-theme="b">
             <h1>Mindfulness</h1>
             </div>
             <div role="main" class="ui-content">
-                <form action="impressions.php" method="post">
+                <form action="impressions.php" method="post" data-ajax="false">
                     <h2>瞑想後の今の気分は？</h2>
                     <div class="ui-field-contain">
                         <input type="hidden" name="bfaf" value="af">

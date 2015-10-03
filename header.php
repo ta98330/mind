@@ -69,6 +69,6 @@ if(empty($_SESSION['mf_userName'])){
         }
         </script>
         <script src="mind.js"></script>
-        <script src="js/youtube.js"></script>
+        
         
     </head>

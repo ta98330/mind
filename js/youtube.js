@@ -7,11 +7,16 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // YouTubeの埋め込み
 function onYouTubeIframeAPIReady() {
     ytPlayer = new YT.Player(
-        'sample', // 埋め込む場所の指定
+        'video1', // 埋め込む場所の指定
         {
-            width: 640, // プレーヤーの幅
-            height: 390, // プレーヤーの高さ
-            videoId: 'bHQqvYy5KYo' // YouTubeのID
+            width: '100%', // プレーヤーの幅
+            height: 'auto', // プレーヤーの高さ
+            videoId: '2W2EvcXrb3A', // YouTubeのID
+            // イベントの設定
+            events: {
+                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
+                'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
+            }
         }
     );
 }
@@ -28,7 +33,8 @@ function onPlayerStateChange(event) {
     var ytStatus = event.data;
     // 再生終了したとき
     if (ytStatus == YT.PlayerState.ENDED) {
-        console.log('再生終了');
+        $(location).attr("href", "#afemo");
+        //console.log('再生終了');
         // 動画再生
         //event.target.playVideo();
     }
@@ -50,19 +56,4 @@ function onPlayerStateChange(event) {
     }
 }
 
-// YouTubeの埋め込み
-function onYouTubeIframeAPIReady() {
-    ytPlayer = new YT.Player(
-        'sample', // 埋め込む場所の指定
-        {
-            width: 640, // プレーヤーの幅
-            height: 390, // プレーヤーの高さ
-            videoId: 'bHQqvYy5KYo', // YouTubeのID
-            // イベントの設定
-            events: {
-                'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
-                'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
-            }
-        }
-    );
-}
+

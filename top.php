@@ -43,7 +43,7 @@
             <h1>Mindfulness</h1>
             </div>
             <div role="main" class="ui-content">
-                <form action="impressions.php" method="post">
+                <form action="impressions.php" method="post" data-ajax="false">
                     <h2>瞑想前の今の気分は？</h2>
                     <div class="ui-field-contain">
                         <input type="hidden" name="bfaf" value="bf">
