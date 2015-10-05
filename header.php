@@ -12,6 +12,7 @@ if(empty($_SESSION['mf_userName'])){
         <meta name="viewport" content="width=device-width, initial=1.0, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="theme-color" content="#0000CD">
         <!--<link rel="stylesheet" type="text/css" href="https://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
         
         <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->

@@ -30,7 +30,8 @@
     
     <!--ボタン・クリックで表示されるページ-->
         <div id="afemo" data-role="page">
-            <div data-role="header" data-theme="b">
+            <div data-role="header" data-theme="b"
+    data-add-back-btn="true" data-back-btn-text="戻る" data-back-btn-theme="a">
             <h1>Mindfulness</h1>
             </div>
             <div role="main" class="ui-content">

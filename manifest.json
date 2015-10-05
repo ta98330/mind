@@ -1,13 +1,19 @@
 {
-  "name": "Mindfulness app",
-  "short_name": "Mindfulness",
-  "icons": [
+    "name": "Mindfulness app",
+    "short_name": "Mindfulness",
+    "description": "Mindfulness瞑想実験のために開発したアプリです．",
+    "icons": [
     {
       "src": "mind6.png",
       "sizes": "144x144",
       "type": "image/png"
     }
-  ],
-  "start_url": "index.html",
-  "display": "standalone"
+    ],
+    "start_url": "index.html",
+    "display": "standalone",
+    "developer": {
+        "name": "近畿大学工学部 情報システム工学科 情報物理研究室 2015年度",
+        "url": "http://buturi.heteml.jp/student/2015/"
+    },
+    "default_locale": "ja"
 }
