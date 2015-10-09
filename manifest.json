@@ -4,8 +4,8 @@
     "description": "Mindfulness瞑想実験のために開発したアプリです．",
     "icons": [
     {
-      "src": "mind6.png",
-      "sizes": "144x144",
+      "src": "mindou.png",
+      "sizes": "127x127",
       "type": "image/png"
     }
     ],

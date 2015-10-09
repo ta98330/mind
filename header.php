@@ -18,8 +18,8 @@ if(empty($_SESSION['mf_userName'])){
         <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         
         <link rel="manifest" href="/manifest.json">
-        <link rel="shortcut icon" href="images/mind6.png">
-        <link rel="apple-touch-icon" href="images/mind6.png" />
+        <link rel="shortcut icon" href="images/mindou.png">
+        <link rel="apple-touch-icon" href="images/mindou.png" />
         
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>-->
