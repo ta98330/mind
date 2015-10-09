@@ -10,7 +10,7 @@
     
     <body>
         <!--ページ領域-->
-        <div data-role="page" data-url="index.php">
+        <div data-role="page" data-url="./index.php">
             <!--ヘッダー領域-->
             <div data-role="header" data-theme="b">
                 <h1>Mindfulness</h1>

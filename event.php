@@ -8,7 +8,7 @@
 ?>
 <body>
     <!--ページ領域-->
-    <div data-role="page">
+    <div data-role="page" data-url="./event.php">
         
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">
@@ -20,7 +20,7 @@
 
             <p>今日の出来事を記録しましょう</p>
 
-            <form action="event_insert.php" method="post">
+            <form action="event_insert.php" method="post" data-ajax="false">
                 <div class="ui-field-contain">
                     <label for="entry_comment">今日の出来事(200文字まで)</label>
                     <textarea name="eventContent" placeholder="入力してください"　id="eventContent" class="form-control" required></textarea>

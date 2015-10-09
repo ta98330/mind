@@ -10,34 +10,7 @@
     <body>
         
         
-        <!--ページ領域-->
-        <div id="home" data-role="page" data-url="./top.php">
-
-            <!--ヘッダー領域-->
-            <div data-role="header" data-theme="b" data-position="fixed">
-                <h1>Mindfulness</h1>
-                <a href="logout.php" class="ui-btn ui-btn-a ui-btn-right">ログアウト</a>
-            </div>
-
-            <!--メイン領域-->
-            <div role="main" class="ui-content" data-dom-cache="true">
-                <div id="topinfo">
-                    <p><?php include_once('mind.php')?></p>
-                </div>
-                
-                <div id="strmenus">
-                    <a href="bfemo.php" data-role="button" class="ui-btn ui-btn-inline strbtn">スタート</a>
-                    <a href="event.php" data-role="button" class="ui-btn ui-btn-inline strbtn">出来事</a>
-                    <a href="graph.php" data-role="button" class="ui-btn ui-btn-inline strbtn">グラフ</a>
-                    <a href="config.php" data-role="button" class="ui-btn ui-btn-inline strbtn">設定</a>
-                </div>
-                
-            </div><!--メイン領域-->
-        </div><!--home-->
-        
-        
-        <!--ボタン・クリックで表示されるページ-->
-        <div id="bfemo" data-role="page">
+        <div id="bfemo" data-role="page" data-url="./bfemo.php">
             <div data-role="header" data-theme="b" data-position="fixed">
             <a href="top.php" class="ui-btn ui-btn-a ui-btn-left">Home</a>
             <h1>Mindfulness</h1>
@@ -107,6 +80,5 @@
                 </form>
             </div>
         </div>
-
 </body>
 </html>

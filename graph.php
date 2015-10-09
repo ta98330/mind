@@ -9,7 +9,7 @@
     <body>
 
     <!--ページ領域-->
-    <div data-role="page">
+    <div data-role="page" data-url="./graph.php">
 
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">

@@ -9,7 +9,7 @@
     <body>
 
     <!--ページ領域-->
-    <div data-role="page">
+    <div data-role="page" data-url="./config.php">
 
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="b" data-position="fixed">
@@ -31,7 +31,7 @@
             </script>
 
             <h2>パスワード変更</h2>
-            <form class="form" role="form" method="post" name="pass_insert" action="pass_update.php" accept-charset="UTF-8" id="login-nav">
+            <form class="form" role="form" method="post" name="pass_insert" action="pass_update.php" accept-charset="UTF-8" id="login-nav" data-ajax="false">
                 <div class="form-group">
                     <label class="sr-only" for="exampleInputPassword1">現在のパスワード</label>
                     <input type="password" class="form-control" name="pass" placeholder="現在のパスワード" required>

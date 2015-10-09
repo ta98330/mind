@@ -17,17 +17,15 @@
                 <li><p class="navbar-text" id="date"><?=date('n月 j日 (D)')?></p></li>
               </ul>
               
-              <ul class="nav navbar-nav navbar-right" <?php if($_SESSION['login'] == "ログインしていません．" || empty($_SESSION['login'])){
-        echo "style='display: none'";
-    }?>>
+              <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><?= "{$_SESSION['userName']}さん"?></b> <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
                              <div class="row">
                                     <div class="col-md-12" id="pro_con">
                                         <h1>設定</h1>
-                                        <?= "<p>{$_SESSION['userName']}さん<p>"?>
+                                        <?= "<p>{$_SESSION['mf_userName']}さん<p>"?>
                                         
                                         <h2>通知設定(GoogleChromeにのみ対応しています)</h2>
                                         <div class="pushnate-notification-button" data-site-id="12"></div>
@@ -63,7 +61,7 @@
                 <li><a href="logout.php">ログアウト</a></li>
             </ul>
                 
-            <ul class="nav navbar-nav navbar-right" <?php if($_SESSION['login'] == "ログイン中！"){
+            <ul class="nav navbar-nav navbar-right" <?php if($_SESSION['mf_login'] == "ログイン中！"){
         echo "style='display: none'";
     }?>>
                 <li class="dropdown"  id="signup">
