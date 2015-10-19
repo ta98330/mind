@@ -25,6 +25,8 @@
                     <p><?php include_once('mind.php')?></p>
                 </div>
                 
+                
+                
                 <div id="strmenus">
                     <a href="bfemo.php" data-role="button" class="ui-btn ui-btn-inline strbtn">スタート</a>
                     <a href="event.php" data-role="button" class="ui-btn ui-btn-inline strbtn">出来事</a>
