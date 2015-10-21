@@ -14,7 +14,7 @@
         <div id="home" data-role="page" data-url="./top.php">
 
             <!--ヘッダー領域-->
-            <div data-role="header" data-theme="b" data-position="fixed">
+            <div data-role="header" data-theme="b">
                 <h1>Mindfulness</h1>
                 <a href="logout.php" class="ui-btn ui-btn-a ui-btn-right">ログアウト</a>
             </div>
@@ -23,9 +23,17 @@
             <div role="main" class="ui-content" data-dom-cache="true">
                 <div id="topinfo">
                     <p><?php include_once('mind.php')?></p>
+                    
+                </div>
+                
+                <div id="image">
+                    <p id="image1"></p><p id="image2"></p>
                 </div>
                 
                 
+                <div class="char">
+                    <img src="images/char02.png"alt="No image">
+                </div>
                 
                 <div id="strmenus">
                     <a href="bfemo.php" data-role="button" class="ui-btn ui-btn-inline strbtn">スタート</a>

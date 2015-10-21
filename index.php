@@ -140,10 +140,10 @@
                 </div>
             
                 <div id="loginbtn">
-                    <a href="#login" data-rel="popup" class="ui-btn">はじめる</a>
+                    <p><a href="#login" data-rel="popup" class="ui-btn">はじめる</a></p>
                 </div>
             
-                <div id="login" data-role="popup">
+                <div id="login" data-role="popup" data-transition="pop" data-position-to="window" data-overlay-theme="b">
                     <h3>ログイン</h3>
                     <form method="post" action="login.php" data-ajax="false">
                         <input type="text" name="username" placeholder="UserName" required>

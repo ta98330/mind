@@ -17,24 +17,41 @@
 }
 
 body{
+    
                     
     
 }
+
+
+
+
+
+
+
+
+
+
+
 /*=================================
 index
 ==================================*/
 svg {
-    position: relative;
+    position: absolute;
     width: 92vw;
     height: 92vw;
     
+    z-index: 0;
+    opacity: 0.2
 }
 
 #svg {
-    position: relative;
+    position: absolute;
     display: block;
     width: 92vw;
     height: 92vw;
+    
+    top: 10vh;
+    //background-color: aliceblue;
     
 }
 
@@ -42,11 +59,62 @@ svg {
 /*=================================
 top
 ==================================*/
-#topinfo{
-   font-size: 160%; 
+#home {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    //overflow: hidden;
+}
+
+
+
+#topinfo {
+    //position: absolute;
+    width: 100%;
+    //height: 40vh;
+}
+
+#topinfo p {
+    position: relative;
+    font-size: 110%;
+    text-align: center;
+    margin: 0;
+    padding: 6%;
     border: solid 2px;
-    border-radius: 15px;
+    border-radius: 50%;
     background-color: #e5f4f1;
+}
+
+#image {
+    position: absolute;
+    right: 25vw;
+    width: 15vw;
+    height: 8vh;
+}
+
+#image p {
+    margin: 0;
+    padding: 0;
+    border: solid 2px;
+    border-radius: 50%;
+    background-color: #e5f4f1;
+}
+
+#image p#image1 {
+    position: absolute;
+    right: 0px;
+    width: 10vw;
+    height: 2vh;
+    padding: 0;
+}
+
+#image p#image2 {
+    position: absolute;
+    right: 0px;
+    top: 4vh;
+    width: 5vw;
+    height: 1vh;
+    padding: 0;
 }
 
 .imppopup{
@@ -54,12 +122,38 @@ top
     
 }
 
+.char {
+    position: absolute;
+    margin-top: 5vh;
+    right: 5%;
+    width: 25vw;
+    height: 25vw;
+}
 
+.char img {
+    width: 100%;
+    height: 100%;
+}
 
+/*----------ボタン-------------*/
+#strmenus {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40vh;
+    
+    text-align: center;
+    
+}
 
-
-
-
+#strmenus .strbtn{
+    position: relative;
+    width: 30%;
+    height: 10vh;
+    line-height: 10vh;
+    
+}
 
 
 
@@ -83,20 +177,7 @@ top
 }
 
 
-#strmenus{
-    position: absolute;
-    width: 100vw;
-    bottom: 5%;
-    
-    
-}
 
-#strmenus .strbtn{
-    width: 30vw;
-    height: 20vw;
-    line-height: 20vw;
-    border-radius: 10px;
-}
 
 .youtube{
     
