@@ -36,9 +36,22 @@
             </div>
             <div role="main" class="ui-content">
                 <form action="impressions.php" method="post" data-ajax="false">
-                    <h2>瞑想後の今の気分は？</h2>
+                    <h2>今の気分は？</h2>
                     <div class="ui-field-contain">
                         <input type="hidden" name="bfaf" value="af">
+                        <label for="ang">怒り:感じない----------感じる</label>
+                        <input id="ang" name="ang" type="range" min="1" max="10" step="1" value="1">
+                        <label for="sad">悲しみ:</label>
+                        <input id="sad" name="sad" type="range" min="1" max="10" step="1" value="1">
+                        <label for="anxiety">不安:</label>
+                        <input id="anxiety" name="anxiety" type="range" min="1" max="10" step="1" value="1">
+                        <label for="joy">喜び:</label>
+                        <input id="joy" name="joy" type="range" min="1" max="10" step="1" value="1">
+                        <label for="stress">ストレス:</label>
+                        <input id="stress" name="stress" type="range" min="1" max="10" step="1" value="1">
+                        
+                        
+                        <!--
                         <fieldset data-role="controlgroup" data-type="horizontal">
                             <legend>怒り:</legend>
                             <input required type="radio" value="1" name="ang" id="ang1" data-mini="true">
@@ -94,6 +107,8 @@
                             <input type="radio" value="4" name="stress" id="stress4" data-mini="true">
                             <label for="stress4">感じる</label>
                         </fieldset>
+                        -->
+                        
                         <input type="submit" value="終わる" data-mini="true">
                     </div>
                 </form>
