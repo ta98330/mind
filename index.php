@@ -252,15 +252,18 @@
                 </div>
             
                 <div id="loginbtn">
-                    <p><a href="#login" data-rel="popup" class="ui-btn">はじめる</a></p>
+                    <p><a href="#login" data-rel="popup" data-transition="pop" class="ui-btn">はじめる</a></p>
                 </div>
             
-                <div id="login" data-role="popup" data-transition="pop" data-position-to="window" data-overlay-theme="b">
+                <div id="login" data-role="popup" data-position-to="window" data-overlay-theme="b">
                     <h3>ログイン</h3>
                     <form method="post" action="login.php" data-ajax="false">
                         <input type="text" name="username" placeholder="UserName" required>
                         <input type="password" name="pass" placeholder="Password" required>
-                        <input type="submit" class="login loginmodal-submit" value="ログイン">
+                        <input type="checkbox" id="nextlogin" name="memory" value="true">
+                        <label for="nextlogin">次回からは自動的にログイン</label>
+                        <input type="submit" name="action" class="login loginmodal-submit" value="login">
+                        
                     </form>
                 </div>
             </div>

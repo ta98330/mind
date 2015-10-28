@@ -20,9 +20,9 @@
                     <h2>今の気分は？</h2>
                     <div class="ui-field-contain">
                         <input type="hidden" name="bfaf" value="bf">
-                        
+                        <h3>感じない　＞＞＞　感じる</h3>
                         <div class="ui-field-contain">
-                            <label for="ang">怒り:感じない----------感じる</label>
+                            <label for="ang">怒り:</label>
                             <input id="ang" name="ang" type="range" min="1" max="10" step="1" value="1">
                             <label for="sad">悲しみ:</label>
                             <input id="sad" name="sad" type="range" min="1" max="10" step="1" value="1">

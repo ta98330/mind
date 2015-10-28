@@ -18,8 +18,32 @@
         </div>
 
         <div role="main" class="ui-content">
-            現在利用できません．
+            
+        <!--3タブパネル全体を定義-->
+        <div id="tabs" data-role="tabs">
+            
+          <!--2タブリストを準備-->
+          <div data-role="navbar">
+            <ul>
+              <li><a href="#backbone" class="ui-btn-active">Backbone.js</a></li>
+              <li><a href="#knockout">Knockout.js</a></li>
+              <li><a href="#angular">AngularJs</a></li>
+            </ul>
+          </div>
+            
+          <!--1パネル（コンテンツ領域）を準備-->
+          <div id="backbone" class="ui-body ui-body-a">
+            <p>Backbone.jsは...</p>
+          </div>
+          <div id="knockout" class="ui-body ui-body-a">
+            <p>Knockoutは...</p>
+          </div>
+          <div id="angular" class="ui-body ui-body-a">
+            <p>Angular.jsは...</p>
+          </div>
         </div>
+        </div>
+        
 
 
 

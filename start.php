@@ -17,8 +17,8 @@
         </div>
    
         <div role="main" class="ui-content">
-            <h1>スタート</h1>
-            <p>Mindfulnessを開始</p>
+            <h1>さあ始めよう</h1>
+            <p>Mindfulnessを開始 ※音量に注意してください</p>
 
             
             <div id="video1"></div>
@@ -37,6 +37,7 @@
             <div role="main" class="ui-content">
                 <form action="impressions.php" method="post" data-ajax="false">
                     <h2>今の気分は？</h2>
+                    <h3>感じない　＞＞＞　感じる</h3>
                     <div class="ui-field-contain">
                         <input type="hidden" name="bfaf" value="af">
                         <label for="ang">怒り:感じない----------感じる</label>
@@ -49,7 +50,7 @@
                         <input id="joy" name="joy" type="range" min="1" max="10" step="1" value="1">
                         <label for="stress">ストレス:</label>
                         <input id="stress" name="stress" type="range" min="1" max="10" step="1" value="1">
-                        
+                    </div>
                         
                         <!--
                         <fieldset data-role="controlgroup" data-type="horizontal">
@@ -109,8 +110,8 @@
                         </fieldset>
                         -->
                         
-                        <input type="submit" value="終わる" data-mini="true">
-                    </div>
+                    <input type="submit" value="終わる" data-mini="true">
+                    
                 </form>
             </div>
         </div>

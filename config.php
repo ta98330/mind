@@ -19,6 +19,7 @@
 
         <div role="main" class="ui-content">
             <h2>通知設定</h2>
+            <p>毎日19時に通知されます</p>
             <div class="pushnate-notification-button" data-site-id="12"></div>
             <script>
             (function(w, d, s, path) {

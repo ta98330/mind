@@ -1,9 +1,28 @@
 <?php
     require "spheader.php";
-    
+    /*
     if($_SESSION['mf_login'] == "ログインしていません．" || empty($_SESSION['mf_login'])){
         header('Location: index.php');
     }
+    */
+    
+    if(isset($_COOKIE["mf_TEST_COOKIE"]) && $_COOKIE["mf_TEST_COOKIE"] != ""){
+
+        $_SESSION["mf_TEST"] = $_COOKIE["mf_TEST_COOKIE"];
+        
+        
+        
+    }
+
+    if(isset($_SESSION["mf_TEST"]) && $_SESSION["mf_TEST"] != null && md5($_SESSION['mf_userPass']) === $_SESSION["mf_TEST"]){
+        //$message = "Login success";
+    }
+    else{
+        session_destroy();//セッション破棄
+        header("Location:index.php");
+    }
+    
+    
     require "header.php";//ヘッダー読み込み
 ?>
     
@@ -32,14 +51,16 @@
                 
                 
                 <div class="char">
-                    <img src="images/char02.png"alt="No image">
+                    <img src="images/char02.png" alt="No image" class="dolphin">
                 </div>
                 
                 <div id="strmenus">
-                    <a href="bfemo.php" data-role="button" class="ui-btn ui-btn-inline strbtn">スタート</a>
-                    <a href="event.php" data-role="button" class="ui-btn ui-btn-inline strbtn">出来事</a>
-                    <a href="graph.php" data-role="button" class="ui-btn ui-btn-inline strbtn">グラフ</a>
-                    <a href="config.php" data-role="button" class="ui-btn ui-btn-inline strbtn">設定</a>
+                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想スタート</a>
+                    <div id="subbtns">
+                    <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
+                    <a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>
+                    <a href="config.php" data-role="button" class="ui-btn subbtn" id="sub3">設定</a>
+                    </div>
                 </div>
                 
             </div><!--メイン領域-->

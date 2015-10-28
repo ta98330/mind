@@ -36,6 +36,7 @@
         
         
         
+        
         <section>
             <h2>新規ユーザー登録</h2>
             <form method="post" action="signin.php" id="login-nav">
