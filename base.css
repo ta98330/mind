@@ -241,8 +241,12 @@ top
 ==================================*/
 #bfemo h3,#afemo h3{
     text-align: center;
+    margin: 0;
 }
 
+#bfemo h2,#afemo h2{
+    margin: 0;
+}
 
 
 /*=================================

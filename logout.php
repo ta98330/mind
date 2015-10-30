@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+
+//データベース側消去
+$pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
+                
+$st = $pdo->query("DELETE FROM mf_auto_login WHERE passkey = '{$_SESSION["TEST"]}'");
+
+//クッキー消去
+setcookie("mf_COOKIE", $_SESSION["TEST"], time() - 1800);
 
 // セッション変数を全て解除する
 $_SESSION = array();

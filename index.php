@@ -4,6 +4,35 @@
     if(@$_SESSION['mf_login'] == "ログイン中！"){
         header('Location: top.php');
     }
+    
+    //クッキーの存在確認
+    if(isset($_COOKIE["mf_COOKIE"])){
+        
+        
+        $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
+        
+        $st = $pdo->query("SELECT * FROM mf_auto_login WHERE passkey = '{$_COOKIE["mf_COOKIE"]}'");
+        if(!empty($st)){
+            while ($row = $st->fetch()) {
+                $id = htmlspecialchars($row['id']);
+                $name = htmlspecialchars($row['name']);
+                $pass = htmlspecialchars($row['password']);
+
+            }
+
+            $_SESSION['mf_userId'] = $id;
+            $_SESSION['mf_userName'] = $name;
+            $_SESSION['mf_userPass'] = $pass;
+
+            $_SESSION["TEST"] = $_COOKIE["mf_COOKIE"];
+            $_SESSION['mf_login'] = "ログイン中！";
+            header("Location:top.php");
+        }
+    }
+    else{
+        
+    }
+
     require "header.php";//ヘッダー読み込み
 ?>
 
@@ -19,6 +48,7 @@
             <div role="main" class="ui-content">
                 <h2>Mindfulnessとは</h2>
                 <p><blockquote cite="http://mindfulness.jp.net/concept.html">今、この瞬間の体験に意図的に意識を向け、評価をせずに、とらわれのない状態で、ただ観ること</blockquote>-<a href="http://mindfulness.jp.net/" target="_blank">日本マインドフルネス学会- 公式サイト</a>より引用</p>
+            
                 
                 <div id="svg">
                     <svg  style="position: absolute; left: 0px; top: 0px" width="500" height="500"viewBox="0 0 65 62.2">
