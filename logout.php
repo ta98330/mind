@@ -1,14 +1,16 @@
 <?php
 session_start();
 
+//クッキーの存在確認
+if(isset($_COOKIE["mf_COOKIE"])){
+    //データベース側消去
+    $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
-//データベース側消去
-$pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
-                
-$st = $pdo->query("DELETE FROM mf_auto_login WHERE passkey = '{$_SESSION["TEST"]}'");
+    $st = $pdo->query("DELETE FROM mf_auto_login WHERE passkey = '{$_SESSION["TEST"]}'");
 
-//クッキー消去
-setcookie("mf_COOKIE", $_SESSION["TEST"], time() - 1800);
+    //クッキー消去
+    setcookie("mf_COOKIE", $_SESSION["TEST"], time() - 1800);
+}
 
 // セッション変数を全て解除する
 $_SESSION = array();
