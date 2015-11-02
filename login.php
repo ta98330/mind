@@ -32,6 +32,8 @@ session_start();
         
         if(isset($_POST["memory"]) && $_POST["memory"]==="true"){//次回からは自動的にログイン
             $timestamp = time();
+            $today = date("Y-m-d");
+            
             $_SESSION["TEST"] = md5("{$_SESSION['mf_userPass']}"+"$timestamp");//セッションに保存
             
             $flag = setcookie("mf_COOKIE", $_SESSION["TEST"], time()+3600*24*14);//クッキーに保存
@@ -39,7 +41,7 @@ session_start();
             if($flag){
                 $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
                 
-                $st = $pdo->query("INSERT INTO mf_auto_login VALUES ( '{$_SESSION["TEST"]}','$id','$name','$pass',$timestamp)");
+                $st = $pdo->query("INSERT INTO mf_auto_login VALUES ( '{$_SESSION["TEST"]}','$id','$name','$pass','$today')");
             }
             else{
                 //クッキー失敗
