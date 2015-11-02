@@ -38,6 +38,7 @@ if(empty($_SESSION['mf_userName'])){
         <script type="text/javascript">
         //https://w3g.jp/blog/js_browser_sniffing2015
         //スマホの判定に使用
+        /*
         var _ua = (function(u){
             return {
                 Tablet:(u.indexOf("windows") != -1 && u.indexOf("touch") != -1)
@@ -55,19 +56,19 @@ if(empty($_SESSION['mf_userName'])){
                   || u.indexOf("blackberry") != -1
                 }
             })(window.navigator.userAgent.toLowerCase());
-            /*
+            
             
             if(_ua.Mobile){
-            //この中のコードはスマホにのみ適用
+                //この中のコードはスマホにのみ適用
             }else if(_ua.Tablet){
-            //この中のコードはタブレットにのみ適用
+                //この中のコードはタブレットにのみ適用
             }else{
-            //この中のコードはスマホとタブレット以外に適用
+                //この中のコードはスマホとタブレット以外に適用
                 if(window.confirm('PC用のページに移動しますか？')){
-                location.href = "index.html";
+                    location.href = "index.html";
+                }
             }
-            */
-        }
+        */
         </script>
         <script src="mind.js"></script>
         
