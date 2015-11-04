@@ -38,15 +38,6 @@ body{
 /*=================================
 index
 ==================================*/
-svg {
-    position: absolute;
-    width: 92vw;
-    height: 92vw;
-    
-    z-index: 0;
-    opacity: 0.2
-}
-
 #svg {
     position: absolute;
     display: block;
@@ -58,6 +49,14 @@ svg {
     
 }
 
+#svg svg {
+    position: absolute;
+    width: 92vw;
+    height: 92vw;
+    
+    z-index: 0;
+    opacity: 0.2
+}
 
 /*=================================
 top
@@ -327,17 +326,14 @@ li.pm{
 /*=================================
 グラフ
 ==================================*/
-#graph img {
-    margin-bottom: 10px;
+#graph {
     
     
-    
-}
-
-#chartimg {
-    overflow-x: auto;
     
     
 }
 
+.grapharea {
+    background-color: white;
+}
 

@@ -21,10 +21,16 @@
         
         while ($row = $st->fetch()) {
             $rep = htmlspecialchars($row['rep']);
+            $bfaf = htmlspecialchars($row['bfaf']);
         }
         
-        if($_POST['bfaf'] == 'bf')
-        $rep++;
+        /*瞑想後なし削除処理
+        if($_POST['bfaf'] == 'bf' && $bfemo == 'bf'){
+            $st = $pdo->query("DELETE FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' AND (datetime BETWEEN '$today 00:00:00' AND '$today 23:59:59') AND datetime = (SELECT MAX(datetime) FROM mf_impressions)");
+        }
+        else */if($_POST['bfaf'] == 'bf'){
+            $rep++;
+        }
         
         
         //記録

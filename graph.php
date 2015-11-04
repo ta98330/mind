@@ -5,6 +5,7 @@
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
+    include_once "chartmake.php";
 ?>
     <body>
 
@@ -18,35 +19,56 @@
         </div>
 
         <div role="main" class="ui-content">
-            
-        <!--3タブパネル全体を定義-->
-        <div id="tabs" data-role="tabs">
-            
-          <!--2タブリストを準備-->
-          <div data-role="navbar">
-            <ul>
-              <li><a href="#backbone" class="ui-btn-active">Backbone.js</a></li>
-              <li><a href="#knockout">Knockout.js</a></li>
-              <li><a href="#angular">AngularJs</a></li>
-            </ul>
-          </div>
-            
-          <!--1パネル（コンテンツ領域）を準備-->
-          <div id="backbone" class="ui-body ui-body-a">
-            <p>Backbone.jsは...</p>
-          </div>
-          <div id="knockout" class="ui-body ui-body-a">
-            <p>Knockoutは...</p>
-          </div>
-          <div id="angular" class="ui-body ui-body-a">
-            <p>Angular.jsは...</p>
-          </div>
-        </div>
-        </div>
+            <h1>グラフ</h1>
+            <div class="ct-chart ct-perfect-fourth grapharea"></div>
         
+            <script>
+                var label=JSON.parse('<?php echo  $jsonLabel; ?>');
 
+                var bf_ang=JSON.parse('<?php echo  $json_bf_ang; ?>');
 
+                var af_ang=JSON.parse('<?php echo  $json_af_ang; ?>');
 
+                new Chartist.Line('.ct-chart', {
+                    labels: label,
+                    /*
+                  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                  series: [
+                    [12, 5, 7, 8, 5],
+                    [2, 1, 3.5, 7, 3],
+                    [1, 3, 4, 5, 6]
+                  ]*/
+
+                    series: [
+                        bf_ang,
+                        af_ang
+                    ]
+
+                }, {
+                  fullWidth: true,
+                  chartPadding: {
+                    right: 30
+                  },
+                    axisX: {
+
+                    },
+                    axisY: {
+                        lineSmooth: true,		// いわゆるベジェ曲線か折れ線か
+                        scaleMinSpace: 1,		// 間隔
+                        high: 10,       //最大値
+                        low: 0,     //最小値
+                        onlyInteger: true,
+                        offset: 10
+                    }
+                });
+            </script>
+            
+            
+            
+            
+        </div><!--main-->
+            
+        
     </div>
 
     </body>
