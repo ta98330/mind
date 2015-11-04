@@ -37,7 +37,7 @@
         <section>
             <h2>CSV出力</h2>
             <form method="post" action="csv.php">
-                <labe>被験者:
+                <labe>ユーザー:
                     <select name="id">
                     <?php
                     

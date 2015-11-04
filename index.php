@@ -1,13 +1,12 @@
 <?php
     require "spheader.php";
-    
-    if(@$_SESSION['mf_login'] == "ログイン中！"){
+    //既ログイン処理
+    if(isset($_SESSION["mf_login"]) && $_SESSION['mf_login'] == "ログイン中！"){
         header('Location: top.php');
     }
     
     //クッキーの存在確認
     if(isset($_COOKIE["mf_COOKIE"])){
-        
         
         $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
         
@@ -29,14 +28,10 @@
             header("Location:top.php");
         }
     }
-    else{
-        
-    }
-
+    
     require "header.php";//ヘッダー読み込み
 ?>
 
-    
     <body>
         <!--ページ領域-->
         <div data-role="page" data-url="./index.php">
@@ -278,8 +273,7 @@
                     />
                     </svg>
 
-
-                </div>
+                </div><!--svg-->
             
                 <div id="loginbtn">
                     <p><a href="#login" data-rel="popup" data-transition="pop" class="ui-btn">はじめる</a></p>
@@ -293,12 +287,9 @@
                         <input type="checkbox" id="nextlogin" name="memory" value="true">
                         <label for="nextlogin">次回からは自動的にログイン</label>
                         <input type="submit" name="action" class="login loginmodal-submit" value="login">
-                        
                     </form>
                 </div>
-            </div>
-            
-            
-        </div>
+            </div><!--main-->
+        </div><!--page-->
     </body>
 </html>

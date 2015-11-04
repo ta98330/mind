@@ -1,10 +1,3 @@
-<?php
-if(empty($_SESSION['mf_userName'])){
-    $_SESSION['mf_login'] = "ログインしていません．";
-    
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 	<head>

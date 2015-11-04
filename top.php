@@ -1,15 +1,14 @@
 <?php
     require "spheader.php";
-    
-    if($_SESSION['mf_login'] == "ログインしていません．" || empty($_SESSION['mf_login'])){
+    //未ログイン処理
+    if(!isset($_SESSION["mf_login"])){
         header('Location: index.php');
     }
+
     require "header.php";//ヘッダー読み込み
 ?>
     
     <body>
-        
-        
         <!--ページ領域-->
         <div id="home" data-role="page" data-url="./top.php">
 
@@ -23,7 +22,6 @@
             <div role="main" class="ui-content" data-dom-cache="true">
                 <div id="topinfo">
                     <p><?php include_once('mind.php')?></p>
-                    
                 </div>
                 
                 <div id="image">
