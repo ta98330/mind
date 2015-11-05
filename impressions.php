@@ -14,21 +14,34 @@
         
         $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
         
+        
+        /*-------瞑想後なし処理---------*/
+        //最新データを検索
+        $st = $pdo->query("SELECT * FROM mf_impressions WHERE datetime = (SELECT max(datetime) FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' GROUP BY id)");
+        
+        while ($row = $st->fetch()) {
+            $last_bfaf = htmlspecialchars($row['bfaf']);
+        }
+        
+        //postデータが瞑想前，最新データも瞑想前 --> 最新データを消去
+        if($_POST['bfaf'] == 'bf' && $last_bfaf == 'bf'){
+            $st = $pdo->query("DELETE FROM mf_impressions WHERE datetime = (SELECT last_date FROM (SELECT max(datetime) AS last_date FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' GROUP BY id) AS temp1)");
+        }
+        
+        
+        
+        
         $rep = 0;
         
-        
-        $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' AND (datetime BETWEEN '$today 00:00:00' AND '$today 23:59:59') AND datetime = (SELECT MAX(datetime) FROM mf_impressions)");//本日最後のデータを検索
+        //本日最後のデータを検索
+        $st = $pdo->query("SELECT * FROM mf_impressions WHERE datetime = (SELECT max(datetime) FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' AND (datetime BETWEEN '$today 00:00:00' AND '$today 23:59:59') GROUP BY id)");
         
         while ($row = $st->fetch()) {
             $rep = htmlspecialchars($row['rep']);
             $bfaf = htmlspecialchars($row['bfaf']);
         }
         
-        /*瞑想後なし削除処理
-        if($_POST['bfaf'] == 'bf' && $bfemo == 'bf'){
-            $st = $pdo->query("DELETE FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' AND (datetime BETWEEN '$today 00:00:00' AND '$today 23:59:59') AND datetime = (SELECT MAX(datetime) FROM mf_impressions)");
-        }
-        else */if($_POST['bfaf'] == 'bf'){
+        if($_POST['bfaf'] == 'bf'){
             $rep++;
         }
         

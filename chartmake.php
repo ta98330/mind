@@ -5,8 +5,15 @@ $today = date("Y-m-d");
 
 $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
+//期間
+$week = "1 WEEK";
+$month = "1 MONTH";
+    
+
+$period = $week;
+
 //瞑想前
-$st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '1' and bfaf = 'bf' and datetime between '$today 00:00:00' - INTERVAL 1 WEEK and '$today 23:59:59'");
+$st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '1' and bfaf = 'bf' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
 
 while ($row = $st->fetch()) {
     
@@ -24,7 +31,7 @@ while ($row = $st->fetch()) {
     $stress = htmlspecialchars($row['stress']);
 
 
-    $label_data[] = "$val1 $rep 回目";
+    $label_data[] = "$val1 $rep";
 
     $bf_ang_data[] = $ang;
     $bf_sad_data[] = $sad;
@@ -37,6 +44,10 @@ while ($row = $st->fetch()) {
 $jsonLabel=json_encode($label_data);
 
 $json_bf_ang=json_encode($bf_ang_data);
+$json_bf_sad=json_encode($bf_sad_data);
+$json_bf_anxiety=json_encode($bf_anxiety_data);
+$json_bf_joy=json_encode($bf_joy_data);
+$json_bf_stress=json_encode($bf_stress_data);
 
 /*
 print_r($label_data);
@@ -75,7 +86,10 @@ while ($row = $st1->fetch()) {
 }
 
 $json_af_ang=json_encode($af_ang_data);
-
+$json_af_sad=json_encode($af_sad_data);
+$json_af_anxiety=json_encode($af_anxiety_data);
+$json_af_joy=json_encode($af_joy_data);
+$json_af_stress=json_encode($af_stress_data);
 
 /*
 print("<br />");
