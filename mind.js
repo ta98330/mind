@@ -6,9 +6,13 @@ $(document).ready(function() {
     }
 })
 
+
+
 $(function(){
     console.log(bf);
-    graph();
+    //graph();
+    //location.reload();
+
     
     $('#ang_btn').click(function(){
         $('#graph_emo').text('怒り');
