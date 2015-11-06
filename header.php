@@ -66,6 +66,7 @@
             }
         */
         </script>
+        
         <script src="mind.js"></script>
         
         

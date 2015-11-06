@@ -57,8 +57,8 @@
                 var bf = bf_ang;
                 var af = af_ang;
                 
-                
-                
+                graph();
+                /*
                 new Chartist.Line(
                     '.ct-chart', {
                     labels: label,
@@ -85,7 +85,7 @@
                     offset: 20
                 }
                 });
-                
+                */
                 
                 
                 

@@ -10,7 +10,7 @@
     
     <body>
         <!--ページ領域-->
-        <div id="home" data-role="page" data-url="./top.php">
+        <div data-role="page" id="home" data-url="./top.php">
 
             <!--ヘッダー領域-->
             <div data-role="header" data-theme="b">

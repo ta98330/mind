@@ -6,12 +6,47 @@ $(document).ready(function() {
     }
 })
 
+$(function() {
+    //ページ遷移イベント
+    $("div[data-role*='page']").on('pageshow', function(event) {
+        console.log('on');
+    });
+});
 
+function graph(){
+    console.log('graph');
+    new Chartist.Line(
+        '.ct-chart', {
+        labels: label,
+        series: [
+            bf,
+            af
+        ]
+    },
+
+    {
+    fullWidth: true,
+    chartPadding: {
+        right: 30
+    },
+    axisX: {
+
+    },
+    axisY: {
+        lineSmooth: true,		// いわゆるベジェ曲線か折れ線か
+        scaleMinSpace: 1,		// 間隔
+        high: 10,       //最大値
+        low: 0,     //最小値
+        onlyInteger: true,
+        offset: 20
+    }
+    });
+    
+}
 
 $(function(){
-    console.log(bf);
-    //graph();
-    //location.reload();
+    console.log('jq');
+    graph();
 
     
     $('#ang_btn').click(function(){
@@ -57,32 +92,3 @@ $(function(){
     
 });
 
-function graph(){
-    new Chartist.Line(
-        '.ct-chart', {
-        labels: label,
-        series: [
-            bf,
-            af
-        ]
-    },
-
-    {
-    fullWidth: true,
-    chartPadding: {
-        right: 30
-    },
-    axisX: {
-
-    },
-    axisY: {
-        lineSmooth: true,		// いわゆるベジェ曲線か折れ線か
-        scaleMinSpace: 1,		// 間隔
-        high: 10,       //最大値
-        low: 0,     //最小値
-        onlyInteger: true,
-        offset: 20
-    }
-    });
-    
-}
