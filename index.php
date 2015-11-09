@@ -286,7 +286,7 @@
                         <input type="password" name="pass" placeholder="Password" required>
                         <input type="checkbox" id="nextlogin" name="memory" value="true">
                         <label for="nextlogin">次回からは自動的にログイン</label>
-                        <input type="submit" name="action" class="login loginmodal-submit" value="login">
+                        <input type="submit" name="action" class="login loginmodal-submit" value="ログイン">
                     </form>
                 </div>
             </div><!--main-->

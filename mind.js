@@ -6,13 +6,24 @@ $(document).ready(function() {
     }
 })
 
+/*
 $(function() {
     //ページ遷移イベント
     $("div[data-role*='page']").on('pageshow', function(event) {
         console.log('on');
     });
 });
-
+*/
+/*
+$(document).on('pagecreate', '#graph', function() {
+    bf = bf_ang;
+    af = af_ang;
+    graph();
+    console.log('graphtest');
+})
+*/
+/*
+//グラフ描画
 function graph(){
     console.log('graph');
     new Chartist.Line(
@@ -30,7 +41,7 @@ function graph(){
         right: 30
     },
     axisX: {
-
+        
     },
     axisY: {
         lineSmooth: true,		// いわゆるベジェ曲線か折れ線か
@@ -43,52 +54,6 @@ function graph(){
     });
     
 }
+*/
 
-$(function(){
-    console.log('jq');
-    graph();
-
-    
-    $('#ang_btn').click(function(){
-        $('#graph_emo').text('怒り');
-        bf = bf_ang;
-        af = af_ang;
-        console.log(bf);
-        graph();
-    });
-    
-    $('#sad_btn').click(function(){
-        $('#graph_emo').text('悲しみ');
-        bf = bf_sad;
-        af = af_sad;
-        console.log(bf);
-        graph();
-    });
-    
-    $('#anxiety_btn').click(function(){
-        $('#graph_emo').text('不安');
-        bf = bf_anxiety;
-        af = af_anxiety;
-        console.log(bf);
-        graph();
-    });
-    
-    $('#joy_btn').click(function(){
-        $('#graph_emo').text('喜び');
-        bf = bf_joy;
-        af = af_joy;
-        console.log(bf);
-        graph();
-    });
-    
-    $('#stress_btn').click(function(){
-        $('#graph_emo').text('ストレス');
-        bf = bf_stress;
-        af = af_stress;
-        console.log(bf);
-        graph();
-    });
-    
-    
-});
 
