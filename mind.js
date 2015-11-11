@@ -16,10 +16,8 @@ $(function() {
 */
 /*
 $(document).on('pagecreate', '#graph', function() {
-    bf = bf_ang;
-    af = af_ang;
-    graph();
-    console.log('graphtest');
+    //location.reload();
+    console.log('reload');
 })
 */
 /*
@@ -55,5 +53,3 @@ function graph(){
     
 }
 */
-
-

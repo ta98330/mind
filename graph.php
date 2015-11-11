@@ -20,13 +20,30 @@
         <div role="main" id="graph" class="ui-content">
             <h1>グラフ</h1>
             
-            <form action="" method="post" data-ajax="false">
+            <?php
+            if(isset($_POST['period_month'])){
+                $disweek = '';
+                $dismonth = 'disabled';
+                
+            }
+            else{
+                $disweek = 'disabled';
+                $dismonth = '';
+            }
+            
+            
+            
+            
+            
+            ?>
+            
+            <form action="" method="post" data-ajax="false" class="g_period">
                 <input type="hidden" name="period_week" value="week">
-                <input type="submit" value="週">
+                <input type="submit" value="週" <?=$disweek?>>
             </form>
-            <form action="" method="post" data-ajax="false">
+            <form action="" method="post" data-ajax="false" class="g_period">
                 <input type="hidden" name="period_month" value="month">
-                <input type="submit" value="月">
+                <input type="submit" value="月" <?=$dismonth?>>
             </form>
             
             <div id="graphbtn">
@@ -54,6 +71,10 @@
             
             if(isset($_POST['period_month']) && $_POST['period_month'] == 'month'){
                 $period = $month;
+                
+                $disweek = '';
+                $dismonth = 'disabled';
+                
             }
             
             
@@ -69,6 +90,9 @@
 
                 $date = new DateTime($datetime);
                 $val1 = $date->format('n/j');
+                
+                $val2 = $val1 = $date->format('j日');
+                
                 //感情
                 $ang = htmlspecialchars($row['ang']);
                 $sad = htmlspecialchars($row['sad']);
@@ -77,7 +101,7 @@
                 $stress = htmlspecialchars($row['stress']);
 
 
-                $label_data[] = "$val1";
+                $label_data[] = "$val2";
 
                 $bf_ang_data[] = $ang;
                 $bf_sad_data[] = $sad;

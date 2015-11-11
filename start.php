@@ -12,7 +12,7 @@
     <div data-role="page">
         
         <!--ヘッダー領域-->
-        <div data-role="header" data-theme="b" data-position="fixed">
+        <div data-role="header" data-theme="b">
             <h1>Mindfulness</h1>
         </div>
    

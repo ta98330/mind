@@ -4,7 +4,7 @@
 全体的なスタイル
 ==================================*/
 .ui-page {
-    
+        
     background-color: #91d2ef;
     background: url(images/bubble_mt.jpg);
     background-size: cover;
@@ -331,7 +331,10 @@ li.pm{
 #graph {
     
     
-    
+}
+
+#graph .g_period{
+    display: inline-block;
     
 }
 

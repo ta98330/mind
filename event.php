@@ -25,7 +25,7 @@
                     <label for="entry_comment">今日の出来事(200文字まで)</label>
                     <textarea name="eventContent" placeholder="入力してください"　id="eventContent" class="form-control" required></textarea>
                 </div>
-                <input type="submit" value="記録">
+                <input type="submit" value="記録" onclick="submit()">
             </form>
 
             <h3>1週間の出来事</h3>
