@@ -1,7 +1,8 @@
 <?php
     require "spheader.php";
     
-    if($_SESSION['mf_login'] == "ログインしていません．" || empty($_SESSION['mf_login'])){
+    //未ログイン処理
+    if(!isset($_SESSION["mf_login"])){
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
@@ -12,23 +13,24 @@
     <div data-role="page" data-url="./graph.php" id="graph">
 
         <!--ヘッダー領域-->
-        <div data-role="header" data-theme="b" data-position="fixed">
-            <a href="top.php" class="ui-btn ui-btn-a ui-btn-left">Home</a>
+        <div data-role="header" data-theme="z" class="data-role-none header">
+            <a href="top.php" class="home_btn"><i class="fa fa-chevron-left"></i></a>
             <h1>グラフ</h1>
         </div>
 
         <div role="main" id="graph" class="ui-content">
-            <h1>グラフ</h1>
+            
             
             <?php
             if(isset($_POST['period_month'])){
                 $disweek = '';
                 $dismonth = 'disabled';
-                
+                $pediodtext = '1ヶ月の';
             }
             else{
                 $disweek = 'disabled';
                 $dismonth = '';
+                $pediodtext = '1週間の';
             }
             
             
@@ -54,7 +56,7 @@
                 <button data-role="none" id="stress_btn">ストレス</button>
             </div>
             
-            <h2><span id="graph_emo">怒り</span>のグラフ</h2>
+            <h2><?=$pediodtext?><span id="graph_emo">怒り</span>のグラフ</h2>
             <div class="ct-chart ct-perfect-fourth grapharea"></div><!--グラフ表示-->
             
             <?php
@@ -170,43 +172,89 @@
                 var af_stress=JSON.parse('<?php echo  $json_af_stress; ?>');
                 
                 
-                var bf = bf_ang;
-                var af = af_ang;
+                /*
+                var bf = [0,0,0,0];
+                var af = [1,1,1,1];
+                label = [1,2,3,4];
+                */
+                //graph();
+                
                 
                 
                 //グラフ描画
                 function graph(){
                     console.log('graph');
-                    new Chartist.Line(
-                        '.ct-chart', {
+                    
+                    var data = {
                         labels: label,
                         series: [
                             bf,
                             af
                         ]
-                    },
-
-                    {
-                    fullWidth: true,
-                    chartPadding: {
-                        right: 30
-                    },
-                    axisX: {
-
-                    },
-                    axisY: {
-                        lineSmooth: true,		// いわゆるベジェ曲線か折れ線か
-                        scaleMinSpace: 1,		// 間隔
-                        high: 10,       //最大値
-                        low: 0,     //最小値
-                        onlyInteger: true,
-                        offset: 20
-                    }
-                    });
-
+                    };
+                    
+                    var options = {
+                        axisX: {
+                            offset: 20,		// X軸ラベルエリアの高さ。ここの数値-10が実際の要素の高さになる
+                            position: 'end',		// "start"だと上に配置される
+                            labelOffset: {
+                                x: -10,
+                                y: 0
+                            },
+                            showLabel: true,	// offsetの数値は維持される
+                            showGrid: true,
+                            labelInterpolationFnc: Chartist.noop,
+                            type: undefined
+                        },
+                        axisY: {
+                            offset: 20,		// Y軸ラベルのwidth
+                            position: 'start',		// "end"だと右に配置される
+                            labelOffset: {
+                                x: 0,
+                                y: 0
+                            },
+                            showLabel: true,
+                            showGrid: true,
+                            labelInterpolationFnc: Chartist.noop,
+                            type: undefined,
+                            scaleMinSpace: 10,		// 間隔
+                            onlyInteger: true		// 小数点ラベルの表示
+                        },
+                        width: undefined,		// 描画範囲width、グラフが縮むわけではない
+                        height: undefined,		// 描画範囲height、グラフが縮むわけではない
+                        showLine: true,			// ラインの描画
+                        showPoint: true,		// ポイントの描画
+                        showArea: false,			// ラインの下に薄いエリアの塗りを描画
+                        areaBase: 0,
+                        lineSmooth: false,		// いわゆるベジェ曲線か折れ線か
+                        low: 1,			// Y軸の最低数値の指定
+                        high: 10,
+                        chartPadding: {			// padding
+                            top: 20,
+                            right: 20,
+                            bottom: 5,
+                            left: 10
+                        },
+                        fullWidth: true,
+                        reverseData: false		// X軸データを反転
+                    };
+                    
+                    new Chartist.Line('.ct-chart', data, options);
+                    
                 }
                 
+                /*
+                $(document).on('pagecreate', '#graph', function() {
+                    //location.reload();
+                    bf = bf_ang;
+                    af = af_ang;
+                    graph();
+                    console.log('reload');
+                })
+                */
                 
+                bf = bf_ang;
+                af = af_ang;
                 graph();
                 
                 
@@ -215,6 +263,7 @@
                     bf = bf_ang;
                     af = af_ang;
                     console.log(bf);
+                    console.log(af);
                     graph();
                 });
 
@@ -223,6 +272,7 @@
                     bf = bf_sad;
                     af = af_sad;
                     console.log(bf);
+                    console.log(af);
                     graph();
                 });
 
@@ -231,6 +281,7 @@
                     bf = bf_anxiety;
                     af = af_anxiety;
                     console.log(bf);
+                    console.log(af);
                     graph();
                 });
 
@@ -239,6 +290,7 @@
                     bf = bf_joy;
                     af = af_joy;
                     console.log(bf);
+                    console.log(af);
                     graph();
                 });
 
@@ -247,6 +299,7 @@
                     bf = bf_stress;
                     af = af_stress;
                     console.log(bf);
+                    console.log(af);
                     graph();
                 });
                 

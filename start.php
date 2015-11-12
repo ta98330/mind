@@ -1,7 +1,8 @@
 <?php
     require "spheader.php";
     
-    if($_SESSION['mf_login'] == "ログインしていません．" || empty($_SESSION['mf_login'])){
+    //未ログイン処理
+    if(!isset($_SESSION["mf_login"])){
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
@@ -12,7 +13,7 @@
     <div data-role="page">
         
         <!--ヘッダー領域-->
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="z" class="data-role-none header">
             <h1>Mindfulness</h1>
         </div>
    
@@ -29,8 +30,7 @@
     
     <!--ボタン・クリックで表示されるページ-->
     <div id="afemo" data-role="page">
-        <div data-role="header" data-theme="b"
-data-add-back-btn="true" data-back-btn-text="戻る" data-back-btn-theme="a">
+        <div data-role="header" data-theme="z" class="data-role-none header">
             <h1>Mindfulness</h1>
         </div>
         <div role="main" class="ui-content">

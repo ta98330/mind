@@ -10,16 +10,16 @@
     
     <body>
         <!--ページ領域-->
-        <div data-role="page" id="home" data-url="./top.php">
+        <div data-role="page" id="home" data-url="./top.php" data-dom-cache="true">
 
             <!--ヘッダー領域-->
-            <div data-role="header" data-theme="b">
+            <div data-role="header" data-theme="z" class="data-role-none header">
                 <h1>Mindfulness</h1>
-                <a href="logout.php" class="ui-btn ui-btn-a ui-btn-right">ログアウト</a>
+                <a href="logout.php" class="logout_btn"><i class="fa fa-sign-out"></i><br /><span class="min">ログアウト</span></a>
             </div>
 
             <!--メイン領域-->
-            <div role="main" class="ui-content" data-dom-cache="true">
+            <div role="main" class="ui-content">
                 <div id="topinfo">
                     <p><?php include_once('mind.php')?></p>
                 </div>
@@ -37,7 +37,13 @@
                     <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想スタート</a>
                     <div id="subbtns">
                     <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
-                    <a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>
+                    <!--<a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>-->
+                        
+                    <form action="graph.php" method="post" data-ajax="false">
+                        <input type="hidden" name="period_week" value="week">
+                        <input type="submit" value="グラフ" data-role="none" class="ui-btn subbtn" id="sub2">
+                    </form>
+                        
                     <a href="config.php" data-role="button" class="ui-btn subbtn" id="sub3">設定</a>
                     </div>
                 </div>

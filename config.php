@@ -1,7 +1,8 @@
 <?php
     require "spheader.php";
     
-    if($_SESSION['mf_login'] == "ログインしていません．" || empty($_SESSION['mf_login'])){
+    //未ログイン処理
+    if(!isset($_SESSION["mf_login"])){
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
@@ -12,8 +13,8 @@
     <div data-role="page" data-url="./config.php">
 
         <!--ヘッダー領域-->
-        <div data-role="header" data-theme="b" data-position="fixed">
-            <a href="top.php" class="ui-btn ui-btn-a ui-btn-left">Home</a>
+        <div data-role="header" data-theme="z" class="data-role-none header">
+            <a href="top.php" class="home_btn"><i class="fa fa-chevron-left"></i></a>
             <h1>設定</h1>
         </div>
 

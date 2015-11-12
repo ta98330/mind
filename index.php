@@ -36,13 +36,13 @@
         <!--ページ領域-->
         <div data-role="page" data-url="./index.php">
             <!--ヘッダー領域-->
-            <div data-role="header" data-theme="b">
+            <div data-role="header" data-theme="z" class="data-role-none header">
                 <h1>Mindfulness</h1>
             </div>
 
             <div role="main" class="ui-content">
                 <h2>Mindfulnessとは</h2>
-                <p><blockquote cite="http://mindfulness.jp.net/concept.html">今、この瞬間の体験に意図的に意識を向け、評価をせずに、とらわれのない状態で、ただ観ること</blockquote>-<a href="http://mindfulness.jp.net/" target="_blank">日本マインドフルネス学会- 公式サイト</a>より引用</p>
+                <p><blockquote cite="http://mindfulness.jp.net/concept.html">今、この瞬間の体験に意図的に意識を向け、評価をせずに、とらわれのない状態で、ただ観ること</blockquote><a href="http://mindfulness.jp.net/" target="_blank">-日本マインドフルネス学会- 公式サイト</a>より引用</p>
             
                 
                 <div id="svg">

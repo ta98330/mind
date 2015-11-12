@@ -6,28 +6,93 @@
 .ui-page {
         
     background-color: #91d2ef;
-    background: url(images/bubble_mt.jpg);
+    //background: url(images/bubble_mt.jpg);
     background-size: cover;
     
-    font-family: "メイリオ",Meiryo;
+    font-family: sans-serif;
+    
+    
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    //overflow: hidden;
+
+}
+
+
+.header{
+    position: relative;
+    width: 100%;
+    height: 44px;
+    background-color: #22bfe5;
+    color: #e3e3e3;
+    border: none;
+    
+}
+
+.header h1 {
+    text-align: center;
+    text-shadow: none;
+    font-size: 120%;
+    height: 100%;
+    line-height: 44px;
+}
+
+.min {
+    font-size: 50%;
+}
+
+.logout_btn {
+    position: absolute;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    //background-color: #250bf2;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: 60px;
+    height: 100%;
+    //line-height: 44px;
+    padding-top: 3px;
+    margin: 0;
+    border: none;
     
     
 }
+
+.home_btn {
+    position: absolute;
+    text-decoration: none;
+    text-align: center;
+    //background-color: #250bf2;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    line-height: 44px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    
+    
+}
+
+.header a:visited, .header a:link {
+    color: #e3e3e3;
+    text-shadow: none;
+}
+
+
 
 .ui-content {
     //padding: 0;
-    
+    //background-color: #91d2ef;
 }
 
-body{
-    
-                    
-    
-}
 
-.ui-content h1 {
-    margin: 0;
-}
+
 
 
 
@@ -63,12 +128,7 @@ index
 /*=================================
 top
 ==================================*/
-#home {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    //overflow: hidden;
-}
+
 
 
 
@@ -216,6 +276,7 @@ top
     position: absolute;
     display: inline-block;
     letter-spacing: normal; /* 文字間を通常に戻す */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     width: 30%;
@@ -230,6 +291,8 @@ top
 
 #sub2 {
     left: 35%;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 #sub3 {
@@ -336,6 +399,7 @@ li.pm{
 #graph .g_period{
     display: inline-block;
     
+    
 }
 
 #graphbtn {
@@ -354,6 +418,21 @@ li.pm{
     //font-size: 80%;
     
 }
+
+
+
+
+
+
+
+
+#graph input:disabled {
+    //width: 100%;
+    //height: 100%;
+    //background-color: aqua;
+    color: red;
+}
+
 
 #graph svg {
     position: absolute;
@@ -379,6 +458,10 @@ li.pm{
 
 .grapharea {
     background-color: white;
+    /*
+    border: solid 2px green;
+    box-sizing: border-box;
+    */
 }
 
 /*グラフライン*/
