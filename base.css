@@ -336,19 +336,11 @@ top
     position: relative;
     margin: 0 auto;
     margin-top: 4%;
-    padding-top: 6.5vw;
-    box-sizing: border-box;
-    width: 25vw;
-    height: 25vw;
-    //line-height: 12.5vw;
+    padding: 0;
+    width: 80%;
+    height: 10vh;
+    line-height: 10vh;
     
-    
-    border-radius: 50%;
-    
-    //font-size: 200%;
-    
-    background: -moz-linear-gradient(top, #990, #066);　/* Firefox用 */  
-    background: -webkit-gradient(linear, left top, left bottom, from(#990), to(#066));　/* Safari,Google Chrome用 */
 }
 
 #subbtns {
@@ -362,7 +354,6 @@ top
     position: absolute;
     display: inline-block;
     letter-spacing: normal; /* 文字間を通常に戻す */
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     width: 30%;

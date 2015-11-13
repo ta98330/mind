@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial=1.0, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="theme-color" content="#0000CD">
+        <meta name="theme-color" content="#22bfe5">
         <link rel="stylesheet" href="css/reset.css">
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">

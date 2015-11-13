@@ -11,6 +11,7 @@
     ],
     "start_url": "index.html",
     "display": "standalone",
+    "orientation": [ "portrait-primary" ],
     "developer": {
         "name": "近畿大学工学部 情報システム工学科 情報物理研究室 2015年度",
         "url": "http://buturi.heteml.jp/student/2015/"
