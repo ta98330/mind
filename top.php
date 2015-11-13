@@ -19,7 +19,7 @@
             </div>
 
             <!--メイン領域-->
-            <div role="main" class="ui-content">
+            <div role="main" class="ui-content data-role-none">
                 <div id="topinfo">
                     <p><?php include_once('mind.php')?></p>
                 </div>
@@ -34,7 +34,7 @@
                 </div>
                 
                 <div id="strmenus">
-                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想スタート</a>
+                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想<br />スタート</a>
                     <div id="subbtns">
                     <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
                     <!--<a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>-->

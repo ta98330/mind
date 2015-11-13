@@ -7,16 +7,23 @@
         
     background-color: #91d2ef;
     //background: url(images/bubble_mt.jpg);
-    background-size: cover;
+    //background-size: cover;
     
     font-family: sans-serif;
     
     
-    position: absolute;
+    //position: absolute;
     width: 100vw;
     height: 100vh;
+    box-sizing: border-box;
     //overflow: hidden;
 
+}
+
+a {
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: normal;
 }
 
 
@@ -47,7 +54,7 @@
     box-sizing: border-box;
     text-decoration: none;
     text-align: center;
-    //background-color: #250bf2;
+    background-color: #0b90f2;
     top: 0;
     right: 0;
     display: inline-block;
@@ -105,24 +112,95 @@
 /*=================================
 index
 ==================================*/
-#svg {
-    position: absolute;
-    display: block;
-    width: 92vw;
-    height: 92vw;
+#index {
+    background-color: #22bfe5;
     
-    top: 10vh;
+    padding-top: 25%;
+}
+
+
+
+#svg {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 15%;
+    display: block;
+    width: 40vw;
+    height: 40vw;
+    
+    //top: 10vh;
     //background-color: aliceblue;
     
 }
 
 #svg svg {
     position: absolute;
-    width: 92vw;
-    height: 92vw;
+    width: 40vw;
+    height: 40vw;
     
     z-index: 0;
-    opacity: 0.2
+    //opacity: 0.2
+}
+
+#login_btn {
+    width: 130px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4px 6px;
+    
+    color: aliceblue;
+    
+    border: solid 2px;
+    border-radius: 50px;
+}
+
+#login_btn a {
+    color: aliceblue;
+    font-size: 150%;
+}
+
+
+#login {
+    padding: 5px 10px;
+    background: aliceblue;
+}
+
+#login h3 {
+    text-align: center;
+}
+
+#login input {
+    
+}
+
+
+
+
+
+
+
+
+#index_menu {
+    
+    
+}
+
+#index_menu p {
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    font-size: 140%;
+}
+
+#mind_info {
+    left: 10%;
+}
+
+#app_info {
+    right: 15%;
+    
 }
 
 /*=================================
@@ -258,11 +336,19 @@ top
     position: relative;
     margin: 0 auto;
     margin-top: 4%;
-    padding: 0;
-    width: 80%;
-    height: 10vh;
-    line-height: 10vh;
+    padding-top: 6.5vw;
+    box-sizing: border-box;
+    width: 25vw;
+    height: 25vw;
+    //line-height: 12.5vw;
     
+    
+    border-radius: 50%;
+    
+    //font-size: 200%;
+    
+    background: -moz-linear-gradient(top, #990, #066);　/* Firefox用 */  
+    background: -webkit-gradient(linear, left top, left bottom, from(#990), to(#066));　/* Safari,Google Chrome用 */
 }
 
 #subbtns {
@@ -406,12 +492,13 @@ li.pm{
     width: 100%;
 }
 
-#graphbtn button{
-    background-color: white;
-    padding: 1% 1.2%;
+
+#graphbtn a{
+    //background-color: white;
+    padding: 13px 1.2%;
     margin: 0 0 5px 0;
     
-    border-radius: 5px;
+    //border-radius: 5px;
 }
 
 #stress_btn {

@@ -48,13 +48,17 @@
                 <input type="submit" value="月" <?=$dismonth?>>
             </form>
             
-            <div id="graphbtn">
-                <button data-role="none" id="ang_btn">怒り</button>
-                <button data-role="none" id="sad_btn">悲しみ</button>
-                <button data-role="none" id="anxiety_btn">不安</button>
-                <button data-role="none" id="joy_btn">喜び</button>
-                <button data-role="none" id="stress_btn">ストレス</button>
+            
+            <div data-role="navbar" id="graphbtn">
+                <ul>
+                    <li><a href="#" id="ang_btn" class="ui-btn-active">怒り</a></li>
+                    <li><a href="#" id="sad_btn">悲しみ</a></li>
+                    <li><a href="#" id="anxiety_btn">不安</a></li>
+                    <li><a href="#" id="joy_btn">喜び</a></li>
+                    <li><a href="#" id="stress_btn">ストレス</a></li>
+                </ul>
             </div>
+            
             
             <h2><?=$pediodtext?><span id="graph_emo">怒り</span>のグラフ</h2>
             <div class="ct-chart ct-perfect-fourth grapharea"></div><!--グラフ表示-->

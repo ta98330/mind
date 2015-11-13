@@ -24,15 +24,15 @@
                         <h3>感じない　＞＞＞　感じる</h3>
                         <div class="ui-field-contain">
                             <label for="ang">怒り:</label>
-                            <input id="ang" name="ang" type="range" min="1" max="10" step="1" value="5">
+                            <input id="ang" name="ang" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true">
                             <label for="sad">悲しみ:</label>
-                            <input id="sad" name="sad" type="range" min="1" max="10" step="1" value="5">
+                            <input id="sad" name="sad" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true">
                             <label for="anxiety">不安:</label>
-                            <input id="anxiety" name="anxiety" type="range" min="1" max="10" step="1" value="5">
+                            <input id="anxiety" name="anxiety" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true">
                             <label for="joy">喜び:</label>
-                            <input id="joy" name="joy" type="range" min="1" max="10" step="1" value="5">
+                            <input id="joy" name="joy" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true">
                             <label for="stress">ストレス:</label>
-                            <input id="stress" name="stress" type="range" min="1" max="10" step="1" value="5">
+                            <input id="stress" name="stress" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true">
                         </div>
                         
                         

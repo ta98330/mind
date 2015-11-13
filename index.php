@@ -34,16 +34,9 @@
 
     <body>
         <!--ページ領域-->
-        <div data-role="page" data-url="./index.php">
-            <!--ヘッダー領域-->
-            <div data-role="header" data-theme="z" class="data-role-none header">
-                <h1>Mindfulness</h1>
-            </div>
-
-            <div role="main" class="ui-content">
-                <h2>Mindfulnessとは</h2>
-                <p><blockquote cite="http://mindfulness.jp.net/concept.html">今、この瞬間の体験に意図的に意識を向け、評価をせずに、とらわれのない状態で、ただ観ること</blockquote><a href="http://mindfulness.jp.net/" target="_blank">-日本マインドフルネス学会- 公式サイト</a>より引用</p>
+        <div data-role="page" data-url="./index.php" id="index">
             
+            <div role="main" class="ui-content">
                 
                 <div id="svg">
                     <svg  style="position: absolute; left: 0px; top: 0px" width="500" height="500"viewBox="0 0 65 62.2">
@@ -274,13 +267,17 @@
                     </svg>
 
                 </div><!--svg-->
-            
-                <div id="loginbtn">
-                    <p><a href="#login" data-rel="popup" data-transition="pop" class="ui-btn">はじめる</a></p>
+                
+                
+                
+                <div id="login_btn">
+                    <p><a href="#login" data-rel="popup" data-transition="pop" class="fa fa-sign-in"> ログイン</a></p>
                 </div>
+                        
+                
             
-                <div id="login" data-role="popup" data-position-to="window" data-overlay-theme="b">
-                    <h3>ログイン</h3>
+                <div id="login" data-role="popup" data-position-to="window" data-overlay-theme="b" data-shadow="false">
+                    <h3><i class="fa fa-sign-in"></i> ログイン</h3>
                     <form method="post" action="login.php" data-ajax="false">
                         <input type="text" name="username" placeholder="UserName" required>
                         <input type="password" name="pass" placeholder="Password" required>
@@ -289,6 +286,22 @@
                         <input type="submit" name="action" class="login loginmodal-submit" value="ログイン">
                     </form>
                 </div>
+                
+                <div data-role="popup" id="pop1" data-shadow="false" data-arrow="b">
+                    <h2>Mindfulnessとは</h2>
+                    <p>今、この瞬間の体験に意図的に意識を向け、評価をせずに、とらわれのない状態で、ただ観ること<a href="http://mindfulness.jp.net/" target="_blank">-日本マインドフルネス学会- 公式サイト</a>より引用</p>
+                </div>
+                
+                <div data-role="popup" id="pop2" data-shadow="false" data-arrow="b">
+                    <h2>アプリ説明</h2>
+                    <p>このWebアプリは実験用に近畿大学工学部 2015年度 情報物理研究室で制作しているアプリです</p>
+                </div>
+                
+                <div id="index_menu">
+                    <p id="mind_info"><a href="#pop1" data-rel="popup">Mindfulnessとは</a></p>
+                    <p id="app_info"><a href="#pop2" data-rel="popup" class="fa fa-info-circle"></a></p>
+                </div>
+                
             </div><!--main-->
         </div><!--page-->
     </body>
