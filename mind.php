@@ -1,6 +1,49 @@
 <?php
     //session_start();//開発時のみ有効にする
 
+//出来事未登録
+    $today = date("Y-m-d");
+    
+    $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
+    
+    $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '$today 00:00:00' and '$today 23:59:59'");
+
+    while ($row = $st->fetch()) {
+        $recorded = htmlspecialchars($row['datetime']);
+        
+    }
+
+
+/*------------セリフ変化--------------*/
+//瞑想途中終了
+if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "bfemo"){
+    echo "瞑想が最後まで記録されませんでした．<br />グラフで確認してください．";
+}
+
+//瞑想終了後
+else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "end"){
+    echo "瞑想おつかれさまでした．";
+}
+
+//グラフ
+else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "graph"){
+    echo "グラフはどうでしたか？";
+}
+
+//出来事
+else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "event"){
+    if(!empty($recorded)){
+        echo "今日はそんなことがあったんですね.<br />";
+    }
+    echo "おつかれさまです．";
+}
+
+//設定
+else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "config"){
+    echo "設定終了です！";
+}
+
+else{
     echo "{$_SESSION['mf_userName']}さん,";
     $nowtime = date("G");
     $nowweek = date("w");
@@ -11,7 +54,7 @@
         echo "こんにちは．";
     else
         echo "こんばんは．";
-
+/*
     switch ($nowweek){
         case '0';
             $weekja = "日";
@@ -37,19 +80,14 @@
     }
 
     echo "<br />今日は",date('n月 j日'),$weekja,"曜日です．";
-    
-    $today = date("Y-m-d");
-    
+*/
+}
 
-    $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
-    
-    $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '$today 00:00:00' and '$today 23:59:59'");
 
-    while ($row = $st->fetch()) {
-        $recorded = htmlspecialchars($row['datetime']);
-        
-    }
-    
 
-    if(empty($recorded))
+
+
+
+    if(empty($recorded)){
         echo "<br />今日の出来事を記録しましょう．";
+    }

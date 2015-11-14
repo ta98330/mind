@@ -6,8 +6,9 @@
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
+
 ?>
-    <body>
+    <body ontouchmove="event.preventDefault()">
 
     <!--ページ領域-->
     <div data-role="page" data-url="./config.php">
@@ -19,6 +20,7 @@
         </div>
 
         <div role="main" class="ui-content">
+            <?php $_SESSION["mf_speak_flag"] = "config"; //セリフ?>
             <h2>通知設定</h2>
             <p>毎日19時に通知されます</p>
             <div class="pushnate-notification-button" data-site-id="12"></div>

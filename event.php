@@ -6,27 +6,24 @@
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
+
+    
 ?>
 <body>
     <!--ページ領域-->
-    <div data-role="page" data-url="./event.php">
+    <div data-role="page" data-url="./event.php" id="event">
         
         <!--ヘッダー領域-->
-        <div data-role="header" data-theme="z" class="data-role-none header" data-position="fixed">
+        <div data-role="header" data-theme="z" class="data-role-none header">
             <a href="top.php" class="home_btn"><i class="fa fa-chevron-left"></i></a>
             <h1>出来事</h1>
         </div>
     
         <div role="main" class="ui-content">
-
-            <p>今日の出来事を記録しましょう</p>
-
-            <form action="event_insert.php" method="post" data-ajax="false">
-                <div class="ui-field-contain">
-                    <label for="entry_comment">今日の出来事(200文字まで)</label>
-                    <textarea name="eventContent" placeholder="入力してください"　id="eventContent" class="form-control" required></textarea>
-                </div>
-                <input type="submit" value="記録" onclick="submit()">
+            <?php $_SESSION["mf_speak_flag"] = "event"; //セリフ?>
+            <form action="event_insert.php" method="post" data-ajax="false" id="event_lec" class="data-role-none">
+                <textarea name="eventContent" placeholder="今日の出来事(100字以内)"　id="eventContent" class="form-control" maxlength="100" required></textarea>
+                <button onclick="submit()" id="lec_btn"><i class="fa fa-check"></i></button>
             </form>
 
             <h3>1週間の出来事</h3>

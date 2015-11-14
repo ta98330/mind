@@ -55,6 +55,9 @@
             header('Location: start.php');
         }
         else{
+            //セリフ
+            $_SESSION["mf_speak_flag"] = "end";
+            
             header('Location: top.php');
         }
         

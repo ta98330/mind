@@ -6,9 +6,12 @@
     }
 
     require "header.php";//ヘッダー読み込み
+    
+    //セリフ
+    //$_SESSION["mf_speak_flag"] = "home";
 ?>
     
-    <body>
+    <body ontouchmove="event.preventDefault()">
         <!--ページ領域-->
         <div data-role="page" id="home" data-url="./top.php" data-dom-cache="true">
 
@@ -34,14 +37,14 @@
                 </div>
                 
                 <div id="strmenus">
-                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想<br />スタート</a>
+                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想スタート</a>
                     <div id="subbtns">
                     <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
                     <!--<a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>-->
                         
                     <form action="graph.php" method="post" data-ajax="false">
                         <input type="hidden" name="period_week" value="week">
-                        <input type="submit" value="グラフ" data-role="none" class="ui-btn subbtn" id="sub2">
+                        <button data-role="none" class="ui-btn subbtn" id="sub2">グラフ</button>
                     </form>
                         
                     <a href="config.php" data-role="button" class="ui-btn subbtn" id="sub3">設定</a>

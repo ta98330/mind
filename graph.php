@@ -6,8 +6,11 @@
         header('Location: index.php');
     }
     require "header.php";//ヘッダー読み込み
+
+    //セリフ
+    $_SESSION["mf_speak_flag"] = "graph";
 ?>
-    <body>
+    <body ontouchmove="event.preventDefault()">
 
     <!--ページ領域-->
     <div data-role="page" data-url="./graph.php" id="graph">
@@ -34,9 +37,46 @@
             }
             
             
+            $today = date("Y-m-d");
             
+            $endday = date("n/j");
             
+            $strweek = date("n/j",strtotime("$today -7 days"));
+            $strmonth = date("n/j",strtotime("$today -1 month"));
             
+            //echo $strweek,"～",$endday;
+            //echo $strmonth,"～",$endday;
+            
+            $nowweek = date("w");
+            
+            switch ($nowweek){
+                case '0';
+                    $weekja = "(日)";
+                    break;
+                case '1';
+                    $weekja = "(月)";
+                    break;
+                case '2';
+                    $weekja = "(火)";
+                    break;
+                case '3';
+                    $weekja = "(水)";
+                    break;
+                case '4';
+                    $weekja = "(木)";
+                    break;
+                case '5';
+                    $weekja = "(金)";
+                    break;
+                case '6';
+                    $weekja = "(土)";
+                    break;
+            }
+
+
+
+
+
             ?>
             
             <form action="" method="post" data-ajax="false" class="g_period">
@@ -48,6 +88,15 @@
                 <input type="submit" value="月" <?=$dismonth?>>
             </form>
             
+            <?php
+                //月
+                if(isset($_POST['period_month']) && $_POST['period_month'] == 'month'){
+                    echo "<p class='period_data'>",$strmonth,$weekja," ～ ",$endday,$weekja,"</p>";
+                }
+                else{
+                    echo "<p class='period_data'>",$strweek,$weekja," ～ ",$endday,$weekja,"</p>";
+                }
+            ?>
             
             <div data-role="navbar" id="graphbtn">
                 <ul>
@@ -64,7 +113,8 @@
             <div class="ct-chart ct-perfect-fourth grapharea"></div><!--グラフ表示-->
             
             <?php
-            $today = date("Y-m-d");
+            
+            
 
             $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
