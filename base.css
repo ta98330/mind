@@ -8,8 +8,10 @@
     text-shadow: none;
 }
 
+
 .ui-page {
-        
+    //padding-top: 44px;
+    
     background-color: #91d2ef;
     //background: url(images/bubble_mt.jpg);
     //background-size: cover;
@@ -17,7 +19,8 @@
     font-family: sans-serif;
     
     
-    //position: absolute;
+    position: absolute;
+    top: 0;
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
@@ -31,9 +34,18 @@ a {
     font-weight: normal;
 }
 
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+h2 {
+    font-size: 130%;
+}
 
 .header{
     position: relative;
+    top: 0;
     width: 100%;
     height: 44px;
     background-color: #22bfe5;
@@ -102,6 +114,7 @@ a {
 .ui-content {
     //padding: 0;
     //background-color: #91d2ef;
+    
 }
 
 
@@ -423,31 +436,77 @@ top
     //border-radius: 50%;
 }
 
-
-
 /*=================================
-セルフ
+瞑想
 ==================================*/
-
-
-#pro_con{
-    padding-bottom: 20px;
+audio {
     
 }
 
-#pro_con h1,h2{
-    font-size: 130%;
+.player {
+    position: relative;
+    border: solid 3px;
+    padding: 10px;
     
+    text-align: center;
 }
 
-
-
-
-.youtube{
-    
-    
-    
+#player_btns {
+    //font-size: 200%;
 }
+
+#player_btns a {
+    margin: 10px;
+}
+
+.player span {
+    color: aliceblue;
+}
+
+#now_time {
+    position: absolute;
+    left: 20px;
+}
+
+#last_time {
+    position: absolute;
+    right: 20px;
+}
+
+#mute_btn {
+    margin-right: 20px;
+    font-size: 180%;
+}
+
+#play_btn {
+    font-size: 230%;
+}
+
+#pause_btn {
+    font-size: 230%;
+}
+
+#reset_btn {
+    margin-left: 20px;
+    font-size: 180%;
+}
+
+#barBd {
+    //width: 500px;
+    height: 20px;
+    //border: solid 1px;
+    background-color: #a7bde5;
+    border-radius: 50px;
+}
+
+#bar {
+    width: 0;
+    height: 100%;
+    background: blue;
+    
+    border-radius: 50px 0 0 50px;
+}
+
 
 /*=================================
 出来事
@@ -456,13 +515,15 @@ top
 
 #event .ui-content{
     padding: 0;
+    margin: 0;
     
 }
 
 #event form {
     position: relative;
-    
+    padding: 0;
 }
+
 
 #event_lec textarea {
     position: relative;
@@ -473,13 +534,14 @@ top
     width: 100%;
     height: 5em;
     
-    
+    -webkit-appearance: none;
+    border-radius: 0;
     
 }
 
 #lec_btn {
     position: absolute;
-    display: inline-block;
+    display: block;
     
     width: 35px;
     height: 35px;
@@ -498,11 +560,16 @@ top
     border: none;
 }
 
-.eventlist{
-    font-size: 13px;
-    margin: 2%;
+#lec_btn i {
+    position: absolute;
+    width: 35px;
+    height: 35px;
     
+    top: 0;
+    left: 0;
+    line-height: 35px;
 }
+
 
 .eventlist h4{
     font-size: 110%;
@@ -518,6 +585,8 @@ top
     border-radius: 5px;
     margin-bottom: 10px;
     list-style: none;
+    font-size: 13px;
+    margin: 2%;
 }
 
 .eventlist li p{
@@ -555,22 +624,55 @@ li.pm{
     
 }
 
-#graph .g_period{
+#g_period{
+    position: relative;
     display: inline-block;
+    font-size: 0;
+    margin-bottom: 5px;
     
+}
+
+#week_btn, #month_btn {
+    background-color: #e6edf4;
+    //color: #ffffff;
     
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    margin: 0;
+    padding: 10px 20px;
+    
+    //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
+}
+
+
+#week_btn {
+    border-radius: 5px 0 0 5px;
+}
+
+#month_btn {
+    border-radius: 0 5px 5px 0;
+}
+
+#graph button:disabled {
+    //background-color: #14ef68;
+    //color: #0b1014;
+    
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
 }
 
 #graph .period_data {
     position: absolute;
-    right: 17px;
+    //right: 17px;
     display: inline-block;
-    padding: 5px;
+    //padding: 5px;
     //font-size: 120%;
     font-weight: 500;
+    //min-width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 5px;
     
-    height: 50px;
-    line-height: 50px;
 }
 
 #graphbtn {
@@ -595,12 +697,7 @@ li.pm{
 
 
 
-#graph input:disabled {
-    //width: 100%;
-    //height: 100%;
-    //background-color: aqua;
-    color: red;
-}
+
 
 
 #graph svg {

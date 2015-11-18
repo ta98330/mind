@@ -11,7 +11,7 @@
     $_SESSION["mf_speak_flag"] = "bfemo";
 ?>
     
-    <body ontouchmove="event.preventDefault()">
+    <body>
         
         
         <div id="bfemo" data-role="page" data-url="./bfemo.php">

@@ -11,7 +11,7 @@
     //$_SESSION["mf_speak_flag"] = "home";
 ?>
     
-    <body ontouchmove="event.preventDefault()">
+    <body>
         <!--ページ領域-->
         <div data-role="page" id="home" data-url="./top.php" data-dom-cache="true">
 

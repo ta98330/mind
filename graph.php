@@ -10,7 +10,7 @@
     //セリフ
     $_SESSION["mf_speak_flag"] = "graph";
 ?>
-    <body ontouchmove="event.preventDefault()">
+    <body>
 
     <!--ページ領域-->
     <div data-role="page" data-url="./graph.php" id="graph">
@@ -25,7 +25,7 @@
             
             
             <?php
-            if(isset($_POST['period_month'])){
+            if(isset($_POST['period']) && $_POST['period'] == 'month'){
                 $disweek = '';
                 $dismonth = 'disabled';
                 $pediodtext = '1ヶ月の';
@@ -79,18 +79,15 @@
 
             ?>
             
-            <form action="" method="post" data-ajax="false" class="g_period">
-                <input type="hidden" name="period_week" value="week">
-                <input type="submit" value="週" <?=$disweek?>>
+            <form action="" method="post" data-ajax="false" id="g_period" class="data-role-none">
+                <button type="submit" name="period" value="week" id="week_btn" <?=$disweek?>>週</button>
+                <button type="submit" name="period" value="month" id="month_btn" <?=$dismonth?>>月</button>
             </form>
-            <form action="" method="post" data-ajax="false" class="g_period">
-                <input type="hidden" name="period_month" value="month">
-                <input type="submit" value="月" <?=$dismonth?>>
-            </form>
+            
             
             <?php
                 //月
-                if(isset($_POST['period_month']) && $_POST['period_month'] == 'month'){
+                if(isset($_POST['period']) && $_POST['period'] == 'month'){
                     echo "<p class='period_data'>",$strmonth,$weekja," ～ ",$endday,$weekja,"</p>";
                 }
                 else{
