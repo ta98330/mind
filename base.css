@@ -497,6 +497,7 @@ audio {
     //border: solid 1px;
     background-color: #a7bde5;
     border-radius: 50px;
+    overflow: hidden;
 }
 
 #bar {
@@ -504,7 +505,8 @@ audio {
     height: 100%;
     background: blue;
     
-    border-radius: 50px 0 0 50px;
+    //border-radius: 50px 0 0 50px;
+    
 }
 
 

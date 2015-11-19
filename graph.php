@@ -122,7 +122,7 @@
             //選択期間
             $period = $week;
             
-            if(isset($_POST['period_month']) && $_POST['period_month'] == 'month'){
+            if(isset($_POST['period']) && $_POST['period'] == 'month'){
                 $period = $month;
                 
                 $disweek = '';
@@ -246,7 +246,7 @@
                     
                     var options = {
                         axisX: {
-                            offset: 20,		// X軸ラベルエリアの高さ。ここの数値-10が実際の要素の高さになる
+                            offset: 30,		// X軸ラベルエリアの高さ。ここの数値-10が実際の要素の高さになる
                             position: 'end',		// "start"だと上に配置される
                             labelOffset: {
                                 x: -10,

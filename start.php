@@ -21,7 +21,7 @@
             <p>※音量に注意してください</p>
             
             <div class="player">
-                <audio id="sound" src="sounds/test5min.mp3"></audio>
+                <audio id="sound" src="sounds/n3test5min.mp3"></audio>
 
                 
                 <div id="player_btns">
@@ -32,7 +32,7 @@
                 </div>
                 
                 <span id="now_time">0m 0s</span>
-                <span id="last_time">last</span>
+                <span id="last_time">5m 0s</span>
 
 
                 <div id="barBd"><div id="bar"></div></div>
@@ -43,6 +43,10 @@
 
                 function play(){
                     TARGET.play();
+                    TARGET.addEventListener("ended", function(){
+                        console.log("再生終了")
+                        location.href = "#afemo";
+                    }, false);
                 }
 
                 function pause(){
@@ -90,7 +94,6 @@
 
                 
                 
-                
                 /*++ jQueryを使ったオリジナルプログレスバー ++*/
 
 
@@ -105,6 +108,8 @@
                             }, true);
                         }
                     });
+                    
+                    
                 });
                 </script>
 
