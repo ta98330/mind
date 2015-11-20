@@ -8,10 +8,23 @@
     /*1週間
     $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '1' and datetime between '$today 00:00:00' - INTERVAL 1 WEEK and '$today 23:59:59'");
     */
-    
+
+
+
+
+    /*テスト用
+    $_POST['id'] = 1;
+    $_POST['str_day'] = $today;
+    $_POST['end_day'] = $today;
+    */
+
+
     //指定
     $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_POST['id']}' and datetime between '{$_POST['str_day']} 00:00:00' and '{$_POST['end_day']} 23:59:59'");
     
+
+
+
     
     while ($row = $st->fetch()) {
         
@@ -31,13 +44,38 @@
         $stress = htmlspecialchars($row['stress']);
         
         
-        $assoc_data[] = array('回数' => $rep,'日時' => $datetime,'前後' => $bfaf,'怒り' => $ang,'悲しみ' => $sad,'不安' => $anxiety,'喜び' => $joy,'ストレス' => $stress);
+        //出来事
+        $eventdata = "";
+        
+        if($bfaf == 'bf'){
+            
+            $eventdate = date('Y-m-d', strtotime($datetime));
+            
+
+            $st1 = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_POST['id']}' and datetime between '$eventdate 00:00:00' and '$eventdate 23:59:59'");
+        
+        
+        
+            while (@$row = $st1->fetch()) {
+                $event_datetime = htmlspecialchars($row['datetime']);
+                $content = nl2br(htmlspecialchars($row['content']));
+
+                $eventtime = date('G:i', strtotime($event_datetime));
+
+                $eventdata .= $eventtime.$content." ";
+
+
+            }
+        }
+        
+        $assoc_data[] = array('回数' => $rep,'日時' => $datetime,'前後' => $bfaf,'怒り' => $ang,'悲しみ' => $sad,'不安' => $anxiety,'喜び' => $joy,'ストレス' => $stress,'出来事' => $eventdata);
         
         //print_r($testarray[]);
         //print("<br />");
         //print("<br />");
         
         
+
         
     }
 
@@ -51,6 +89,11 @@ if(!isset($assoc_data)){
     );
     
 */
+
+/*テスト用
+print_r($assoc_data);
+*/
+
 
 $st1 = $pdo->query("SELECT name FROM mf_user WHERE id = {$_POST['id']}");
 while ($row = $st1->fetch()) {
@@ -73,7 +116,8 @@ $csv_header = array(
         '悲しみ',
         '不安',
         '喜び',
-        'ストレス'
+        'ストレス',
+        '出来事'
    );
 
 //出力ヘッダー
@@ -85,7 +129,8 @@ $enco_header = array(
         '悲しみ',
         '不安',
         '喜び',
-        'ストレス'
+        'ストレス',
+        '出来事'
    );
 
 mb_convert_variables('SJIS', 'UTF-8', $enco_header);
