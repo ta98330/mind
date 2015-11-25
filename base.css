@@ -509,6 +509,14 @@ audio {
     
 }
 
+.videoPlayer {
+    
+}
+
+.videoPlayer video {
+    //width: 100%;
+}
+
 
 /*=================================
 出来事

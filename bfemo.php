@@ -23,7 +23,7 @@
                 <form action="impressions.php" method="post" data-ajax="false">
                     <div class="ui-field-contain">
                         <input type="hidden" name="bfaf" value="bf">
-                        <h2>感じない　→　→　→　感じる</h2>
+                        <h2>感じない　→　感じる</h2>
                         <div class="ui-field-contain">
                             <label for="ang">怒り:</label>
                             <input id="ang" name="ang" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">

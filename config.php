@@ -67,7 +67,7 @@
                 <div id="barBd"><div id="bar"></div></div>
 
                 <script type="text/javascript">
-
+/*
                 var TARGET = document.getElementById('sound');
 
                 function play(){
@@ -145,11 +145,26 @@
             </div><!--player-->
             
             
+            <h2>動画テスト</h2>
+            <div class="videoPlayer">
+                <video id="video" src="sounds/sox.mp4" width="100%" controls></video>
+                
+                <script>
+                    var video = document.querySelector('video');
+                    /*
+                    video.onended = function(){
+                        alert('最後まで再生されました');
+                    }
+                    */
+                    video.addEventListener('ended', function(){
+                        console.log('addEventListenerによるイベント発火');
+                        //location.href = "#afemo";
+                    });
+                </script>
+
+            </div><!--videoPlayer-->
             
-            
-            
-            
-            
+           
             
             
             
