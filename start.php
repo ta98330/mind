@@ -21,7 +21,7 @@
             <p>※音量に注意してください</p>
             
             <div class="videoPlayer">
-                <video id="video" src="sounds/sox.mp4" width="100%" controls></video>
+                <video id="video" src="sounds/n/nc1-2.mp4" width="100%" controls></video>
                 
                 <script>
                     var video = document.querySelector('video');
