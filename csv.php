@@ -14,7 +14,7 @@
 
     /*テスト用
     $_POST['id'] = 1;
-    $_POST['str_day'] = $today;
+    $_POST['str_day'] = '2015-10-01';
     $_POST['end_day'] = $today;
     */
 
@@ -23,8 +23,9 @@
     $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_POST['id']}' and datetime between '{$_POST['str_day']} 00:00:00' and '{$_POST['end_day']} 23:59:59'");
     
 
-
-
+    //日付分け変数定義
+    $identification = 0;
+    $last_date = $_POST['str_day'];
     
     while ($row = $st->fetch()) {
         
@@ -68,14 +69,42 @@
             }
         }
         
-        $assoc_data[] = array('回数' => $rep,'日時' => $datetime,'前後' => $bfaf,'怒り' => $ang,'悲しみ' => $sad,'不安' => $anxiety,'喜び' => $joy,'ストレス' => $stress,'出来事' => $eventdata);
+        //bfafを0・1に
+        if($bfaf == 'bf'){
+            $bfaf = '0';
+        }
+        else{
+            $bfaf = '1';
+        }
+        
+        //日付分け
+        $str_date =  date('Y-m-d', strtotime($datetime));
+        
+        if(isset($ident_date)){
+            $last_date = $ident_date;
+        }
+        else{
+            $last_date = $str_date;
+        }
+        
+        $ident_date =  date('Y-m-d', strtotime($datetime));
+        
+        if($ident_date != $last_date){
+            $identification++;
+        }
+        
+        $assoc_data[] = array('日付別' => $identification, '回数' => $rep,'日時' => $datetime,'前後' => $bfaf,'怒り' => $ang,'悲しみ' => $sad,'不安' => $anxiety,'喜び' => $joy,'ストレス' => $stress,'出来事' => $eventdata);
         
         //print_r($testarray[]);
         //print("<br />");
         //print("<br />");
         
-        
+        //echo "そのデータ", $ident_date, " ", "前のデータ",$last_date, " ", $identification, "<br>";
 
+        
+        
+        
+        
         
     }
 
@@ -87,12 +116,12 @@ if(!isset($assoc_data)){
     $testarray = array(
         array('rep' => $rep,'datetime' => $datetime,'bfaf' => $bfaf,'ang' => $ang,'sad' => $sad,'anxiety' => $anxiety,'joy' => $joy,'stress' => $stress),
     );
-    
 */
 
-/*テスト用
-print_r($assoc_data);
-*/
+
+
+//print_r($assoc_data);
+
 
 
 $st1 = $pdo->query("SELECT name FROM mf_user WHERE id = {$_POST['id']}");
@@ -109,6 +138,7 @@ $file_name = "$name {$_POST['str_day']}～{$_POST['end_day']}";
 
 //キーヘッダー
 $csv_header = array(
+        '日付別',
         '回数',
         '日時',
         '前後',
@@ -122,6 +152,7 @@ $csv_header = array(
 
 //出力ヘッダー
 $enco_header = array(
+        '日付別',
         '回数',
         '日時',
         '前後',
