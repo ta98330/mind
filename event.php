@@ -25,6 +25,11 @@
                 <textarea name="eventContent" placeholder="今日の出来事(100字以内)"　id="eventContent" class="form-control" maxlength="100" required></textarea>
                 <button onclick="submit()" id="lec_btn"><i class="fa fa-check"></i></button>
             </form>
+            
+            <form method="post" action="">
+                <label>日付:<input type="date" name="str_day" min="2015-10-01" required></label><br />
+                <button type="submit">検索</button>
+            </form>
 
             <h3>1週間の出来事</h3>
             <ul class="eventlist">
@@ -59,7 +64,7 @@
                 ?>
 
 
-           </ul> 
+           </ul>
 
 
         </div>

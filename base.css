@@ -134,7 +134,7 @@ index
 #index {
     background-color: #22bfe5;
     
-    padding-top: 25%;
+    //padding-top: 25%;
 }
 
 
@@ -147,6 +147,9 @@ index
     width: 40vw;
     height: 40vw;
     
+    max-width: 400px;
+    max-height: 400px;
+    
     //top: 10vh;
     //background-color: aliceblue;
     
@@ -154,8 +157,8 @@ index
 
 #svg svg {
     position: absolute;
-    width: 40vw;
-    height: 40vw;
+    width: 100%;
+    height: 100%;
     
     z-index: 0;
     //opacity: 0.2
@@ -178,6 +181,14 @@ index
 #login_btn a {
     color: aliceblue;
     font-size: 150%;
+}
+
+#adminlogin_btn {
+    margin: 10px;
+    position: absolute;
+    bottom: 0;
+    
+    
 }
 
 
@@ -360,6 +371,9 @@ top
     height: 10vh;
     line-height: 10vh;
     
+    //background-color: rgb(255, 151, 235);
+    //color: white;
+    //text-shadow: none;
 }
 
 #subbtns {
@@ -664,11 +678,20 @@ li.pm{
     border-radius: 0 5px 5px 0;
 }
 
-#graph button:disabled {
+#g_period button:disabled {
+    background-color: rgb(51, 136, 204);
+    color: #f7f7f7;
+    opacity: 1;
+    //box-shadow: none;
+}
+
+
+
+#graph button {
     //background-color: #14ef68;
     //color: #0b1014;
     
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
+    //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
 }
 
 #graph .period_data {
@@ -695,13 +718,21 @@ li.pm{
     padding: 13px 1.2%;
     margin: 0 0 5px 0;
     
+    box-shadow: none;
     //border-radius: 5px;
 }
 
 
 
 
-
+#nonedata {
+    display: block;
+    position: absolute;
+    top: 300px;
+    
+    width: 98%;
+    text-align: center;
+}
 
 
 
@@ -738,6 +769,8 @@ li.pm{
     border: solid 2px green;
     box-sizing: border-box;
     */
+    
+    max-height: 35vh;
 }
 
 /*グラフライン*/
@@ -756,23 +789,142 @@ li.pm{
 
 /*------凡例------*/
 #legend {
-    position: absolute;
+    position: relative;
+    display: inline-block;
+}
+
+#legend div {
+    margin: 2px;
 }
 
 #bf_line {
     color: blue;
+    border-bottom: solid 3px blue;
 }
 
 #af_line {
     color: red;
+    border-bottom: dashed 3px red;
+}
+
+
+#record_event {
+    height: 30vh;
+    overflow-y: scroll;
+    background-color: azure;
 }
 
 
 
 
 
+/*--------------PCのスタイル-----------------*/
+@media all and (min-width: 768px) {
+        
+    /*=================================
+    index
+    ==================================
+    #index {
+        background-color: #22bfe5;
+
+        padding-top: 25%;
+    }
 
 
+
+    #svg {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 15%;
+        display: block;
+        width: 40vw;
+        height: 40vw;
+
+        //top: 10vh;
+        //background-color: aliceblue;
+
+    }
+
+    #svg svg {
+        position: absolute;
+        width: 40vw;
+        height: 40vw;
+
+        z-index: 0;
+        //opacity: 0.2
+    }
+
+    #login_btn {
+        width: 130px;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+        padding: 4px 6px;
+
+        color: aliceblue;
+
+        border: solid 2px;
+        border-radius: 50px;
+    }
+
+    #login_btn a {
+        color: aliceblue;
+        font-size: 150%;
+    }
+
+
+    #login {
+        padding: 5px 10px;
+        background: aliceblue;
+    }
+
+    #login h3 {
+        text-align: center;
+    }
+
+    #login input {
+
+    }
+
+
+
+
+
+
+
+
+    #index_menu {
+
+
+    }
+
+    #index_menu p {
+        display: block;
+        position: absolute;
+        bottom: 10%;
+        font-size: 140%;
+    }
+
+    #mind_info {
+        left: 10%;
+    }
+
+    #app_info {
+        right: 15%;
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+*/
 
 
 

@@ -163,14 +163,20 @@
                 $bf_stress_data[] = $stress;
 
             }
+                
+            if(!isset($val1)){
+                echo "<div id='nonedata'><p>期間中に記録がありません</p></div>";
+                
+                
+            }
 
-            $jsonLabel=json_encode($label_data);
+            @$jsonLabel=json_encode($label_data);
 
-            $json_bf_ang=json_encode($bf_ang_data);
-            $json_bf_sad=json_encode($bf_sad_data);
-            $json_bf_anxiety=json_encode($bf_anxiety_data);
-            $json_bf_joy=json_encode($bf_joy_data);
-            $json_bf_stress=json_encode($bf_stress_data);
+            @$json_bf_ang=json_encode($bf_ang_data);
+            @$json_bf_sad=json_encode($bf_sad_data);
+            @$json_bf_anxiety=json_encode($bf_anxiety_data);
+            @$json_bf_joy=json_encode($bf_joy_data);
+            @$json_bf_stress=json_encode($bf_stress_data);
 
             //瞑想後
             $st1 = $pdo->query("SELECT * FROM mf_impressions WHERE id = '1' and bfaf = 'af' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
@@ -193,11 +199,11 @@
 
             }
 
-            $json_af_ang=json_encode($af_ang_data);
-            $json_af_sad=json_encode($af_sad_data);
-            $json_af_anxiety=json_encode($af_anxiety_data);
-            $json_af_joy=json_encode($af_joy_data);
-            $json_af_stress=json_encode($af_stress_data);
+            @$json_af_ang=json_encode($af_ang_data);
+            @$json_af_sad=json_encode($af_sad_data);
+            @$json_af_anxiety=json_encode($af_anxiety_data);
+            @$json_af_joy=json_encode($af_joy_data);
+            @$json_af_stress=json_encode($af_stress_data);
             
             ?>
             
@@ -359,8 +365,41 @@
                 
             </script>
             
-            <div id="legend"><span id="bf_line">青実線</span>：瞑想<span id="bf_line">前</span><br /><span id="af_line">赤破線</span>：瞑想<span id="af_line">後</span></div>
+            <div id="legend">
+                <div id="bf_line"><span>青実線</span>：瞑想前</div>
+                <div id="af_line"><span>赤破線</span>：瞑想後</div>
+            </div>
+            <h3>期間中の出来事</h3>
+            <ul id="record_event" class="eventlist">
+            <?php
             
+            $st1 = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '$today' - interval $period and '$today' + interval 1 day ORDER BY datetime ASC");
+
+            while (@$row = $st1->fetch()) {
+                $datetime = htmlspecialchars($row['datetime']);
+                $content = nl2br(htmlspecialchars($row['content']));
+
+                $ampm = date('a', strtotime($datetime));
+
+                if($ampm == "am"){
+                    echo "<li class='am'>";
+                }
+                else{
+                    echo "<li class='pm'>";
+                }
+
+                echo "<h4>",date('n月j日　a g:i', strtotime($datetime)),"</h4>";
+                echo "<p>$content</p>";
+                echo "</li>\n";
+            }
+
+            if(empty($content))
+                echo "<li>この期間中に登録された出来事はありません．<br /></li>";
+            
+            
+            
+            ?>
+            </ul>
             
         </div><!--main-->
             

@@ -1,4 +1,11 @@
-<?php require "spheader.php"; ?>
+<?php
+    require "spheader.php";
+
+    //未ログイン処理
+    if(!isset($_SESSION["mf_ad_login"])){
+        header('Location: index.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -37,10 +44,11 @@
             
             if(_ua.Mobile){
                 //この中のコードはスマホにのみ適用
-                location.href = "index.html";
+                
+                location.href = "index.php";
             }else if(_ua.Tablet){
                 //この中のコードはタブレットにのみ適用
-                location.href = "index.html";
+                location.href = "index.php";
             }else{
                 //この中のコードはスマホとタブレット以外に適用
                 /*
@@ -81,12 +89,14 @@
                     
                     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
                     
+                    $number = 0;
+                        
                     $st = $pdo->query("SELECT * FROM mf_user WHERE NOT id = 999");//SQL文の発行
                     while ($row = $st->fetch()) {
                         $id = htmlspecialchars($row['id']);
                         $name = htmlspecialchars($row['name']);
                         echo "<option value='$id'>$name</option>";
-                        
+                        $number++;
                     }
                     ?>
                     </select>
@@ -97,7 +107,10 @@
             </form>
         </section>
         
-        
+        <section id="info">
+            <h2>インフォメーション</h2>
+            <p>現在の登録ユーザー数は<?= $number ?>人です．</p>
+        </section>
         
         <section>
             <h2>新規ユーザー登録</h2>
@@ -115,7 +128,7 @@
                 </div>
             </form>
         </section>
-    
-    
+        
+        <a href="logout.php"><i class="fa fa-sign-out"></i>ログアウト</a>
     </body>
 </html>
