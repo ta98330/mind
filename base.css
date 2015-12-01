@@ -595,6 +595,189 @@ audio {
 }
 
 
+
+
+
+/* スピンボタン（上下ボタン）を非表示 */
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* 無入力時の 年/月/日 を / / にする */
+input[type=date]::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+  display: none;
+}
+
+
+
+
+/* /の色を変える */
+input[type=date]::-webkit-datetime-edit-text {
+    //color: #fff;
+    display: none;
+}
+/* clearボタンの非表示 */
+input[type=date]::-webkit-clear-button {
+  -webkit-appearance: none;
+}
+/* カレンダーのインジケータ（▼）を非表示 */
+input[type=date]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  position: relative;
+}
+/* fontAwesomeのカレンダーアイコンをインジケータにする */
+input[type=date]::-webkit-calendar-picker-indicator:before {
+  color: #666;
+  font-family: FontAwesome;
+  /*content: "\f073";*/ /* fa-calendar */
+  content: "\f133"; /* fa-calendar-o */
+  position: relative;
+  //left: -5px; /* ここら辺はいい感じの塩梅で */
+  //top: -5px;  /* ここも */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*期間検索*/
+#event_range {
+    position: relative;
+    display: block;
+    width: 96%;
+    height: 100px;
+    
+    margin: 2%;
+    padding: 0;
+    
+    background-color: red;
+    box-sizing: border-box;
+    
+    
+}
+
+#event_range form {
+    //height: 44px;
+    
+}
+
+#event_range span {
+    posi
+    margin: 0;
+    padding: 0;
+    
+    width: 110px;
+    height: 44px;
+    
+    position: absolute;
+    top: 0;
+}
+
+#event_range span span{
+    margin: 0;
+    padding: 0;
+    
+    outline: 0;
+    
+    width: 100%;
+    height: 44px;
+    padding-top: 12px;
+    
+    box-sizing: border-box;
+}
+
+#endday + span {
+    left: 24px;
+}
+
+
+#event_range p {
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    
+    height: 44px;
+    width: 20px;
+    line-height: 44px;
+    
+    top: 0;
+}
+
+
+#event_range input {
+    position: absolute;
+    background-color: white;
+    
+    width: 110px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    
+    
+    top: 0px;
+    
+    
+    
+    //display: inline-block;
+    
+    border: none;
+    
+    line-height: 100px;
+    
+    //box-sizing: border-box;
+}
+
+#strday {
+    left: 0px;
+}
+
+#endday {
+    left: 24px;
+}
+
+
+#event_range button {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 44px;
+    
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    
+    left: 260px;
+    
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .eventlist h4{
     font-size: 110%;
     margin: 0;

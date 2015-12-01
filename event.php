@@ -26,20 +26,42 @@
                 <button onclick="submit()" id="lec_btn"><i class="fa fa-check"></i></button>
             </form>
             
-            <form method="post" action="">
-                <label>日付:<input type="date" name="str_day" min="2015-10-01" required></label><br />
-                <button type="submit">検索</button>
-            </form>
 
-            <h3>1週間の出来事</h3>
+            <h2>期間選択</h2>
+            <div id="event_range">
+                <form method="post" action="" class="data-role-none">
+                    <input type="date" name="str_day" id="strday" min="2015-10-01" title="開始日" data-role="none" required>
+                    <p><i class="fa fa-arrows-h"></i></p>
+                    <input type="date" name="end_day" id="endday" min="2015-10-01" title="終了日" data-role="none" required>
+                    <button type="submit" class="ui-btn">検索</button>
+                </form>
+            </div>
+            <?php
+            if(isset($_POST['str_day'])){
+                echo '<h2>期間中の出来事</h2>';
+            }
+            else{
+                echo '<h2>1週間の出来事</h2>';
+            }
+            ?>
             <ul class="eventlist">
 
                 <?php
                 $today = date("Y-m-d");
 
                 $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
-
-                $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '$today' - interval 7 day and '$today' + interval 1 day ORDER BY datetime DESC");
+                
+                
+            
+                if(isset($_POST['str_day'])){
+                    //期間選択
+                    $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '{$_POST['str_day']} 00:00:00' and '{$_POST['end_day']} 23:59:59' ORDER BY datetime ASC");
+                }
+                else{
+                    //1週間
+                    $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '$today' - interval 7 day and '$today' + interval 1 day ORDER BY datetime DESC");
+                }
+                
 
                 while (@$row = $st->fetch()) {
                     $datetime = htmlspecialchars($row['datetime']);
