@@ -142,7 +142,7 @@ index
 #svg {
     position: relative;
     margin: 0 auto;
-    margin-bottom: 15%;
+    margin-bottom: 35%;
     display: block;
     width: 40vw;
     height: 40vw;
@@ -599,13 +599,13 @@ audio {
 
 
 /* スピンボタン（上下ボタン）を非表示 */
-input[type=date]::-webkit-inner-spin-button {
+#event input[type=date]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 /* 無入力時の 年/月/日 を / / にする */
-input[type=date]::-webkit-datetime-edit-year-field:not([aria-valuenow]),
-input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
-input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+#event input[type=date]::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+#event input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+#event input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
   display: none;
 }
 
@@ -613,21 +613,21 @@ input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
 
 
 /* /の色を変える */
-input[type=date]::-webkit-datetime-edit-text {
+#event input[type=date]::-webkit-datetime-edit-text {
     //color: #fff;
     display: none;
 }
 /* clearボタンの非表示 */
-input[type=date]::-webkit-clear-button {
+#event input[type=date]::-webkit-clear-button {
   -webkit-appearance: none;
 }
 /* カレンダーのインジケータ（▼）を非表示 */
-input[type=date]::-webkit-calendar-picker-indicator {
-  color: transparent;
+#event input[type=date]::-webkit-calendar-picker-indicator {
+  //color: transparent;
   position: relative;
 }
 /* fontAwesomeのカレンダーアイコンをインジケータにする */
-input[type=date]::-webkit-calendar-picker-indicator:before {
+#event input[type=date]::-webkit-calendar-picker-indicator:before {
   color: #666;
   font-family: FontAwesome;
   /*content: "\f073";*/ /* fa-calendar */
@@ -653,12 +653,12 @@ input[type=date]::-webkit-calendar-picker-indicator:before {
     position: relative;
     display: block;
     width: 96%;
-    height: 100px;
+    //height: 100px;
     
     margin: 2%;
     padding: 0;
     
-    background-color: red;
+    //background-color: red;
     box-sizing: border-box;
     
     
@@ -669,8 +669,8 @@ input[type=date]::-webkit-calendar-picker-indicator:before {
     
 }
 
-#event_range span {
-    posi
+#event_range>form>span {
+    position: relative;
     margin: 0;
     padding: 0;
     
@@ -678,44 +678,46 @@ input[type=date]::-webkit-calendar-picker-indicator:before {
     height: 44px;
     
     position: absolute;
-    top: 0;
+    bottom: 0;
+    left: 0;
+    
+    //background-color: #ade6ad;
+}
+
+#event_range span:nth-of-type(2) {
+    left: 24px;
+    //top: 50px;
 }
 
 #event_range span span{
+    position: absolute;
     margin: 0;
     padding: 0;
     
-    outline: 0;
+    
+    
+    bottom: 0;
     
     width: 100%;
     height: 44px;
     padding-top: 12px;
+    padding-left: 33px;
     
     box-sizing: border-box;
+    
+    //background-color: lightblue;
 }
 
 #endday + span {
-    left: 24px;
-}
-
-
-#event_range p {
-    position: absolute;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
+    left: 0;
     
-    height: 44px;
-    width: 20px;
-    line-height: 44px;
-    
-    top: 0;
+    //background-color: pink;
 }
 
 
 #event_range input {
     position: absolute;
-    background-color: white;
+    background-color: #ffffff;
     
     width: 110px;
     height: 44px;
@@ -736,13 +738,29 @@ input[type=date]::-webkit-calendar-picker-indicator:before {
     //box-sizing: border-box;
 }
 
-#strday {
+#event #strday {
     left: 0px;
 }
 
-#endday {
-    left: 24px;
+#event #endday {
+    left: 0px;
 }
+
+
+
+#event_range p {
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    
+    height: 44px;
+    width: 20px;
+    line-height: 44px;
+    
+    top: 0;
+}
+
 
 
 #event_range button {

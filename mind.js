@@ -66,7 +66,7 @@ $(document).on('pagecreate', '#event', function() {
                 //left:'30px',
                 //fontSize:'100%',
                 //lineHeight:'120%',
-                textAlign:'center',
+                //textAlign:'center',
                 color:'#999',
                 overflow:'hidden',
                 //position:'absolute',

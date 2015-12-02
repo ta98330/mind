@@ -76,7 +76,7 @@
                         echo "<li class='pm'>";
                     }
 
-                    echo "<h4>",date('n月j日　a g:i', strtotime($datetime)),"</h4>";
+                    echo "<h4>",date('n月j日 G:i', strtotime($datetime)),"</h4>";
                     echo "<p>$content</p>";
                     echo "</li>\n";
                 }
