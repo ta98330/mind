@@ -17,7 +17,7 @@
 /*------------セリフ変化--------------*/
 //瞑想途中終了
 if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "bfemo"){
-    echo "瞑想が最後まで記録されませんでした．<br />グラフで確認してください．";
+    echo "最後まで記録されませんでした．<br />グラフで確認してください．";
 }
 
 //瞑想終了後
@@ -29,7 +29,7 @@ else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "end"
 else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "graph"){
     echo "グラフはどうでしたか？";
 }
-
+/*
 //出来事
 else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "event"){
     if(!empty($recorded)){
@@ -42,7 +42,7 @@ else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "even
 else if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "config"){
     echo "設定終了です！";
 }
-
+*/
 else{
     echo "{$_SESSION['mf_userName']}さん,";
     $nowtime = date("G");

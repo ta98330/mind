@@ -19,25 +19,27 @@
             <div data-role="header" data-theme="z" class="data-role-none header">
                 <h1>Mindfulness</h1>
                 <a href="logout.php" class="logout_btn"><i class="fa fa-sign-out"></i><br /><span class="min">ログアウト</span></a>
+                <a href="config.php" class="config_btn"><i class="fa fa-cog"></i><!--<br /><span class="min">設定</span>--></a>
             </div>
 
             <!--メイン領域-->
             <div role="main" class="ui-content data-role-none">
                 <div id="topinfo">
                     <p><?php include_once('mind.php')?></p>
-                </div>
-                
-                <div id="image">
-                    <p id="image1"></p><p id="image2"></p>
-                </div>
                 
                 
-                <div class="char">
-                    <img src="images/char02.png" alt="No image" class="dolphin">
+                    <div id="image">
+                        <p id="image1"></p><p id="image2"></p>
+                    </div>
+
+
+                    <div class="char">
+                        <img src="images/char02.png" alt="No image" class="dolphin">
+                    </div>
                 </div>
                 
                 <div id="strmenus">
-                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想スタート</a>
+                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn" rel="external">瞑想開始</a>
                     <div id="subbtns">
                     <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
                     <!--<a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>-->
@@ -47,7 +49,7 @@
                         <button data-role="none" class="ui-btn subbtn" id="sub2">グラフ</button>
                     </form>
                         
-                    <a href="config.php" data-role="button" class="ui-btn subbtn" id="sub3">設定</a>
+                    <!--<a href="config.php" data-role="button" class="ui-btn subbtn" id="sub3">設定</a>-->
                     </div>
                 </div>
                 

@@ -44,17 +44,19 @@
             
             if(_ua.Mobile){
                 //この中のコードはスマホにのみ適用
-                
-                location.href = "index.php";
+                //alert("このページはPC専用です．\nログインページに移動します．")
+                //location.href = "index.php";
             }else if(_ua.Tablet){
                 //この中のコードはタブレットにのみ適用
-                location.href = "index.php";
+                //location.href = "index.php";
             }else{
                 //この中のコードはスマホとタブレット以外に適用
                 /*
                 if(window.confirm('PC用のページに移動しますか？')){
                     location.href = "index.html";
                 }
+                alert("このページはPC専用です．\nログインページに移動します．")
+                location.href = "index.php";
                 */
             }
         
