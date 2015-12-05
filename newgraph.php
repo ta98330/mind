@@ -21,7 +21,7 @@
             <h1>グラフ</h1>
         </div>
 
-        <div role="main" id="graphcontain" class="ui-content">
+        <div role="main" id="graph" class="ui-content">
             
             
             <?php
@@ -70,6 +70,10 @@
                     $weekja = "(土)";
                     break;
             }
+
+
+
+
 
             ?>
             
@@ -269,12 +273,8 @@
                               renderTo : "graph_container",
                               type : "line",
                               backgroundColor : "white",
-                              height : 350,
-                              margin: [40, 20, 70, 35] //余白
                               
-                          },
-                          scrollbar: {
-                              enabled: true  // scrollbar 有効
+                              
                           },
 
                           // タイトルを指定
@@ -283,7 +283,6 @@
                           xAxis : {
                               type : 'datetime',
                               title : null,
-                              offset : 0,
                               categories : label
                           },
                           // y軸のラベルを指定
@@ -291,7 +290,7 @@
                               title : null,
                               max : 10,
                               min : 1,
-                              allowDecimals : false //小数点非表示
+                              allowDecimals : false
                           },
 
                           // データ系列を作成
@@ -316,6 +315,19 @@
                     draw();
                     
                 });
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 

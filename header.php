@@ -29,7 +29,8 @@
         
         
         <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-        <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        
+        <script type="text/javascript" src="js/highcharts.js"></script>
         
         <link rel="stylesheet" href="base.css">
         
