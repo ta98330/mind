@@ -234,6 +234,9 @@ top
 #home .ui-content {
     padding: 0;
     margin: 0;
+    
+    width: 100%;
+    height: 90%;
 }
 
 #topinfo {
@@ -241,7 +244,7 @@ top
     //width: 100%;
     //height: 30vh;
     
-    margin: 5px;
+    margin: 10px 5px;
     padding: 5px;
 }
 
@@ -253,7 +256,7 @@ top
     font-size: 110%;
     text-align: center;
     margin: 0;
-    padding: 10px 5px;
+    padding: 10px 20px;
     //border: solid 2px;
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.81);
@@ -264,6 +267,8 @@ top
     right: 25vw;
     width: 15vw;
     height: 8vh;
+    
+    margin-top: 5px;
 }
 
 #image p {
@@ -297,11 +302,12 @@ top
 }
 
 .char {
-    position: absolute;
-    top: 180px;
-    right: 5%;
+    position: relative;
+    top: 8vh;
+    right: -70%;
     width: 25vw;
     height: 25vw;
+    
     
     
     
@@ -386,13 +392,14 @@ top
 
 /*----------ボタン-------------*/
 #strmenus {
-    position: relative;
+    position: absolute;
     margin: 0;
+    margin-top:150px;
     padding: 0;
     left: 0;
     bottom: 0;
     width: 100vw;
-    height: 45vh;
+    height: 35vh;
     
     text-align: center;
     
@@ -400,29 +407,43 @@ top
 
 #strmenus .strbtn{
     position: relative;
+    
+    width: 80%;
+    height: 10vh;
+    line-height: 10vh;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //margin: 0 auto;
     margin-left: 10%;
     margin-top: 4%;
     padding: 0;
-    width: 45vw;
-    height: 45vw;
-    line-height: 45vw;
+    //width: 45vw;
+    //height: 45vw;
+    //line-height: 45vw;
     
     box-sizing: border-box;
     
     //background-color: rgb(255, 128, 0);
-    background-image: url(images/mind5.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    //background-image: url(images/mind5.png);
+    //background-repeat: no-repeat;
+    //background-size: cover;
     
-    color: #ff3100;
-    font-size: 180%;
-    font-weight: 900;
-    text-shadow: 1px 1px 3px #80ff00;
+    //color: #ff3100;
+    //font-size: 180%;
+    //font-weight: 900;
+    //text-shadow: 1px 1px 3px #80ff00;
     
-    border: solid 5px #0080ff;
+    //border: solid 5px #0080ff;
     
-    border-radius: 100%;
+    //border-radius: 100%;
 }
 
 #subbtns {
@@ -438,10 +459,10 @@ top
     letter-spacing: normal; /* 文字間を通常に戻す */
     margin: 0;
     padding: 0;
-    width: 30%;
+    width: 48%;
     height: 10vh;
     line-height: 10vh;
-    
+    box-sizing: border-box;
 }
 
 #sub1 {
@@ -449,7 +470,7 @@ top
 }
 
 #sub2 {
-    left: 35%;
+    right: 0;
     -webkit-appearance: none;
     border-radius: 0;
 }

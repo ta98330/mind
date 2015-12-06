@@ -39,7 +39,7 @@
                 </div>
                 
                 <div id="strmenus">
-                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn" rel="external">瞑想開始</a>
+                    <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想開始</a>
                     <div id="subbtns">
                     <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
                     <!--<a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>-->
