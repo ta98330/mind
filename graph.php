@@ -127,7 +127,7 @@
             
 
             //瞑想前
-            $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '1' and bfaf = 'bf' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
+            $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'bf' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
 
             while ($row = $st->fetch()) {
 
@@ -186,7 +186,7 @@
             @$json_bf_stress=json_encode($bf_stress_data);
 
             //瞑想後
-            $st1 = $pdo->query("SELECT * FROM mf_impressions WHERE id = '1' and bfaf = 'af' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
+            $st1 = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'af' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
 
             while ($row = $st1->fetch()) {
 

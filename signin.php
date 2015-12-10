@@ -1,15 +1,9 @@
 <?php
 require "spheader.php";
 
-if($_SESSION['mf_login'] == "ログイン中！" || empty($_SESSION['mf_login'])){
-    //ログアウト
-    $_SESSION['mf_userId'] = NULL;
-    $_SESSION['mf_userName'] = NULL;
-    $_SESSION['mf_userPass'] = NULL;
-    $_SESSION['mf_login'] = "ログインしていません．";
-}
 
 if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
+    
     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
     
     $st = $pdo->query("SELECT * FROM mf_user WHERE name = '{$_POST['username']}'");//ユーザーネームの重複を確認
@@ -17,9 +11,9 @@ if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
     $duplicate = "clear";
     while ($row = $st->fetch()) {
         $duplicate = "duplicate";
-        require "header.php";//ヘッダー読み込み
+        require "admin_header.php";//ヘッダー読み込み
         echo "<section id='passage'>";
-        echo "<div class='alert alert-danger' role='alert'>このユーザーネームはすでに使われています．<br />別の名前で作成してください．<br /><a href='index.php'>戻る</a></div>";
+        echo "<div class='alert alert-danger' role='alert'>このユーザーネームはすでに使われています．<br />別の名前で作成してください．<br /><a href='admin.php'>戻る</a></div>";
         echo "</section>";
         require "footer.php"; //フッター読み込み
     }
@@ -35,12 +29,7 @@ if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
         
         
         
-        $_SESSION['mf_userId'] = $id;
-        $_SESSION['mf_userName'] = $_POST['username'];
-        $_SESSION['mf_userPass'] = $_POST['pass'];
-        $_SESSION['mf_login'] = "ログイン中！";
-        
-        header('Location: top.php');
+        header('Location: admin.php');
         
         
     }
