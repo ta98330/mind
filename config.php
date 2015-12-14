@@ -11,7 +11,7 @@
     <body>
 
     <!--ページ領域-->
-    <div data-role="page" data-url="./config.php">
+    <div id="config" data-role="page" data-url="./config.php">
 
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="z" class="data-role-none header">

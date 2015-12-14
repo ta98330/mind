@@ -8,9 +8,9 @@
     require "header.php";//ヘッダー読み込み
 ?>
 <body>
-    <script src="js/youtube.js"></script>
+    
     <!--ページ領域-->
-    <div data-role="page">
+    <div id="start" data-role="page" data-url="./start.php">
         
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="z" class="data-role-none header">

@@ -13,7 +13,7 @@ if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
         $duplicate = "duplicate";
         require "admin_header.php";//ヘッダー読み込み
         echo "<section id='passage'>";
-        echo "<div class='alert alert-danger' role='alert'>このユーザーネームはすでに使われています．<br />別の名前で作成してください．<br /><a href='admin.php'>戻る</a></div>";
+        echo "<div class='alert'>このユーザーネームはすでに使われています．<br />別の名前で作成してください．<br /><a href='admin.php'>戻る</a></div>";
         echo "</section>";
         require "footer.php"; //フッター読み込み
     }

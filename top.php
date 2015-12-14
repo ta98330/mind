@@ -41,15 +41,15 @@
                 <div id="strmenus">
                     <a href="bfemo.php" data-role="button" class="ui-btn strbtn">瞑想開始</a>
                     <div id="subbtns">
-                    <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
-                    <!--<a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>-->
-                        
-                    <form action="graph.php" method="post" data-ajax="false">
-                        <input type="hidden" name="period_week" value="week">
-                        <button data-role="none" class="ui-btn subbtn" id="sub2">グラフ</button>
-                    </form>
-                        
-                    <!--<a href="config.php" data-role="button" class="ui-btn subbtn" id="sub3">設定</a>-->
+                        <a href="event.php" data-role="button" class="ui-btn subbtn" id="sub1">出来事</a>
+                        <!--<a href="graph.php" data-role="button" class="ui-btn subbtn" id="sub2">グラフ</a>-->
+
+                        <form action="graph.php" method="post" data-ajax="false">
+                            <input type="hidden" name="period_week" value="week">
+                            <button data-role="none" class="ui-btn subbtn" id="sub2">グラフ</button>
+                        </form>
+
+                        <!--<a href="config.php" data-role="button" class="ui-btn subbtn" id="sub3">設定</a>-->
                     </div>
                 </div>
                 

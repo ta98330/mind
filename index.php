@@ -295,17 +295,9 @@
                 
                 <div data-role="popup" id="pop2" data-shadow="false" data-arrow="b">
                     <h2>アプリ説明</h2>
-                    <p>このWebアプリは実験用に近畿大学工学部 2015年度 情報物理研究室で制作しているアプリです</p>
+                    <p>このWebアプリは実験用に近畿大学工学部 2015年度 情報物理研究室で制作しているWebアプリです</p>
                 </div>
-                        
-                <div id="admin_login" data-role="popup" data-position-to="window" data-overlay-theme="b" data-shadow="false">
-                    <h3><i class="fa fa-sign-in"></i> 管理者ログイン</h3>
-                    <form method="post" action="ad_login.php" data-ajax="false">
-                        <input type="text" name="administrator" placeholder="UserName" required>
-                        <input type="password" name="admin_pass" placeholder="Password" required>
-                        <input type="submit" name="action" class="login loginmodal-submit" value="ログイン">
-                    </form>
-                </div>
+                
                 
                 <div id="index_menu">
                     <p id="mind_info"><a href="#pop1" data-rel="popup">Mindfulnessとは</a></p>
@@ -314,7 +306,7 @@
                 </div>
                         
                 <div id="adminlogin_btn">
-                    <p><a href="#admin_login" data-rel="popup" data-transition="pop"><i class="fa fa-desktop"></i>管理者用ページ</a></p>
+                    <p><a href="mf_adlogin.php" target="_blank"><i class="fa fa-desktop"></i>管理者用ページ</a></p>
                 </div>
                 
                 
