@@ -18,8 +18,10 @@
             <p>※音量に注意してください</p>
             
             <div class="videoPlayer">
-                <video id="video" src="sounds/n/test5minasdkou.mp4" poster="images/5min_info.png" width="100%" controls></video>
-                <video id="video" src="sounds/n/test5minasdkou.mp4" poster="images/10min_info.png" width="100%" controls></video>
+                <video id="video" src="sounds/n/test5minasdkou.mp4" poster="images/5min_info.jpg" width="100%" controls></video>
+                <video id="video" src="sounds/n/test5minasdkou.mp4" poster="images/5min_noinfo.jpg" width="100%" controls></video>
+                <video id="video" src="sounds/n/test5minasdkou.mp4" poster="images/10min_info.jpg" width="100%" controls></video>
+                <video id="video" src="sounds/n/test5minasdkou.mp4" poster="images/10min_noinfo.jpg" width="100%" controls></video>
                 
                 <script>
                     var video = document.querySelector('video');

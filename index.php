@@ -32,7 +32,7 @@
     require "header.php";//ヘッダー読み込み
 ?>
 
-    <body ontouchmove="event.preventDefault()">
+    <body>
         <!--ページ領域-->
         <div data-role="page" data-url="./index.php" id="index">
             
