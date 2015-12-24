@@ -52,17 +52,21 @@
             <div class="videoPlayer">
                 <video id="video" src="sounds/n/test5minasdkou.mp4" width="100%" controls></video>
                 
+                
+                
                 <script>
+                    /*
                     var video = document.querySelector('video');
                     /*
                     video.onended = function(){
                         alert('最後まで再生されました');
                     }
-                    */
+                    
                     video.addEventListener('ended', function(){
                         console.log('addEventListenerによるイベント発火');
                         //location.href = "#afemo";
                     });
+                    */
                 </script>
 
             </div><!--videoPlayer-->

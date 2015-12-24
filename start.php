@@ -21,19 +21,30 @@
             <p>※音量に注意してください</p>
             
             <div class="videoPlayer">
-                <video id="video" src="sounds/n/test5minasdkou.mp4" width="100%" controls></video>
+                <video id="video1" src="sounds/movie/5minno.mp4" poster="images/5min_info.jpg" width="100%" controls></video>
+                <video id="video2" src="sounds/movie/10mmmm.mp4" poster="images/10min_info.jpg" width="100%" controls></video>
                 
                 <script>
-                    var video = document.querySelector('video');
-                    /*
-                    video.onended = function(){
-                        alert('最後まで再生されました');
+                    function videoend(videoId){
+                        var video = document.getElementById(videoId)
+                        /*
+                        video.onended = function(){
+                            alert('最後まで再生されました');
+                        }
+                        */
+                        video.addEventListener('ended', function(){
+                            console.log('addEventListenerによるイベント発火');
+                            location.href = "#afemo";
+                        });
+                        
                     }
-                    */
-                    video.addEventListener('ended', function(){
-                        console.log('addEventListenerによるイベント発火');
-                        location.href = "#afemo";
-                    });
+                    
+                    videoend('video1');
+                    videoend('video2');
+                    videoend('video3');
+                    videoend('video4');
+                    
+                    
                 </script>
 
             </div><!--videoPlayer-->
