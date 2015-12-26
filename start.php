@@ -21,8 +21,12 @@
             <p>※音量に注意してください</p>
             
             <div class="videoPlayer">
+                <h2>説明あり</h2>
                 <video id="video1" src="sounds/movie/5minno.mp4" poster="images/5min_info.jpg" width="100%" controls></video>
                 <video id="video2" src="sounds/movie/10mmmm.mp4" poster="images/10min_info.jpg" width="100%" controls></video>
+                <h2>説明なし（慣れてきたら）</h2>
+                <video id="video3" src="sounds/movie/c-2.mp4" poster="images/5min_noinfo.jpg" width="100%" controls></video>
+                <video id="video4" src="sounds/movie/c-10-2.mp4" poster="images/10min_noinfo.jpg" width="100%" controls></video>
                 
                 <script>
                     function videoend(videoId){

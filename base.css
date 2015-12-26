@@ -1,4 +1,10 @@
 @charset "utf-8";
+
+/* フォントファイル（.ttf）を読み込む */
+@font-face {
+  font-family: 'ほのか丸ゴシック';
+  src: url('fonts/font_1_honokamarugo_1.1.ttf') format('truetype');
+}
 /*=================================
 全体的なスタイル
 ==================================*/
@@ -16,6 +22,7 @@
     //background-size: cover;
     
     font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
+    //font-family: "ほのか丸ゴシック";
     //font-weight: 600;
     
     position: absolute;
@@ -149,6 +156,7 @@ index
 }
 
 #login_btn {
+    background-color: #009dff;
     width: 130px;
     display: block;
     position: relative;
@@ -160,6 +168,10 @@ index
     
     border: solid 2px;
     border-radius: 50px;
+}
+
+#login_btn:hover {
+    background-color: #4be3ff;
 }
 
 #login_btn a {

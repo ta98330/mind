@@ -50,23 +50,34 @@
             
             <h2>動画テスト</h2>
             <div class="videoPlayer">
-                <video id="video" src="sounds/n/test5minasdkou.mp4" width="100%" controls></video>
+                <video id="video1" src="sounds/movie/5minno.mp4" poster="sounds/movie/5minb.png" width="100%" controls></video>
+                <video id="video2" src="sounds/movie/10mmmm.mp4" poster="images/10min_info.jpg" width="100%" controls></video>
+                <video id="video3" src="sounds/movie/c-2.mp4" poster="images/5min_noinfo.jpg" width="100%" controls></video>
+                <video id="video4" src="sounds/movie/c-10-2.mp4" poster="images/10min_noinfo.jpg" width="100%" controls></video>
                 
                 
                 
                 <script>
-                    /*
-                    var video = document.querySelector('video');
-                    /*
-                    video.onended = function(){
-                        alert('最後まで再生されました');
+                    function videoend(videoId){
+                        var video = document.getElementById(videoId)
+                        /*
+                        video.onended = function(){
+                            alert('最後まで再生されました');
+                        }
+                        */
+                        video.addEventListener('ended', function(){
+                            console.log('addEventListenerによるイベント発火');
+                            //location.href = "#afemo";
+                        });
+                        
                     }
                     
-                    video.addEventListener('ended', function(){
-                        console.log('addEventListenerによるイベント発火');
-                        //location.href = "#afemo";
-                    });
-                    */
+                    videoend('video1');
+                    videoend('video2');
+                    videoend('video3');
+                    videoend('video4');
+                    
+                    
                 </script>
 
             </div><!--videoPlayer-->
