@@ -3,9 +3,9 @@ session_start();
 
 
     if(empty($_POST['administrator'])){
-        require "header.php";//ヘッダー読み込み
+        require "admin_header.php";//ヘッダー読み込み
         echo "<section id='passage' class='container'>";
-        echo "<p class='alert alert-danger' role='alert'>ログインに失敗しました．<br />UserNameを入力して下さい．<br /><a href='index.php'>戻る</a></p>";
+        echo "<p class='alert'>ログインに失敗しました．<br />UserNameを入力して下さい．<br /><a href='mf_adlogin.php'>戻る</a></p>";
         echo "<section>";
         require "footer.php"; //フッター読み込み
     }
@@ -37,7 +37,7 @@ session_start();
         
         
         
-        
+        /*
         if(isset($_POST["memory"]) && $_POST["memory"]==="true"){//次回からは自動的にログイン
             $timestamp = time();
             $today = date("Y-m-d");
@@ -55,7 +55,7 @@ session_start();
                 //クッキー失敗
             }
         }
-        
+        */
         
         
         
@@ -63,9 +63,9 @@ session_start();
     }
     else{
         session_destroy();//セッション破棄
-        require "header.php";//ヘッダー読み込み
+        require "admin_header.php";//ヘッダー読み込み
         echo "<section id='passage' class='container'>";
-        echo "<p class='alert alert-danger' role='alert'>ログインに失敗しました．<br />UserNameとパスワードを確認して下さい．<br /><a href='index.php'>戻る</a></p>";
+        echo "<p class='alert'>ログインに失敗しました．<br />UserNameとパスワードを確認して下さい．<br /><a href='mf_adlogin.php'>戻る</a></p>";
         
         echo "<section>";
         require "footer.php"; //フッター読み込み

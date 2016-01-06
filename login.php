@@ -4,10 +4,10 @@ session_start();
 
     if(empty($_POST['username'])){
         require "header.php";//ヘッダー読み込み
-        echo "<section id='passage' class='container'>";
-        echo "<p class='alert alert-danger' role='alert'>ログインに失敗しました．<br />UserNameを入力して下さい．<br /><a href='index.php'>戻る</a></p>";
-        echo "<section>";
-        require "footer.php"; //フッター読み込み
+        $reposi = "index.php";//戻り先
+        $mestitle = "ログインに失敗しました";//エラータイトル
+        $mescontent = "UserNameを入力して下さい．";//エラーメッセージ
+        require "warning.php"; //エラーページ読み込み
     }
     else{
 
@@ -56,10 +56,10 @@ session_start();
     else{
         session_destroy();//セッション破棄
         require "header.php";//ヘッダー読み込み
-        echo "<section id='passage' class='container'>";
-        echo "<p class='alert alert-danger' role='alert'>ログインに失敗しました．<br />UserNameとパスワードを確認して下さい．<br /><a href='index.php'>戻る</a></p>";
+        $reposi = "index.php";
+        $mestitle = "ログインに失敗しました";
+        $mescontent = "UserNameとパスワードを確認して下さい．";
+        require "warning.php"; //エラーページ読み込み
         
-        echo "<section>";
-        require "footer.php"; //フッター読み込み
     }
     }

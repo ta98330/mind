@@ -109,9 +109,51 @@ h2 {
 }
 
 
+/*=================================
+エラーページ
+==================================*/
+#warning {
+    background-color: #ffbebe;
+}
+
+#warning .ui-content{
+    color: #ff00a7;
+    text-align: center;
+}
+
+#warning h2 {
+    position: relative;
+    //background-color: black;
+    margin-bottom: 20px;
+    
+    //left: -20px;
+}
+
+#warning h2 i {
+    color: yellow;
+    position: relative;
+    font-size: 150%;
+    width: 40px;
+    text-align: center;
+    top: 5px;
+}
 
 
+#warning .header{
+    background-color: #ff3636;
+}
 
+#warning #warnmes {
+    display: inline-block;
+    //background-color: #ffffff;
+    //margin: 10px;
+    //padding: 20px;
+}
+
+#warning #warnmes a{
+    display: block;
+    margin: 20px;
+}
 
 
 
@@ -178,7 +220,7 @@ index
     color: aliceblue;
     font-size: 150%;
 }
-
+/*
 #adminlogin_btn {
     margin: 10px;
     position: absolute;
@@ -186,7 +228,7 @@ index
     
     
 }
-
+*/
 
 #login {
     padding: 5px 10px;

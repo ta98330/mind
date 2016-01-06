@@ -37,17 +37,14 @@
             <h2>パスワード変更</h2>
             <form class="form" role="form" method="post" name="pass_insert" action="pass_update.php" accept-charset="UTF-8" id="login-nav" data-ajax="false">
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputPassword1">現在のパスワード</label>
-                    <input type="password" class="form-control" name="pass" placeholder="現在のパスワード" required>
-                    <label class="sr-only" for="exampleInputPassword2">新しいパスワード</label>
-                    <input type="password" class="form-control" name="newPass" placeholder="新しいパスワード" required>
+                    <label for="nowpassword">現在のパスワード</label>
+                    <input type="password" id="nowpassword" class="form-control" name="pass" placeholder="現在のパスワード" required>
+                    <label for="newpassword">新しいパスワード</label>
+                    <input type="password" id="newpassword" class="form-control" name="newPass" placeholder="新しいパスワード" required>
                     <button type="submit" class="btn btn-primary btn-block">変更</button>
                 </div>
             </form>
 
-            <h2>管理者メールアドレス</h2>
-            <img class="img-responsive" src="images/mail.gif" alt="">
-            
             <h2>動画テスト</h2>
             <div class="videoPlayer">
                 <video id="video1" src="sounds/movie/5minno.mp4" poster="sounds/movie/5minb.png" width="100%" controls></video>

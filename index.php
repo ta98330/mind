@@ -304,10 +304,7 @@
                     
                     <p id="app_info"><a href="#pop2" data-rel="popup" class="fa fa-info-circle"></a></p>
                 </div>
-                        
-                <div id="adminlogin_btn">
-                    <p><a href="mf_adlogin.php" target="_blank"><i class="fa fa-desktop"></i>管理者用ページ</a></p>
-                </div>
+                
                 
                 
             </div><!--main-->
