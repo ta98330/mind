@@ -3,15 +3,15 @@
     "short_name": "Mindfulness",
     "description": "Mindfulness瞑想実験のために開発したアプリです．",
     "icons": [
-    {
-      "src": "mindou.png",
-      "sizes": "127x127",
-      "type": "image/png"
-    }
+        {
+          "src": "mindou.png",
+          "sizes": "127x127",
+          "type": "image/png"
+        }
     ],
-    "start_url": "index.html",
+    "start_url": "https://buturi.heteml.jp/student/2015/misawa/test/mind/",
     "display": "standalone",
-    "orientation": [ "portrait-primary" ],
+    "orientation": "portrait",
     "developer": {
         "name": "近畿大学工学部 情報システム工学科 情報物理研究室 2015年度",
         "url": "http://buturi.heteml.jp/student/2015/"
