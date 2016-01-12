@@ -13,25 +13,15 @@
     text-shadow: none;
 }
 
-
 .ui-page {
-    //padding-top: 44px;
-    
     background-color: #91d2ef;
-    //background: url(images/bubble_mt.jpg);
-    //background-size: cover;
-    
     font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
-    //font-family: "ほのか丸ゴシック";
-    //font-weight: 600;
     
     position: absolute;
     top: 0;
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    //overflow: hidden;
-
 }
 
 a {
@@ -57,7 +47,6 @@ h2 {
     background-color: #22bfe5;
     color: #e3e3e3;
     border: none;
-    
 }
 
 .header h1 {
@@ -70,16 +59,12 @@ h2 {
 
 .min {
     font-size: 40%;
-    
 }
-
-
 
 .home_btn {
     position: absolute;
     text-decoration: none;
     text-align: center;
-    //background-color: #250bf2;
     top: 0;
     left: 0;
     display: inline-block;
@@ -89,8 +74,6 @@ h2 {
     padding: 0;
     margin: 0;
     border: none;
-    
-    
 }
 
 .header a:visited, .header a:link {
@@ -100,12 +83,6 @@ h2 {
 
 .header a:hover {
     color: #0b90f2;
-}
-
-.ui-content {
-    //padding: 0;
-    //background-color: #91d2ef;
-    
 }
 
 
@@ -125,8 +102,6 @@ h2 {
     position: relative;
     //background-color: black;
     margin-bottom: 20px;
-    
-    //left: -20px;
 }
 
 #warning h2 i {
@@ -145,9 +120,6 @@ h2 {
 
 #warning #warnmes {
     display: inline-block;
-    //background-color: #ffffff;
-    //margin: 10px;
-    //padding: 20px;
 }
 
 #warning #warnmes a{
@@ -155,22 +127,12 @@ h2 {
     margin: 20px;
 }
 
-
-
-
-
-
-
 /*=================================
 index
 ==================================*/
 #index {
     background-color: #22bfe5;
-    
-    //padding-top: 25%;
 }
-
-
 
 #svg {
     position: relative;
@@ -179,13 +141,8 @@ index
     display: block;
     width: 40vw;
     height: 40vw;
-    
     max-width: 400px;
     max-height: 400px;
-    
-    //top: 10vh;
-    //background-color: aliceblue;
-    
 }
 
 #svg svg {
@@ -194,22 +151,21 @@ index
     height: 100%;
     
     z-index: 0;
-    //opacity: 0.2
 }
 
 #login_btn {
     background-color: #009dff;
-    width: 130px;
+    width: 140px;
     display: block;
     position: relative;
     margin: 0 auto;
     text-align: center;
-    padding: 4px 6px;
     
     color: aliceblue;
     
     border: solid 2px;
     border-radius: 50px;
+    box-sizing: border-box;
 }
 
 #login_btn:hover {
@@ -217,18 +173,12 @@ index
 }
 
 #login_btn a {
+    display: block;
     color: aliceblue;
     font-size: 150%;
+    border-radius: 50px;
+    padding: 4px;
 }
-/*
-#adminlogin_btn {
-    margin: 10px;
-    position: absolute;
-    bottom: 0;
-    
-    
-}
-*/
 
 #login {
     padding: 5px 10px;
@@ -237,22 +187,6 @@ index
 
 #login h3 {
     text-align: center;
-}
-
-#login input {
-    
-}
-
-
-
-
-
-
-
-
-#index_menu {
-    
-    
 }
 
 #index_menu p {
@@ -268,19 +202,7 @@ index
 
 #app_info {
     right: 15%;
-    
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*=================================
 top
@@ -294,24 +216,16 @@ top
 }
 
 #topinfo {
-    //position: relative;
-    //width: 100%;
-    //height: 30vh;
-    
     margin: 10px 5px;
     padding: 5px;
 }
 
 #topinfo p {
     position: relative;
-    
-    //height: 4em;
-    
     font-size: 110%;
     text-align: center;
     margin: 0;
     padding: 10px 20px;
-    //border: solid 2px;
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.81);
 }
@@ -321,14 +235,12 @@ top
     right: 25vw;
     width: 15vw;
     height: 8vh;
-    
     margin-top: 5px;
 }
 
 #image p {
     margin: 0;
     padding: 0;
-    //border: solid 2px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.81);
 }
@@ -350,23 +262,12 @@ top
     padding: 0;
 }
 
-.imppopup{
-    
-    
-}
-
 .char {
     position: relative;
     top: 8vh;
     right: -70%;
     width: 25vw;
     height: 25vw;
-    
-    
-    
-    
-    
-    
 }
 
 .char img {
@@ -417,12 +318,9 @@ top
     display: inline-block;
     width: 60px;
     height: 100%;
-    //line-height: 44px;
     padding-top: 4px;
     margin: 0;
     border: none;
-    
-    
 }
 
 .config_btn {
@@ -430,17 +328,14 @@ top
     box-sizing: border-box;
     text-decoration: none;
     text-align: center;
-    //background-color: #0b90f2;
     top: 0;
     left: 0;
     display: inline-block;
     width: 60px;
     height: 100%;
     line-height: 44px;
-    //padding-top: 4px;
     margin: 0;
     border: none;
-    
     font-size: 140%;
 }
 
@@ -454,9 +349,7 @@ top
     bottom: 0;
     width: 100vw;
     height: 35vh;
-    
     text-align: center;
-    
 }
 
 #strmenus .strbtn {
@@ -466,31 +359,11 @@ top
     height: 10vh;
     line-height: 10vh;
     
-    
-    
-    //margin: 0 auto;
     margin-left: 10%;
     margin-top: 4%;
     padding: 0;
-    //width: 45vw;
-    //height: 45vw;
-    //line-height: 45vw;
     
     box-sizing: border-box;
-    
-    //background-color: rgb(255, 128, 0);
-    //background-image: url(images/mind5.png);
-    //background-repeat: no-repeat;
-    //background-size: cover;
-    
-    //color: #ff3100;
-    //font-size: 180%;
-    //font-weight: 900;
-    //text-shadow: 1px 1px 3px #80ff00;
-    
-    //border: solid 5px #0080ff;
-    
-    //border-radius: 100%;
 }
 
 #strmenus .strbtn img {
@@ -532,7 +405,6 @@ top
     right: 0;
 }
 
-
 /*=================================
 評定
 ==================================*/
@@ -540,9 +412,6 @@ top
     text-align: center;
     margin: 0;
 }
-
-
-
 
 /*------スライダー------*/
 .ui-slider {
@@ -567,10 +436,7 @@ top
 }
 
 .ui-slider-popup {
-    //position: absolute;
-    //padding: 0;
-    //margin: 0;
-    //border-radius: 50%;
+    
 }
 
 /*=================================
@@ -599,12 +465,10 @@ top
 
 #start h2:nth-of-type(2) {
     margin-top: 20px;
-    
     border: solid 2px rgb(0, 162, 68);
     color: aliceblue;
     background-color: #ff8900;
 }
-
 
 #start h2 img{
     position: relative;
@@ -634,19 +498,15 @@ top
 /*=================================
 出来事
 ==================================*/
-
-
 #event .ui-content{
     padding: 0;
     margin: 0;
-    
 }
 
 #event form {
     position: relative;
     padding: 0;
 }
-
 
 #event_lec textarea {
     position: relative;
@@ -665,17 +525,10 @@ top
 #lec_btn {
     position: absolute;
     display: block;
-    
     width: 35px;
     height: 35px;
-    
-    
-    
     right: 5px;
     bottom: 8px;
-    //margin: 0 2% 2% 0;
-    //padding: 2%;
-    
     border-radius: 50%;
     
     background-color: #3b6ee2;
@@ -701,6 +554,7 @@ top
 #event input[type=date]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 /* 無入力時の 年/月/日 を / / にする */
 #event input[type=date]::-webkit-datetime-edit-year-field:not([aria-valuenow]),
 #event input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
@@ -708,23 +562,23 @@ top
   display: none;
 }
 
-
-
-
 /* /の色を変える */
 #event input[type=date]::-webkit-datetime-edit-text {
     //color: #fff;
     display: none;
 }
+
 /* clearボタンの非表示 */
 #event input[type=date]::-webkit-clear-button {
   -webkit-appearance: none;
 }
+
 /* カレンダーのインジケータ（▼）を非表示 */
 #event input[type=date]::-webkit-calendar-picker-indicator {
   //color: transparent;
   position: relative;
 }
+
 /* fontAwesomeのカレンダーアイコンをインジケータにする */
 #event input[type=date]::-webkit-calendar-picker-indicator:before {
   color: #666;
@@ -736,35 +590,17 @@ top
   //top: -5px;  /* ここも */
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*期間検索*/
 #event_range {
     position: relative;
     display: block;
     width: 96%;
-    //height: 100px;
-    
     margin: 2%;
     padding: 0;
-    
-    //background-color: red;
     box-sizing: border-box;
-    
-    
 }
 
 #event_range form {
-    //height: 44px;
     
 }
 
@@ -779,40 +615,28 @@ top
     position: absolute;
     bottom: 0;
     left: 0;
-    
-    //background-color: #ade6ad;
 }
 
 #event_range span:nth-of-type(2) {
     left: 24px;
-    //top: 50px;
 }
 
 #event_range span span{
     position: absolute;
     margin: 0;
     padding: 0;
-    
-    
-    
     bottom: 0;
-    
     width: 100%;
     height: 44px;
     padding-top: 12px;
     padding-left: 33px;
     
     box-sizing: border-box;
-    
-    //background-color: lightblue;
 }
 
 #endday + span {
     left: 0;
-    
-    //background-color: pink;
 }
-
 
 #event_range input {
     position: absolute;
@@ -822,19 +646,10 @@ top
     height: 44px;
     margin: 0;
     padding: 0;
-    
-    
     top: 0px;
-    
-    
-    
-    //display: inline-block;
-    
     border: none;
     
     line-height: 100px;
-    
-    //box-sizing: border-box;
 }
 
 #event #strday {
@@ -844,8 +659,6 @@ top
 #event #endday {
     left: 0px;
 }
-
-
 
 #event_range p {
     position: absolute;
@@ -860,40 +673,17 @@ top
     top: 0;
 }
 
-
-
 #event_range button {
     position: absolute;
     display: inline-block;
     width: 50px;
     height: 44px;
-    
     margin: 0;
     padding: 0;
     border-radius: 4px;
-    
     left: 260px;
-    
     box-sizing: border-box;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .eventlist h4{
     font-size: 110%;
@@ -927,31 +717,24 @@ li.pm{
     border-bottom-color: tomato;
 }
 
-
-
 #impression{
     font-size: 16px;
-    
 }
 
 #impression label:hover{
     color: orangered;
-    
 }
-
 
 /*=================================
 グラフ
 ==================================*/
 #graph {
     padding: 0;
-    
 }
 
 #graphcontain {
     padding: 0;
     margin: 2%;
-    
 }
 
 #g_period{
@@ -959,7 +742,6 @@ li.pm{
     display: inline-block;
     font-size: 0;
     margin-bottom: 5px;
-    
 }
 
 #week_btn, #month_btn {
@@ -971,8 +753,6 @@ li.pm{
     border: none;
     margin: 0;
     padding: 10px 20px;
-    
-    //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
 }
 
 
@@ -988,69 +768,40 @@ li.pm{
     background-color: rgb(51, 136, 204);
     color: #f7f7f7;
     opacity: 1;
-    //box-shadow: none;
 }
 
 
 
 #graph button {
-    //background-color: #14ef68;
-    //color: #0b1014;
     
-    //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
 }
 
 #graph .period_data {
     position: absolute;
-    //right: 17px;
     display: inline-block;
-    //padding: 5px;
-    //font-size: 120%;
     font-weight: 500;
-    //min-width: 200px;
     height: 40px;
     line-height: 40px;
     margin-left: 5px;
-    
 }
 
 #graphbtn {
     width: 100%;
 }
 
-
 #graphbtn a{
-    //background-color: white;
     padding: 13px 1.2%;
     margin: 0 0 5px 0;
-    
     box-shadow: none;
-    //border-radius: 5px;
 }
-
-
-
 
 #nonedata {
     display: block;
     position: absolute;
     top: 300px;
-    
     width: 98%;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 #record_event {
     height: 30vh;
@@ -1058,38 +809,23 @@ li.pm{
     background-color: azure;
 }
 
-
-
-
-
-
-
-/*
-#graph_container, #graph_container div, #graph_container div svg, {
-    width: 100%;
-}
-*/
-
 #graph_container {
     position: relative;
     display: block;
     padding: 0;
     margin: 0;
     width: 100%;
-    
     left: 0;
-    
     box-sizing: border-box;
 }
 
 #graph_container div {
-    //width: 100%;
+    
 }
 
 #graph_container div svg{
     width: 100%;
 }
-
 
 /*=================================
 設定
@@ -1130,26 +866,7 @@ li.pm{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------PCのスタイル-----------------*/
+/*--------------PC(画面サイズが768px以上)のスタイル-----------------*/
 @media all and (min-width: 768px) {
         
     /*=================================
@@ -1168,22 +885,6 @@ li.pm{
 
     }
 
-    #svg svg {
-        
-    }
-
-    #login_btn {
-        
-    }
-
-
-
-
-
-    #index_menu {
-
-    }
-
     #index_menu p {
         display: block;
         position: absolute;
@@ -1199,12 +900,6 @@ li.pm{
         right: 35%;
 
     }
-    
-    
-    
-
-
-
 
     /*=================================
     top
@@ -1266,11 +961,8 @@ li.pm{
         right: -70%;
         width: 25vw;
         height: 25vw;
-        
         max-width: 300px;
         max-height: 300px;
-
-
     }
 
     .char img {
@@ -1278,20 +970,16 @@ li.pm{
         height: 100%;
     }
 
-
     /*----------ボタン-------------*/
     #strmenus {
         position: absolute;
         height: 400px;
-        
         padding: 0;
-        
     }
 
     #strmenus .strbtn{
         display: inline-block;
         position: absolute;
-
         width: 28%;
         height: 300px;
         line-height: 300px;
@@ -1299,8 +987,6 @@ li.pm{
         margin: 0;
         
         left: 20%;
-
-
     }
 
     #subbtns {
@@ -1309,21 +995,16 @@ li.pm{
         position:absolute;
         margin: 0;
         padding: 0;
-        
         top: 0;
-        
-        
     }
 
     #strmenus .subbtn{
         position: relative;
         display: block;
-        
         width: 100%;
         height: 145px;
         
         line-height: 150px;
-        
     }
 
     #sub1 {
@@ -1333,8 +1014,6 @@ li.pm{
     #sub2 {
         top: 10px;
     }
-
-
 
     /*=================================
     評定
@@ -1348,9 +1027,6 @@ li.pm{
         text-align: center;
         margin: 0;
     }
-
-    
-
 
     /*------スライダー------*/
     .ui-slider {
@@ -1398,7 +1074,7 @@ li.pm{
     }
 
     #player_btns {
-        //font-size: 200%;
+        
     }
 
     #player_btns a {
@@ -1438,9 +1114,7 @@ li.pm{
     }
 
     #barBd {
-        //width: 500px;
         height: 20px;
-        //border: solid 1px;
         background-color: #a7bde5;
         border-radius: 50px;
         overflow: hidden;
@@ -1450,9 +1124,6 @@ li.pm{
         width: 0;
         height: 100%;
         background: blue;
-
-        //border-radius: 50px 0 0 50px;
-
     }
 
     .videoPlayer {
@@ -1460,21 +1131,16 @@ li.pm{
     }
 
     .videoPlayer video {
-        //width: 100%;
     }
 
 
     /*=================================
     出来事
     ==================================*/
-
-
     #event .ui-content{
         max-width: 800px;
-        
         padding: 0;
         margin: 0 auto;
-
     }
 
     #event form {
@@ -1486,12 +1152,10 @@ li.pm{
     #event_lec textarea {
         position: relative;
         top: 0;
-
         margin: 0;
         padding: 5px;
         width: 100%;
         height: 5em;
-
         -webkit-appearance: none;
         border-radius: 0;
 
@@ -1500,19 +1164,11 @@ li.pm{
     #lec_btn {
         position: absolute;
         display: block;
-
         width: 35px;
         height: 35px;
-
-
-
         right: 5px;
         bottom: 8px;
-        //margin: 0 2% 2% 0;
-        //padding: 2%;
-
         border-radius: 50%;
-
         background-color: #3b6ee2;
         color: aliceblue;
         border: none;
@@ -1522,85 +1178,25 @@ li.pm{
         position: absolute;
         width: 35px;
         height: 35px;
-
         top: 0;
         left: 0;
         line-height: 35px;
     }
-
-
-
-
-
-    /* スピンボタン（上下ボタン）を非表示 */
-    #event input[type=date]::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-    /* 無入力時の 年/月/日 を / / にする */
-    #event input[type=date]::-webkit-datetime-edit-year-field:not([aria-valuenow]),
-    #event input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
-    #event input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
-      display: none;
-    }
-
-
-
-
-    /* /の色を変える */
-    #event input[type=date]::-webkit-datetime-edit-text {
-        //color: #fff;
-        display: none;
-    }
-    /* clearボタンの非表示 */
-    #event input[type=date]::-webkit-clear-button {
-      -webkit-appearance: none;
-    }
-    /* カレンダーのインジケータ（▼）を非表示 */
-    #event input[type=date]::-webkit-calendar-picker-indicator {
-      //color: transparent;
-      position: relative;
-    }
-    /* fontAwesomeのカレンダーアイコンをインジケータにする */
-    #event input[type=date]::-webkit-calendar-picker-indicator:before {
-      color: #666;
-      font-family: FontAwesome;
-      /*content: "\f073";*/ /* fa-calendar */
-      content: "\f133"; /* fa-calendar-o */
-      position: relative;
-      //left: -5px; /* ここら辺はいい感じの塩梅で */
-      //top: -5px;  /* ここも */
-    }
-
-
-
-
-
-
-
-
-
-
-
 
     /*期間検索*/
     #event_range {
         position: relative;
         display: block;
         width: 96%;
-        //height: 100px;
-
         margin: 2%;
         padding: 0;
-
-        //background-color: red;
         box-sizing: border-box;
 
 
     }
 
     #event_range form {
-        //height: 44px;
-
+        
     }
 
     #event_range>form>span {
@@ -1615,21 +1211,16 @@ li.pm{
         bottom: 0;
         left: 0;
 
-        //background-color: #ade6ad;
     }
 
     #event_range span:nth-of-type(2) {
         left: 24px;
-        //top: 50px;
     }
 
     #event_range span span{
         position: absolute;
         margin: 0;
         padding: 0;
-
-
-
         bottom: 0;
 
         width: 100%;
@@ -1638,38 +1229,23 @@ li.pm{
         padding-left: 33px;
 
         box-sizing: border-box;
-
-        //background-color: lightblue;
     }
 
     #endday + span {
         left: 0;
-
-        //background-color: pink;
     }
-
 
     #event_range input {
         position: absolute;
         background-color: #ffffff;
-
         width: 110px;
         height: 44px;
         margin: 0;
         padding: 0;
-
-
         top: 0px;
-
-
-
-        //display: inline-block;
-
         border: none;
 
         line-height: 100px;
-
-        //box-sizing: border-box;
     }
 
     #event #strday {
@@ -1680,55 +1256,28 @@ li.pm{
         left: 0px;
     }
 
-
-
     #event_range p {
         position: absolute;
         display: inline-block;
         margin: 0;
         padding: 0;
-
         height: 44px;
         width: 20px;
         line-height: 44px;
-
         top: 0;
     }
-
-
 
     #event_range button {
         position: absolute;
         display: inline-block;
         width: 50px;
         height: 44px;
-
         margin: 0;
         padding: 0;
         border-radius: 4px;
-
         left: 260px;
-
         box-sizing: border-box;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     .eventlist h4{
         font-size: 110%;
@@ -1766,14 +1315,11 @@ li.pm{
 
     #impression{
         font-size: 16px;
-
     }
 
     #impression label:hover{
         color: orangered;
-
     }
-
 
     /*=================================
     グラフ
@@ -1799,17 +1345,12 @@ li.pm{
 
     #week_btn, #month_btn {
         background-color: #e6edf4;
-        //color: #ffffff;
-
         font-size: 16px;
         font-weight: 500;
         border: none;
         margin: 0;
         padding: 10px 20px;
-
-        //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
     }
-
 
     #week_btn {
         border-radius: 5px 0 0 5px;
@@ -1823,30 +1364,19 @@ li.pm{
         background-color: rgb(51, 136, 204);
         color: #f7f7f7;
         opacity: 1;
-        //box-shadow: none;
     }
 
-
-
     #graph button {
-        //background-color: #14ef68;
-        //color: #0b1014;
-
-        //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4) inset;
+        
     }
 
     #graph .period_data {
         position: absolute;
-        //right: 17px;
         display: inline-block;
-        //padding: 5px;
-        //font-size: 120%;
         font-weight: 500;
-        //min-width: 200px;
         height: 40px;
         line-height: 40px;
         margin-left: 5px;
-
     }
 
     #graphbtn {
@@ -1855,37 +1385,19 @@ li.pm{
 
 
     #graphbtn a{
-        //background-color: white;
         padding: 13px 1.2%;
         margin: 0 0 5px 0;
 
         box-shadow: none;
-        //border-radius: 5px;
     }
-
-
-
 
     #nonedata {
         display: block;
         position: absolute;
         top: 300px;
-
         width: 98%;
         text-align: center;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     #record_event {
         height: 30vh;
@@ -1893,43 +1405,23 @@ li.pm{
         background-color: azure;
     }
 
-
-
-
-
-
-
-    /*
-    #graph_container, #graph_container div, #graph_container div svg, {
-        width: 100%;
-    }
-    */
-
     #graph_container {
         position: relative;
         display: block;
         padding: 0;
         margin: 0;
         width: 100%;
-
         left: 0;
-
         box-sizing: border-box;
     }
 
     #graph_container div {
-        //width: 100%;
+        
     }
 
     #graph_container div svg{
         width: 100%;
     }
-    
-    
-    
-    
-    
-    
     
     /*=================================
     設定
@@ -1939,31 +1431,4 @@ li.pm{
         margin: 0 auto;
     }
     
-    
-    
 }
-
-/*
-@media screen and (max-aspect-ratio: 768/500) {
-    .ui-page {
-        background-color: red;
-    }
-    
-    
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

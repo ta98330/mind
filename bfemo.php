@@ -12,8 +12,6 @@
 ?>
     
     <body>
-        
-        
         <div id="bfemo" data-role="page" data-url="./bfemo.php">
             <div data-role="header" data-theme="z" class="data-role-none header">
             <a href="top.php" class="home_btn"><i class="fa fa-chevron-left"></i></a>
@@ -37,11 +35,10 @@
                             <input id="stress" name="stress" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
                         </div>
                         
-                        
                         <input type="submit" value="始める" data-mini="true">
                     </div>
                 </form>
             </div>
         </div>
-</body>
+    </body>
 </html>

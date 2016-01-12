@@ -22,8 +22,6 @@
         </div>
 
         <div role="main" id="graphcontain" class="ui-content">
-            
-            
             <?php
             if(isset($_POST['period']) && $_POST['period'] == 'month'){
                 $disweek = '';
@@ -34,16 +32,12 @@
                 $dismonth = '';
             }
             
-            
             $today = date("Y-m-d");
             
             $endday = date("n/j");
             
             $strweek = date("n/j",strtotime("$today -7 days"));
             $strmonth = date("n/j",strtotime("$today -1 month"));
-            
-            //echo $strweek,"～",$endday;
-            //echo $strmonth,"～",$endday;
             
             $nowweek = date("w");
             
@@ -70,7 +64,6 @@
                     $weekja = "(土)";
                     break;
             }
-
             ?>
             
             <form action="" method="post" data-ajax="false" id="g_period" class="data-role-none">
@@ -78,9 +71,7 @@
                 <button type="submit" name="period" value="month" id="month_btn" <?=$dismonth?>>月</button>
             </form>
             
-            
             <?php
-                //月
                 if(isset($_POST['period']) && $_POST['period'] == 'month'){
                     echo "<p class='period_data'>",$strmonth,$weekja," ～ ",$endday,$weekja,"</p>";
                 }
@@ -99,14 +90,9 @@
                 </ul>
             </div>
             
-            
-            
             <div id='graph_container'></div>
             
             <?php
-            
-            
-
             $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
 
             //期間
@@ -118,21 +104,16 @@
             
             if(isset($_POST['period']) && $_POST['period'] == 'month'){
                 $period = $month;
-                
                 $disweek = '';
                 $dismonth = 'disabled';
-                
             }
             
-            
-
             //瞑想前
             $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'bf' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
 
             while ($row = $st->fetch()) {
 
                 //ラベル
-                //$rep = htmlspecialchars($row['rep']);
                 $datetime = htmlspecialchars($row['datetime']);
 
                 $date = new DateTime($datetime);
@@ -140,23 +121,11 @@
                 
                 $val2 = $val1 = $date->format('j日');
                 
-                
-                
-                //感情
-                /*
-                $ang = htmlspecialchars($row['ang']);
-                $sad = htmlspecialchars($row['sad']);
-                $anxiety = htmlspecialchars($row['anxiety']);
-                $joy = htmlspecialchars($row['joy']);
-                $stress = htmlspecialchars($row['stress']);
-                */
-                
                 $ang = $row['ang'];
                 $sad = $row['sad'];
                 $anxiety = $row['anxiety'];
                 $joy = $row['joy'];
                 $stress = $row['stress'];
-
 
                 $label_data[] = "$val2";
 
@@ -170,14 +139,10 @@
                 
             if(!isset($val1)){
                 echo "<div id='nonedata'><p>期間中に記録がありません</p></div>";
-                
-                
             }
             
             //ラベル
             @$jsonLabel=json_encode($label_data);
-            //@$jsonLabel_date=json_encode($label_realdata);
-
 
             @$json_bf_ang=json_encode($bf_ang_data);
             @$json_bf_sad=json_encode($bf_sad_data);
@@ -197,7 +162,6 @@
                 $joy = htmlspecialchars($row['joy']);
                 $stress = htmlspecialchars($row['stress']);
 
-
                 $af_ang_data[] = intval($ang);
                 $af_sad_data[] = intval($sad);
                 $af_anxiety_data[] = intval($anxiety);
@@ -212,15 +176,10 @@
             @$json_af_stress=json_encode($af_stress_data);
             
             ?>
-            
-            
             <script>
-                
-                
                 //ラベル
                 var label=JSON.parse('<?php echo  $jsonLabel; ?>');
                 
-
                 //瞑想前
                 var bf_ang=JSON.parse('<?php echo  $json_bf_ang; ?>');
                 var bf_sad=JSON.parse('<?php echo  $json_bf_sad; ?>');
@@ -234,7 +193,6 @@
                 var af_anxiety=JSON.parse('<?php echo  $json_af_anxiety; ?>');
                 var af_joy=JSON.parse('<?php echo  $json_af_joy; ?>');
                 var af_stress=JSON.parse('<?php echo  $json_af_stress; ?>');
-                
                 
                 //新グラフ
                 var chart;
@@ -256,12 +214,9 @@
                 
                 var title = periodtext+"怒りのグラフ";
                 
-                
-                
                 console.log(label);
                 
                 function draw() {
-
                     // グラフオプションを指定
                     var options = {
                           // 出力先を指定
@@ -307,18 +262,10 @@
 
                 }
                 
-                
-                // ページがロードされた後に、グラフを出力する
-                //document.body.onload = draw();
-                
-                
                 $(document).on('pagecreate', '#graph', function(){
                     draw();
                     
                 });
-                
-                
-                
                 
                 $('#ang_btn').click(function(){
                     title = periodtext+"怒りのグラフ";
@@ -365,11 +312,7 @@
                     draw();
                 });
                 
-                
-                
-                
             </script>
-            
             
             <h3>期間中の出来事</h3>
             <ul id="record_event" class="eventlist">
@@ -398,15 +341,10 @@
             if(empty($content))
                 echo "<li>この期間中に登録された出来事はありません．<br /></li>";
             
-            
-            
             ?>
             </ul>
             
         </div><!--main-->
-            
-        
-    </div>
-
+    </div><!--page-->
     </body>
 </html>

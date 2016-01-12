@@ -1,7 +1,7 @@
 <?php
-    require "spheader.php";//ヘッダー読み込み
-        
-    if($_SESSION['mf_login'] == "ログインしていません．"){
+    require "spheader.php";
+    //未ログイン処理
+    if(!isset($_SESSION["mf_login"])){
         header('Location: index.php');
     }
     

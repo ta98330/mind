@@ -4,13 +4,9 @@
     if(isset($_SESSION["mf_ad_login"])){
         header('Location: admin.php');
     }
-    
     require "admin_header.php";//ヘッダー読み込み
 ?>
-
-    <body>
         <h1>Mindfulness研究管理ページ</h1>
-        
         <h2><i class="fa fa-sign-in"></i> 管理者ログイン</h2>
         <form method="post" action="ad_login.php" data-ajax="false">
             <input type="text" name="administrator" placeholder="UserName" required>

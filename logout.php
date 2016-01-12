@@ -30,7 +30,3 @@ if (ini_get("session.use_cookies")) {
 //セッションを破壊してリダイレクト
 session_destroy();
 header("Location:index.php");
-
-
-?>
-    

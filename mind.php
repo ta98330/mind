@@ -13,7 +13,6 @@
         
     }
 
-
 /*------------セリフ変化--------------*/
 //瞑想途中終了
 if(isset($_SESSION["mf_speak_flag"]) && $_SESSION["mf_speak_flag"] == "bfemo"){
@@ -83,11 +82,6 @@ else{
 */
 }
 
-
-
-
-
-
-    if(empty($recorded)){
-        echo "<br />今日の出来事を記録しましょう．";
-    }
+if(empty($recorded)){
+    echo "<br />今日の出来事を記録しましょう．";
+}

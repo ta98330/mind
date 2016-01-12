@@ -8,10 +8,8 @@
     require "header.php";//ヘッダー読み込み
 ?>
 <body>
-    
     <!--ページ領域-->
     <div id="start" data-role="page" data-url="./start.php">
-        
         <!--ヘッダー領域-->
         <div data-role="header" data-theme="z" class="data-role-none header">
             <h1>瞑想</h1>
@@ -22,11 +20,11 @@
             
             <div class="videoPlayer">
                 <h2><img src="images/biginer.png" alt="">初心者用</h2>
-                <video id="video1" src="sounds/movie/5minno.mp4" poster="images/5min_info.jpg" width="100%" controls></video>
-                <video id="video2" src="sounds/movie/10mmmm.mp4" poster="images/10min_info.jpg" width="100%" controls></video>
+                <video id="video1" src="movie/5-1.mp4" poster="images/5min_info3.jpg" width="100%" controls></video>
+                <video id="video2" src="movie/10-1.mp4" poster="images/10min_info3.jpg" width="100%" controls></video>
                 <h2>中級者用</h2>
-                <video id="video3" src="sounds/movie/c-2.mp4" poster="images/5min_noinfo.jpg" width="100%" controls></video>
-                <video id="video4" src="sounds/movie/c-10-2.mp4" poster="images/10min_noinfo.jpg" width="100%" controls></video>
+                <video id="video3" src="movie/5-2.mp4" poster="images/5min_noinfo3.jpg" width="100%" controls></video>
+                <video id="video4" src="movie/10-2.mp4" poster="images/10min_noinfo3.jpg" width="100%" controls></video>
                 
                 <script>
                     function videoend(videoId){
@@ -48,15 +46,13 @@
                     videoend('video3');
                     videoend('video4');
                     
-                    
                 </script>
 
             </div><!--videoPlayer-->
 
             <a href="#afemo" data-role="button">終わる</a>
-            
-        </div>
-    </div>
+        </div><!--main-->
+    </div><!--page-->
     
     <!--ボタン・クリックで表示されるページ-->
     <div id="afemo" data-role="page">
@@ -81,7 +77,7 @@
                 </div>
                 <input type="submit" value="終わる" data-mini="true">
             </form>
-        </div>
-    </div>
+        </div><!--main-->
+    </div><!--page-->
 </body>
 </html>

@@ -16,7 +16,6 @@
                 $id = htmlspecialchars($row['id']);
                 $name = htmlspecialchars($row['name']);
                 $pass = htmlspecialchars($row['password']);
-
             }
 
             $_SESSION['mf_userId'] = $id;
@@ -35,9 +34,7 @@
     <body>
         <!--ページ領域-->
         <div data-role="page" data-url="./index.php" id="index">
-            
             <div role="main" class="ui-content">
-                
                 <div id="svg">
                     <svg  style="position: absolute; left: 0px; top: 0px" width="500" height="500"viewBox="0 0 65 62.2">
                     <path fill="#180ee1">
@@ -268,15 +265,10 @@
 
                 </div><!--svg-->
                 
-                
-                
                 <div id="login_btn">
                     <p><a href="#login" data-rel="popup" data-transition="pop" class="fa fa-sign-in"> ログイン</a></p>
                 </div>
                 
-                        
-                
-            
                 <div id="login" data-role="popup" data-position-to="window" data-overlay-theme="b" data-shadow="false">
                     <h3><i class="fa fa-sign-in"></i> ログイン</h3>
                     <form method="post" action="login.php" data-ajax="false">
@@ -295,18 +287,14 @@
                 
                 <div data-role="popup" id="pop2" data-shadow="false" data-arrow="b">
                     <h2>アプリ説明</h2>
-                    <p>このWebアプリは実験用に近畿大学工学部 2015年度 情報物理研究室で制作しているWebアプリです</p>
+                    <p>このWebアプリは福山大学人間文化学部 人間科学研究科 心理臨床学専攻の研究室での実験用に<a href="http://buturi.heteml.jp/student/2015/" target="_blank">近畿大学工学部 2015年度 情報物理研究室</a>で制作したWebアプリです</p>
                 </div>
-                
                 
                 <div id="index_menu">
                     <p id="mind_info"><a href="#pop1" data-rel="popup">Mindfulnessとは</a></p>
                     
                     <p id="app_info"><a href="#pop2" data-rel="popup" class="fa fa-info-circle"></a></p>
                 </div>
-                
-                
-                
             </div><!--main-->
         </div><!--page-->
     </body>

@@ -1,7 +1,6 @@
 <?php
 require "spheader.php";
 
-
 if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
     
     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
@@ -15,7 +14,8 @@ if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
         echo "<section id='passage'>";
         echo "<div class='alert'>このユーザーネームはすでに使われています．<br />別の名前で作成してください．<br /><a href='admin.php'>戻る</a></div>";
         echo "</section>";
-        require "footer.php"; //フッター読み込み
+        echo "</body>";
+        echo "</html>";
     }
     
     if($duplicate != "duplicate"){
@@ -27,20 +27,14 @@ if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
         
         $st = $pdo->query("INSERT INTO mf_user(id, name, pass) VALUES($id,'{$_POST['username']}','{$_POST['pass']}')");//新規ユーザー情報の追加
         
-        
-        
         header('Location: admin.php');
-        
-        
     }
-    
-    
-    
 }
 else{
-    require "header.php";//ヘッダー読み込み
+    require "admin_header.php";//ヘッダー読み込み
     echo "<section id='passage'>";
-    echo "<p class='alert alert-danger' role='alert'>選択が足りません．<br /><a href='index.php'>戻る</a></p>";
+    echo "<p class='alert alert-danger' role='alert'>選択が足りません．<br /><a href='admin.php'>戻る</a></p>";
     echo "</section>";
-    require "footer.php"; //フッター読み込み
+    echo "</body>";
+    echo "</html>";
 }
