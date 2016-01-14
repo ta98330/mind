@@ -1,12 +1,14 @@
-【ソフト名】　　Mindfulness Webアプリ Ver1.00
+【ソフト名】　　Mindfulness Webアプリ Ver1.01
 【制作者】　　　情報物理研究室2015　三澤拓弥
 【制作日】　　　2016/1/13　
 【配布元】　　　http://buturi.heteml.jp/student/2015/misawa/
+【推奨ブラウザ】PC：Google Chrome（最新バージョン）　※IEには非対応
+　　　　　　　　スマートフォン：（iPhone）Safari　（Android）Chrome
 
 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 ・はじめに
 　本アプリは2015年度 近畿大学工学部情報システム工学科 情報物理研究室で卒業研究として制作した，ブラウザ上で動作するWebアプリです．
-　スマートフォン上での利用を想定して制作していますが，PCでも利用することができます．
+　スマートフォンで，iPhoneではSafari，AndroidではChromeで「ホーム画面に追加」をしてアプリライクに利用することを想定して制作していますが，PCでも利用することができます．
 
 ・ファイル構成
 mindfulness_app.zip
@@ -62,6 +64,7 @@ mindfulness_app.zip
 　1.readme.txtとmindfulness_app.sqlを除く全ファイルをWebサーバにアップロードする．
  
 　2.利用するデータベース（MySQL以外動作未確認）にmindfulness_app.sqlをインポートする．
+　　phpMyAdmin等で簡単にインポートできる．
  
 　3.spheader.phpをエディターで開き，下記のようにデータベース名（サーバ名），ユーザ名，パスワードを入れ，上書き保存する．
 　　$_SESSION['dbname'] = "mindfulness_app;host=サーバ名";

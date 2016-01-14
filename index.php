@@ -287,7 +287,7 @@
                 
                 <div data-role="popup" id="pop2" data-shadow="false" data-arrow="b">
                     <h2>アプリ説明</h2>
-                    <p>このWebアプリは福山大学人間文化学部 人間科学研究科 心理臨床学専攻の研究室での実験用に<a href="http://buturi.heteml.jp/student/2015/" target="_blank">近畿大学工学部 2015年度 情報物理研究室</a>で制作したWebアプリです</p>
+                    <p>このWebアプリは福山大学人間文化学部 人間科学研究科 心理臨床学専攻の研究室での実験用に<a href="http://buturi.heteml.jp/student/2015/" target="_blank">近畿大学工学部 2015年度 情報物理研究室</a>で制作したWebアプリです．そのため現在一般ユーザーの登録はできません．</p><p>このアプリの目的は，マインドフルネスを継続的に行ってもらうことです．そのために前後の感情や，その日の出来事を記録し，振り返ることができます．</p>
                 </div>
                 
                 <div id="index_menu">

@@ -82,6 +82,7 @@ else{
 */
 }
 
+
 if(empty($recorded)){
     echo "<br />今日の出来事を記録しましょう．";
 }

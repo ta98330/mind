@@ -688,13 +688,16 @@ top
 .eventlist h4{
     font-size: 110%;
     margin: 0;
-    padding-left: 3px;
-    border-bottom: 2px solid deepskyblue;
-    background-color: deepskyblue;
+    padding-left: 5px;
+    border-bottom: 2px solid #b4b4b4;
+    background-color: #b4b4b4;
+    color: #0a0034;
+    font-weight: 600;
+    border-radius: 3px 3px 0 0;
 }
 
 .eventlist li{
-    border: 2px solid deepskyblue;
+    border: 2px solid #b4b4b4;
     background-color: floralwhite;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -704,17 +707,26 @@ top
 }
 
 .eventlist li p{
-    margin-left: 5px;
     margin: 5px;
+    padding-left: 5px;
+}
+/*日曜の場合*/
+li.sunday{
+    border-color: #fa5757;
 }
 
-li.pm{
-    border-color: tomato;
+.sunday h4{
+    background-color: #fa5757;
+    border-bottom-color: #fa5757;
+}
+/*土曜の場合*/
+li.saturday{
+    border-color: #3ee7fd;
 }
 
-.pm h4{
-    background-color: tomato;
-    border-bottom-color: tomato;
+.saturday h4{
+    background-color: #3ee7fd;
+    border-bottom-color: #3ee7fd;
 }
 
 #impression{
@@ -1279,37 +1291,7 @@ li.pm{
         box-sizing: border-box;
     }
 
-    .eventlist h4{
-        font-size: 110%;
-        margin: 0;
-        padding-left: 3px;
-        border-bottom: 2px solid deepskyblue;
-        background-color: deepskyblue;
-    }
-
-    .eventlist li{
-        border: 2px solid deepskyblue;
-        background-color: floralwhite;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        list-style: none;
-        font-size: 13px;
-        margin: 2%;
-    }
-
-    .eventlist li p{
-        margin-left: 5px;
-        margin: 5px;
-    }
-
-    li.pm{
-        border-color: tomato;
-    }
-
-    .pm h4{
-        background-color: tomato;
-        border-bottom-color: tomato;
-    }
+    
 
 
 

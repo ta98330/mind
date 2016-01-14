@@ -56,21 +56,52 @@
                         //1週間
                         $st = $pdo->query("SELECT * FROM mf_events WHERE id = '{$_SESSION['mf_userId']}' and datetime between '$today' - interval 7 day and '$today' + interval 1 day ORDER BY datetime DESC");
                     }
+                    
+                    function week_jp($weekno){
+                        switch ($weekno){
+                            case '0';
+                                $weekja = "日";
+                                break;
+                            case '1';
+                                $weekja = "月";
+                                break;
+                            case '2';
+                                $weekja = "火";
+                                break;
+                            case '3';
+                                $weekja = "水";
+                                break;
+                            case '4';
+                                $weekja = "木";
+                                break;
+                            case '5';
+                                $weekja = "金";
+                                break;
+                            case '6';
+                                $weekja = "土";
+                                break;
+                        }
+
+                        return $weekja;
+                    }
 
                     while (@$row = $st->fetch()) {
                         $datetime = htmlspecialchars($row['datetime']);
                         $content = nl2br(htmlspecialchars($row['content']));
 
-                        $ampm = date('a', strtotime($datetime));
+                        $week = date('w', strtotime($datetime));
 
-                        if($ampm == "am"){
-                            echo "<li class='am'>";
+                        if($week == "0"){
+                            echo "<li class='sunday'>";
+                        }
+                        elseif($week == "6"){
+                            echo "<li class='saturday'>";
                         }
                         else{
-                            echo "<li class='pm'>";
+                            echo "<li class='weekday'>";
                         }
-
-                        echo "<h4>",date('n月j日 G:i', strtotime($datetime)),"</h4>";
+                        
+                        echo "<h4>",date('n月j日', strtotime($datetime)),"(",week_jp($week),")",date('  G:i', strtotime($datetime)),"</h4>";
                         echo "<p>$content</p>";
                         echo "</li>\n";
                     }
