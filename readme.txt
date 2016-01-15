@@ -1,4 +1,4 @@
-【ソフト名】　　Mindfulness Webアプリ Ver1.01
+【ソフト名】　　Mindfulness Webアプリ Ver1.02
 【制作者】　　　情報物理研究室2015　三澤拓弥
 【制作日】　　　2016/1/13　
 【配布元】　　　http://buturi.heteml.jp/student/2015/misawa/
