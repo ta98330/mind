@@ -62,18 +62,18 @@
         <div role="main" class="ui-content">
             <form action="impressions.php" method="post" data-ajax="false">
                 <input type="hidden" name="bfaf" value="af">
-                <h2>感じない　→　感じる</h2>
+                <div id="sl_scale"><span id="sl_scale_min">まったく感じない<br /> 　0</span><span id="sl_scale_max">とても感じる<br />10　</span></div>
                 <div class="ui-field-contain">
                     <label for="ang">怒り:</label>
-                    <input id="ang" name="ang" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
+                    <input id="ang" name="ang" type="range" min="0" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
                     <label for="sad">悲しみ:</label>
-                    <input id="sad" name="sad" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
+                    <input id="sad" name="sad" type="range" min="0" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
                     <label for="anxiety">不安:</label>
-                    <input id="anxiety" name="anxiety" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
+                    <input id="anxiety" name="anxiety" type="range" min="0" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
                     <label for="joy">喜び:</label>
-                    <input id="joy" name="joy" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
+                    <input id="joy" name="joy" type="range" min="0" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
                     <label for="stress">ストレス:</label>
-                    <input id="stress" name="stress" type="range" min="1" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
+                    <input id="stress" name="stress" type="range" min="0" max="10" step="1" value="5" data-popup-enabled="true" data-highlight="true">
                 </div>
                 <input type="submit" value="終わる" data-mini="true">
             </form>

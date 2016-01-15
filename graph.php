@@ -34,10 +34,10 @@
             
             $today = date("Y-m-d");
             
-            $endday = date("n/j");
+            $endday = date("j日");
             
-            $strweek = date("n/j",strtotime("$today -7 days"));
-            $strmonth = date("n/j",strtotime("$today -1 month"));
+            $strweek = date("j日",strtotime("$today -7 days"));
+            $strmonth = date("j日",strtotime("$today -1 month"));
             
             $nowweek = date("w");
             
@@ -245,7 +245,7 @@
                           yAxis : {
                               title : null,
                               max : 10,
-                              min : 1,
+                              min : 0,
                               allowDecimals : false //小数点非表示
                           },
 

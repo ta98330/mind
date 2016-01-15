@@ -314,7 +314,7 @@ top
     text-align: center;
     background-color: #0b90f2;
     top: 0;
-    right: 0;
+    left: 0;
     display: inline-block;
     width: 60px;
     height: 100%;
@@ -329,7 +329,7 @@ top
     text-decoration: none;
     text-align: center;
     top: 0;
-    left: 0;
+    right: 0;
     display: inline-block;
     width: 60px;
     height: 100%;
@@ -408,9 +408,82 @@ top
 /*=================================
 評定
 ==================================*/
-#bfemo h2,#afemo h2{
-    text-align: center;
-    margin: 0;
+#afemo,#bfemo {
+    position: relative;
+}
+
+#afemo .ui-content ,#bfemo .ui-content {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#afemo .ui-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#sl_scale {
+    position: absolute;
+    display: block;
+    width: 70%;
+    height: 40px;
+    top: -20px;
+    right: 5px;
+}
+
+#afemo #sl_scale {
+    top: 0px;
+    right: 12px
+}
+
+#sl_scale_min ,#sl_scale_max {
+    position: absolute;
+    font-size: 16px
+}
+
+#sl_scale_min {
+    width: 130px;
+}
+
+#sl_scale_max {
+    width: 100px;
+    text-align: right;
+    right: -2px;
+}
+
+@media all and (max-width: 430px) {
+    #sl_scale {
+        width: 78%;
+        margin-top: 40px;
+        //background-color: red;
+    }
+    
+    #afemo #sl_scale {
+        margin-top: 20px;
+    }
+    
+}
+
+@media all and (min-width: 431px) and (max-width: 447px) {
+    #sl_scale {
+        width: 83%;
+        margin-top: 40px;
+        //background-color: red;
+    }
+    
+    #afemo #sl_scale {
+        margin-top: 20px;
+    }
+}
+
+@media all and (min-width: 448px) and (max-width: 700px) {
+    #sl_scale {
+        width: 66%;
+        //background-color: blue;
+    }
+    
 }
 
 /*------スライダー------*/
@@ -546,7 +619,9 @@ top
     line-height: 35px;
 }
 
-
+#event h2 {
+    margin-left: 1%;
+}
 
 
 
@@ -791,10 +866,12 @@ li.saturday{
 #graph .period_data {
     position: absolute;
     display: inline-block;
-    font-weight: 500;
+    font-size: 100%;
+    font-weight: 600;
+    color: #191272;
     height: 40px;
     line-height: 40px;
-    margin-left: 5px;
+    margin-left: 5%;
 }
 
 #graphbtn {
@@ -1027,43 +1104,6 @@ li.saturday{
         top: 10px;
     }
 
-    /*=================================
-    評定
-    ==================================*/
-    #bfemo .ui-content,#afemo .ui-content {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    
-    #bfemo h2,#afemo h2{
-        text-align: center;
-        margin: 0;
-    }
-
-    /*------スライダー------*/
-    .ui-slider {
-        
-    }
-
-    .ui-slider-input {
-        box-shadow: none;
-    }
-
-    .ui-slider-track {
-        box-shadow: none;
-    }
-
-    .ui-slider-bg {
-
-    }
-
-    .ui-slider-handle {
-        
-    }
-
-    .ui-slider-popup {
-        
-    }
 
     /*=================================
     瞑想
@@ -1303,107 +1343,7 @@ li.saturday{
         color: orangered;
     }
 
-    /*=================================
-    グラフ
-    ==================================*/
-    #graph {
-        padding: 0;
-
-    }
-
-    #graphcontain {
-        padding: 0;
-        margin: 2%;
-
-    }
-
-    #g_period{
-        position: relative;
-        display: inline-block;
-        font-size: 0;
-        margin-bottom: 5px;
-
-    }
-
-    #week_btn, #month_btn {
-        background-color: #e6edf4;
-        font-size: 16px;
-        font-weight: 500;
-        border: none;
-        margin: 0;
-        padding: 10px 20px;
-    }
-
-    #week_btn {
-        border-radius: 5px 0 0 5px;
-    }
-
-    #month_btn {
-        border-radius: 0 5px 5px 0;
-    }
-
-    #g_period button:disabled {
-        background-color: rgb(51, 136, 204);
-        color: #f7f7f7;
-        opacity: 1;
-    }
-
-    #graph button {
-        
-    }
-
-    #graph .period_data {
-        position: absolute;
-        display: inline-block;
-        font-weight: 500;
-        height: 40px;
-        line-height: 40px;
-        margin-left: 5px;
-    }
-
-    #graphbtn {
-        width: 100%;
-    }
-
-
-    #graphbtn a{
-        padding: 13px 1.2%;
-        margin: 0 0 5px 0;
-
-        box-shadow: none;
-    }
-
-    #nonedata {
-        display: block;
-        position: absolute;
-        top: 300px;
-        width: 98%;
-        text-align: center;
-    }
-
-    #record_event {
-        height: 30vh;
-        overflow-y: scroll;
-        background-color: azure;
-    }
-
-    #graph_container {
-        position: relative;
-        display: block;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        left: 0;
-        box-sizing: border-box;
-    }
-
-    #graph_container div {
-        
-    }
-
-    #graph_container div svg{
-        width: 100%;
-    }
+    
     
     /*=================================
     設定

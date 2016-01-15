@@ -5,7 +5,7 @@
         header('Location: index.php');
     }
     
-    if((!empty($_POST['ang']))&&(!empty($_POST['sad']))&&(!empty($_POST['anxiety']))&&(!empty($_POST['joy']))&&(!empty($_POST['stress']))){
+    if((isset($_POST['ang']))&&(isset($_POST['sad']))&&(isset($_POST['anxiety']))&&(isset($_POST['joy']))&&(isset($_POST['stress']))){
         $now = date("Y-m-d H:i:s");
         $today = date("Y-m-d");
         
