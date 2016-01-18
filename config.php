@@ -20,21 +20,6 @@
 
             <div role="main" class="ui-content">
                 <?php $_SESSION["mf_speak_flag"] = "config"; //セリフ?>
-                <h2>通知設定</h2>
-                <div>
-                    <p>毎日19時に通知されます</p>
-                    <div class="pushnate-notification-button" data-site-id="12"></div>
-                    <script>
-                    (function(w, d, s, path) {
-                      tag = d.createElement(s);
-                      firstTag = d.getElementsByTagName(s)[0];
-                      tag.async = 1;
-                      tag.src = path;
-                      firstTag.parentNode.insertBefore(tag, firstTag);
-                    })(window, document, 'script', 'https://pushnate.com/pnbt.js');
-                    </script>
-                </div>
-
                 <h2>パスワード変更</h2>
                 <div id="passup">
                     <form class="form" role="form" method="post" name="pass_insert" action="pass_update.php" accept-charset="UTF-8" id="login-nav" data-ajax="false">

@@ -12,10 +12,16 @@
     <body>
         <!--ページ領域-->
         <div data-role="page" id="home" data-url="./top.php" data-dom-cache="true">
+            <!--ログアウト確認-->
+            <div id="logout" data-role="popup" data-position-to="window" data-overlay-theme="b" data-shadow="false">
+                <h3>本当にログアウトしますか？</h3>
+                <p><a href="logout.php">はい</a><a href="#" data-rel="back">いいえ</a></p>
+            </div>
+            
             <!--ヘッダー領域-->
             <div data-role="header" data-theme="z" class="data-role-none header">
                 <h1>Mindfulness</h1>
-                <a href="logout.php" class="logout_btn"><i class="fa fa-sign-out"></i><br /><span class="min">ログアウト</span></a>
+                <a href="#logout" data-rel="popup" data-transition="pop" class="logout_btn"><i class="fa fa-sign-out rotation180"></i><br /><span class="min">ログアウト</span></a>
                 <a href="config.php" class="config_btn"><i class="fa fa-cog"></i></a><!--設定-->
             </div>
 
@@ -42,6 +48,8 @@
                         </form>
                     </div>
                 </div>
+                
+                
             </div><!--メイン領域-->
         </div><!--home-->
     </body>

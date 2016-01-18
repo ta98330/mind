@@ -281,7 +281,7 @@
                 </div>
                 
                 <div data-role="popup" id="pop1" data-shadow="false" data-arrow="b">
-                    <h2>Mindfulnessとは</h2>
+                    <h2>マインドフルネスとは</h2>
                     <p>今、この瞬間の体験に意図的に意識を向け、評価をせずに、とらわれのない状態で、ただ観ること<a href="http://mindfulness.jp.net/" target="_blank">-日本マインドフルネス学会- 公式サイト</a>より引用</p>
                 </div>
                 
@@ -291,7 +291,7 @@
                 </div>
                 
                 <div id="index_menu">
-                    <p id="mind_info"><a href="#pop1" data-rel="popup">Mindfulnessとは</a></p>
+                    <p id="mind_info"><a href="#pop1" data-rel="popup">マインドフルネスとは</a></p>
                     
                     <p id="app_info"><a href="#pop2" data-rel="popup" class="fa fa-info-circle"></a></p>
                 </div>

@@ -323,6 +323,10 @@ top
     border: none;
 }
 
+.logout_btn:hover {
+    background-color: #c2e5ff;
+}
+
 .config_btn {
     position: absolute;
     box-sizing: border-box;
@@ -337,6 +341,41 @@ top
     margin: 0;
     border: none;
     font-size: 140%;
+}
+
+.logout_btn .rotation180 {
+    /* 回転 : cos sin -sin cos : Y軸下向きが正 */
+    -moz-transform:matrix(-1, 0, 0, -1, 0, 0);
+    -webkit-transform:matrix(-1, 0, 0, -1, 0, 0);
+    -o-transform:matrix(-1, 0, 0, -1, 0, 0);
+    transform:matrix(-1, 0, 0, -1, 0, 0);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    
+    position: relative;
+    left: -2px;
+}
+
+#logout {
+}
+
+#logout h3 {
+    
+}
+
+#logout p {
+    text-align: center
+}
+
+#logout p a {
+    
+}
+
+#logout p a:first-child {
+    margin-right: 20%;
+}
+
+#logout p a:nth-of-type(2) {
+    
 }
 
 /*----------ボタン-------------*/
@@ -458,6 +497,10 @@ top
         width: 78%;
         margin-top: 40px;
         //background-color: red;
+    }
+    
+    #sl_scale  span {
+        font-size: 95%;
     }
     
     #afemo #sl_scale {

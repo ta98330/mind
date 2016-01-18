@@ -33,7 +33,7 @@
             }
             
             $today = date("Y-m-d");
-            
+            /*
             $endday = date("j日");
             
             $strweek = date("j日",strtotime("$today -7 days"));
@@ -64,6 +64,7 @@
                     $weekja = "(土)";
                     break;
             }
+            */
             ?>
             
             <form action="" method="post" data-ajax="false" id="g_period" class="data-role-none">
@@ -72,12 +73,14 @@
             </form>
             
             <?php
+            /*
                 if(isset($_POST['period']) && $_POST['period'] == 'month'){
                     echo "<p class='period_data'>",$strmonth,$weekja," ～ ",$endday,$weekja,"</p>";
                 }
                 else{
                     echo "<p class='period_data'>",$strweek,$weekja," ～ ",$endday,$weekja,"</p>";
                 }
+            */
             ?>
             
             <div data-role="navbar" id="graphbtn">
@@ -206,10 +209,10 @@
                 //週・月判定
                 var periodtext;
                 if(week){
-                    periodtext = "１週間の";
+                    periodtext = "ここ１週間の";
                 }
                 else{
-                    periodtext = "１ヶ月の";
+                    periodtext = "ここ１ヶ月の";
                 }
                 
                 var title = periodtext+"怒りのグラフ";
