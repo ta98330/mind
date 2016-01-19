@@ -71,7 +71,13 @@
                 <button type="submit" name="period" value="week" id="week_btn" <?=$disweek?>>週</button>
                 <button type="submit" name="period" value="month" id="month_btn" <?=$dismonth?>>月</button>
             </form>
-            
+            <!--過去月検索断念
+            <form action="" method="post" data-ajax="false" id="g_selectmon" class="data-role-none">
+                <label for="selmonarea">過去検索：</label>
+                <input type="month" id="selmonarea" name="sel_mon" min="2015-10-01" required></input>
+                <input type="submit" value="検索" id="selmonbtn" class="ui-btn">
+            </form>
+            -->
             <?php
             /*
                 if(isset($_POST['period']) && $_POST['period'] == 'month'){
@@ -97,10 +103,17 @@
             
             <?php
             $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
-
+            
             //期間
             $week = "1 WEEK";
             $month = "1 MONTH";
+            $selmon = "期間中の";
+
+            if(isset($_POST['sel_mon'])){
+                $selmon = $_POST['sel_mon'];
+                $selmon = date('Y年n月の', strtotime($selmon));
+                //echo $selmon;
+            }
 
             //選択期間
             $period = $week;
@@ -110,9 +123,13 @@
                 $disweek = '';
                 $dismonth = 'disabled';
             }
-            
             //瞑想前
-            $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'bf' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
+            if($selmon == "期間中の"){
+                $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'bf' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
+            }
+            else{//過去月選択時
+                $st = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'bf' and datetime between '$selmon-01 00:00:00' and '$selmon-31 23:59:59'");
+            }
 
             while ($row = $st->fetch()) {
 
@@ -154,7 +171,12 @@
             @$json_bf_stress=json_encode($bf_stress_data);
 
             //瞑想後
-            $st1 = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'af' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
+            if($selmon == "期間中の"){
+                $st1 = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'af' and datetime between '$today 00:00:00' - INTERVAL $period and '$today 23:59:59'");
+            }
+            else{//過去月選択時
+                $st1 = $pdo->query("SELECT * FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' and bfaf = 'af' and datetime between '$selmon-01 00:00:00' - INTERVAL 1 MONTH and '$selmon-31 23:59:59'");
+            }
 
             while ($row = $st1->fetch()) {
 
@@ -206,13 +228,23 @@
                 var week = $('#week_btn').prop('disabled');
                 console.log(week);
                 
+                
                 //週・月判定
                 var periodtext;
+                
+                var sel_mon = "<?php echo $selmon;?>";
+                console.log("selmon = "+sel_mon);
+                
                 if(week){
                     periodtext = "ここ１週間の";
                 }
                 else{
                     periodtext = "ここ１ヶ月の";
+                }
+                
+                if(sel_mon !== "期間中の"){
+                    periodtext = sel_mon;
+                    //console.log("selmon = "+sel_mon);
                 }
                 
                 var title = periodtext+"怒りのグラフ";
@@ -317,7 +349,7 @@
                 
             </script>
             
-            <h3>期間中の出来事</h3>
+            <h3><?=$selmon ?>出来事</h3>
             <ul id="record_event" class="eventlist">
             <?php
             

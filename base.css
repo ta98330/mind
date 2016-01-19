@@ -917,6 +917,36 @@ li.saturday{
     margin-left: 5%;
 }
 
+#graph #g_selectmon {
+    display: inline-block;
+    margin-left: 1%;
+    margin-bottom: 3px;
+}
+
+#graph #g_selectmon label {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+#graph #selmonarea {
+    display: inline-block;
+    width: 140px;
+    height: 34px;
+    border: none;
+}
+
+#graph #selmonbtn {
+    //position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 34px;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 #graphbtn {
     width: 100%;
 }
@@ -952,11 +982,12 @@ li.saturday{
 }
 
 #graph_container div {
-    
+    max-width: 100%;
+    overflow-x: scroll;
 }
 
 #graph_container div svg{
-    width: 100%;
+    max-width: 100%;
 }
 
 /*=================================
