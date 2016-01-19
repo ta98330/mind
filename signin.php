@@ -1,7 +1,7 @@
 <?php
 require "spheader.php";
 
-if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
+if(!empty($_POST['username'])){
     
     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
     
@@ -25,7 +25,7 @@ if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
             $id =  htmlspecialchars($row['id']) + 1;
         }
         
-        $st = $pdo->query("INSERT INTO mf_user(id, name, pass) VALUES($id,'{$_POST['username']}','{$_POST['pass']}')");//新規ユーザー情報の追加
+        $st = $pdo->query("INSERT INTO mf_user(id, name, pass) VALUES($id,'{$_POST['username']}','password')");//新規ユーザー情報の追加
         
         header('Location: admin.php');
     }

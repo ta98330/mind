@@ -66,10 +66,7 @@
                          <label class="sr-only" for="exampleinputformat">ユーザーネーム:</label>
                          <input type="text" class="form-control" name="username" placeholder="User Name" required>
                     </div>
-                    <div class="form-group">
-                         <label class="sr-only" for="exampleInputPassword2">パスワード:</label>
-                         <input type="password" class="form-control" name="pass" placeholder="Password" required>
-                    </div>
+                    <p>初期パスワードは「password」です．</p>
                     <div class="form-group">
                          <button type="submit" class="btn btn-primary btn-block" onClick="return check('新しいユーザーを登録します．本当によろしいですか？')">登録</button>
                     </div>

@@ -19,12 +19,9 @@
             <p><i class="fa fa-volume-up"></i> 音量に注意してください</p>
             
             <div class="videoPlayer">
-                <h2><img src="images/biginer.png" alt="">初心者用</h2>
-                <video id="video1" src="movie/5-1.mp4" poster="images/5min_info3.jpg" width="100%" controls></video>
-                <video id="video2" src="movie/10-1.mp4" poster="images/10min_info3.jpg" width="100%" controls></video>
-                <h2>中級者用</h2>
-                <video id="video3" src="movie/5-2.mp4" poster="images/5min_noinfo3.jpg" width="100%" controls></video>
-                <video id="video4" src="movie/10-2.mp4" poster="images/10min_noinfo3.jpg" width="100%" controls></video>
+                <video id="video1" src="movie/asd1.mp4" poster="images/asd1.png" width="100%" controls></video>
+                    <video id="video2" src="movie/asd2.mp4" poster="images/asd2.png" width="100%" controls></video>
+                    <video id="video3" src="movie/asd3.mp4" poster="images/asd3.png" width="100%" controls></video>
                 
                 <script>
                     function videoend(videoId){
@@ -44,7 +41,6 @@
                     videoend('video1');
                     videoend('video2');
                     videoend('video3');
-                    videoend('video4');
                     
                 </script>
 

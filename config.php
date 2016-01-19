@@ -14,7 +14,7 @@
 
             <!--ヘッダー領域-->
             <div data-role="header" data-theme="z" class="data-role-none header">
-                <a href="top.php" class="home_btn"><i class="fa fa-chevron-left"></i></a>
+                <a href="" data-rel="back" class="home_btn"><i class="fa fa-chevron-left"></i></a>
                 <h1>設定</h1>
             </div>
 
@@ -39,10 +39,20 @@
 
                 <h2>動画テスト</h2>
                 <div class="videoPlayer">
-                    <video id="video1" src="movie/5-1.mp4" poster="images/5min_info3.jpg" width="100%" controls></video>
-                    <video id="video2" src="movie/10-1.mp4" poster="images/10min_info3.jpg" width="100%" controls></video>
-                    <video id="video3" src="movie/5-2.mp4" poster="images/5min_noinfo3.jpg" width="100%" controls></video>
-                    <video id="video4" src="movie/10-2.mp4" poster="images/10min_noinfo3.jpg" width="100%" controls></video>
+                    <video id="video1" src="movie/asd1.mp4" poster="images/asd1.png" width="100%" controls></video>
+                    
+                    <br />
+                    <br />
+                    <h3>＜構想吹き出しあり１＞</h3>
+                    <video id="video1" src="movie/asd1-j.mp4" poster="images/asd1.png" width="100%" controls></video>
+                    <h3>＜構想吹き出しあり２＞</h3>
+                    <video id="video1" src="movie/asd1-j2.mp4" poster="images/asd1.png" width="100%" controls></video>
+                    <br />
+                    <br />
+                    
+                    <video id="video2" src="movie/asd4.mp4" poster="images/asd2.png" width="100%" controls></video>
+                    <video id="video3" src="movie/asd5.mp4" poster="images/asd3.png" width="100%" controls></video>
+                    
 
                     <script>
                         function videoend(videoId){
@@ -62,7 +72,6 @@
                         videoend('video1');
                         videoend('video2');
                         videoend('video3');
-                        videoend('video4');
 
                     </script>
                 </div><!--videoPlayer-->

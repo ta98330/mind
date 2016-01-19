@@ -11,7 +11,7 @@
 ?>
     <body>
         <!--ページ領域-->
-        <div data-role="page" id="home" data-url="./top.php" data-dom-cache="true">
+        <div data-role="page" id="home" data-url="./top.php">
             <!--ログアウト確認-->
             <div id="logout" data-role="popup" data-position-to="window" data-overlay-theme="b" data-shadow="false">
                 <h3>本当にログアウトしますか？</h3>
@@ -50,7 +50,7 @@
                 </div>
                 
                 
-            </div><!--メイン領域-->
-        </div><!--home-->
+            </div><!--main-->
+        </div><!--page-->
     </body>
 </html>
