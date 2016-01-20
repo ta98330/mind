@@ -20,8 +20,8 @@
             
             <div class="videoPlayer">
                 <video id="video1" src="movie/asd1.mp4" poster="images/asd1.png" width="100%" controls></video>
-                    <video id="video2" src="movie/asd2.mp4" poster="images/asd2.png" width="100%" controls></video>
-                    <video id="video3" src="movie/asd3.mp4" poster="images/asd3.png" width="100%" controls></video>
+                    <video id="video2" src="movie/asd4.mp4" poster="images/asd2.png" width="100%" controls></video>
+                    <video id="video3" src="movie/asd5.mp4" poster="images/asd3.png" width="100%" controls></video>
                 
                 <script>
                     function videoend(videoId){
