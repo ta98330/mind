@@ -37,12 +37,6 @@
                         <img src="images/char02.png" alt="No image" class="dolphin">
                     </div>
                 </div>
-                
-                <!--実験用アンケートへのリンク　1／28日のみ使用-->
-                <div id="anke-to">
-                    <a href="https://docs.google.com/forms/d/1xbuiw_7skO60yKshSbgadaWMK8VI--kwSyHbvBGtAys/viewform" target="_blank">★実験最終日のアンケート★</a>
-                </div>
-                
                 <div id="strmenus">
                     <a href="bfemo.php" data-role="button" class="ui-btn strbtn"><img src="images/yoga.png" alt=""> 瞑想開始</a>
                     <div id="subbtns">
