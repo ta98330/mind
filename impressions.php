@@ -21,7 +21,7 @@
         }
         
         //postデータが瞑想前，最新データも瞑想前 --> 最新データを消去
-        if($_POST['bfaf'] == 'bf' && $last_bfaf == 'bf'){
+        if(isset($last_bfaf) && $_POST['bfaf'] == 'bf' && $last_bfaf == 'bf'){
             $st = $pdo->query("DELETE FROM mf_impressions WHERE datetime = (SELECT last_date FROM (SELECT max(datetime) AS last_date FROM mf_impressions WHERE id = '{$_SESSION['mf_userId']}' GROUP BY id) AS temp1)");
         }
         
