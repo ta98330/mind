@@ -27,12 +27,50 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    margin-bottom: 5px;
+    font-size: 150%;
+}
+
+h2 {
+    margin-bottom: 5px;
+    font-family:
+}
+
 section {
-    margin: 10px;
+    position: relative;
+    margin-bottom: 10px;
+    border: solid 1px #00c4ff;
+    border-radius: 10px;
+}
+
+section>:not(h2) {
+    padding: 5px 10px;
+    
+}
+
+section :not(h2) {
+    margin: 5px 0;
+    
 }
 
 section h2 {
     font-size: 120%;
+    text-align: center;
+    
+    background-color: #00c4ff;
+    color: aliceblue;
+    font-family:
+     "メイリオ",
+     "Meiryo",
+     "ヒラギノ角ゴ ProN W3",
+      "Hiragino Kaku Gothic ProN",
+     "ＭＳ Ｐゴシック",
+     "MS P Gothic",
+     Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+    border-radius: 8px 8px 0px 0px;
 }
 
 /*=================================
@@ -41,24 +79,47 @@ section h2 {
 main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /*=================================
 ヘッダー
 ==================================*/
 header {
-    
+    padding: 2% 0;
+}
+
+header img{
+    position: relative;
+    height: 50px;
+    top: 15px;
+    left: -5px;
 }
 
 header h1 {
+    text-align: center;
     font-size: 150%;
+    font-family:
+     "メイリオ",
+     "Meiryo",
+     "ヒラギノ角ゴ ProN W3",
+      "Hiragino Kaku Gothic ProN",
+     "ＭＳ Ｐゴシック",
+     "MS P Gothic",
+     Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
+
+
 
 /*=================================
 ナビ
 ==================================*/
 #headerNav {
-    
+    display: none;
 }
 
 #headerNav ul li {
@@ -79,11 +140,23 @@ CSV出力
     order: 2;
 }
 
+#csvdl button {
+    
+    width: 60%;
+    margin: 0 20%;
+}
+
 /*=================================
 新規ユーザー登録
 ==================================*/
 #signin {
     order: 3;
+    text-align: center;
+}
+
+#signin button {
+    width: 60%;
+    margin: 0 20%;
 }
 
 /*=================================
@@ -91,4 +164,16 @@ CSV出力
 ==================================*/
 #userdel {
     order: 4;
+    text-align: center;
+}
+
+#userdel button {
+    width: 60%;
+    margin: 0 20%;
+}
+/*=================================
+フッター
+==================================*/
+footer {
+    text-align: center;
 }

@@ -10,7 +10,7 @@
 
         <!-- ヘッダ　-->
         <header>
-            <h1><a href="admin.php">Mindfulness研究管理ページ</a></h1>
+            <h1><a href="admin.php"><img src="images/mind2.png" alt="">Mindfulness研究管理ページ</a></h1>
             
             <!-- メニュー-->
             <nav id="headerNav">
