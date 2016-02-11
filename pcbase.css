@@ -25,6 +25,7 @@ body {
 
 a {
     text-decoration: none;
+    color: #0b12d3;
 }
 
 h1 {
@@ -175,5 +176,6 @@ CSV出力
 フッター
 ==================================*/
 footer {
+    padding: 2% 0;
     text-align: center;
 }
