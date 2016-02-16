@@ -48,6 +48,7 @@ h2 {
     background-color: #22bfe5;
     color: #e3e3e3;
     border: none;
+    z-index: 10;
 }
 
 .header h1 {
@@ -555,7 +556,11 @@ top
 }
 
 .ui-slider-popup {
-    
+    position: relative;
+    padding: 0;
+    height: 1.2em;
+    width: 1.2em;
+    z-index: 100;
 }
 
 /*=================================
