@@ -4,6 +4,7 @@ require "header.php";//ヘッダー読み込み
 $reposi = "index.php";//戻り先
 $mestitle = "ログインに失敗しました";//エラータイトル
 $mescontent = "UserNameを入力して下さい．";//エラーメッセージ
+require "warning.php"; //エラーページ読み込み
 */
 ?>
 <body>

@@ -57,20 +57,25 @@
             <section id="info">
                 <h2>インフォメーション</h2>
                 <p>現在の登録ユーザー数は<?= $number ?>人です．</p>
+                <p>2015.2.25 一般公開しました．</p>
             </section>
 
             <section id="signin">
                 <h2>新規ユーザー登録</h2>
+                <!--
                 <form method="post" action="signin.php">
                     <div class="form-group">
                          <label class="sr-only" for="exampleinputformat">ユーザーネーム:</label>
                          <input type="text" class="form-control" name="username" placeholder="User Name" required>
+                        <input type="hidden" name="pass" value="password">
                     </div>
                     <p>初期パスワードは「password」です．</p>
                     <div class="form-group">
                          <button type="submit" class="btn btn-primary btn-block" onClick="return check('新しいユーザーを登録します．本当によろしいですか？')">登録</button>
                     </div>
                 </form>
+                -->
+                <p>現在一般公開中　アプリから登録できます．</p>
             </section>
 
             <section id="userdel">

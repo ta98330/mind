@@ -1,7 +1,7 @@
 <?php
 require "spheader.php";
 
-if(!empty($_POST['username'])){
+if((!empty($_POST['username']))&&(!empty($_POST['pass']))){
     
     $pdo = new PDO("mysql:dbname={$_SESSION['dbname']}", "{$_SESSION['dbusername']}", "{$_SESSION['dbpass']}");
     
@@ -10,12 +10,11 @@ if(!empty($_POST['username'])){
     $duplicate = "clear";
     while ($row = $st->fetch()) {
         $duplicate = "duplicate";
-        require "admin_header.php";//ヘッダー読み込み
-        echo "<section id='passage'>";
-        echo "<div class='alert'>このユーザーネームはすでに使われています．<br />別の名前で作成してください．<br /><a href='admin.php'>戻る</a></div>";
-        echo "</section>";
-        echo "</body>";
-        echo "</html>";
+        require "header.php";//ヘッダー読み込み
+        $reposi = "index.php";//戻り先
+        $mestitle = "このユーザーネームはすでに使われています";//エラータイトル
+        $mescontent = "別の名前で作成してください．";//エラーメッセージ
+        require "warning.php"; //エラーページ読み込み
     }
     
     if($duplicate != "duplicate"){
@@ -25,16 +24,20 @@ if(!empty($_POST['username'])){
             $id =  htmlspecialchars($row['id']) + 1;
         }
         
-        $st = $pdo->query("INSERT INTO mf_user(id, name, pass) VALUES($id,'{$_POST['username']}','password')");//新規ユーザー情報の追加
+        $st = $pdo->query("INSERT INTO mf_user(id, name, pass) VALUES($id,'{$_POST['username']}','{$_POST['pass']}')");//新規ユーザー情報の追加
         
-        header('Location: admin.php');
+        $_SESSION['mf_userId'] = $id;
+        $_SESSION['mf_userName'] = $_POST['username'];
+        $_SESSION['mf_userPass'] = $_POST['pass'];
+        
+        $_SESSION['mf_login'] = "ログイン中！";
+        header('Location: top.php');
     }
 }
 else{
-    require "admin_header.php";//ヘッダー読み込み
-    echo "<section id='passage'>";
-    echo "<p class='alert alert-danger' role='alert'>選択が足りません．<br /><a href='admin.php'>戻る</a></p>";
-    echo "</section>";
-    echo "</body>";
-    echo "</html>";
+    require "header.php";//ヘッダー読み込み
+    $reposi = "index.php";//戻り先
+    $mestitle = "入力項目が足りません";//エラータイトル
+    $mescontent = "ユーザーネームとパスワードを確認してください．";//エラーメッセージ
+    require "warning.php"; //エラーページ読み込み
 }

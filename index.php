@@ -268,15 +268,29 @@
                 <div id="login_btn">
                     <p><a href="#login" data-rel="popup" data-transition="pop" class="fa fa-sign-in"> ログイン</a></p>
                 </div>
+                <div id="signin_btn">
+                    <p><a href="#signin" data-rel="popup" data-transition="pop" class="fa fa-user-plus"><br />新規登録</a></p>
+                </div>
                 
                 <div id="login" data-role="popup" data-position-to="window" data-overlay-theme="b" data-shadow="false">
                     <h3><i class="fa fa-sign-in"></i> ログイン</h3>
                     <form method="post" action="login.php" data-ajax="false">
-                        <input type="text" name="username" placeholder="UserName" required>
-                        <input type="password" name="pass" placeholder="Password" required>
+                        <input type="text" name="username" placeholder="ユーザーネーム" required>
+                        <input type="password" name="pass" placeholder="パスワード" required>
                         <input type="checkbox" id="nextlogin" name="memory" value="true">
                         <label for="nextlogin">次回からは自動的にログイン</label>
                         <input type="submit" name="action" class="login loginmodal-submit" value="ログイン">
+                    </form>
+                </div>
+                        
+                <div id="signin" data-role="popup" data-position-to="window" data-overlay-theme="b" data-shadow="false">
+                    <h3><i class="fa fa-user-plus"></i> 新規ユーザー登録</h3>
+                    <h4>※注意※</h4>
+                    <p>今後，不具合の修正などを含めたアップデートの予定はありません．<br />このアプリを利用することで，何らかの問題が発生した場合でも本研究室では一切の責任を負いません．<br />以上のことをご理解された上での登録，利用をお願いします．</p>
+                    <form method="post" action="signin.php" data-ajax="false">
+                        <input type="text" name="username" placeholder="ユーザーネーム" required>
+                        <input type="password" name="pass" placeholder="パスワード" required>
+                        <input type="submit" name="action" class="login loginmodal-submit" value="登録">
                     </form>
                 </div>
                 
@@ -287,7 +301,7 @@
                 
                 <div data-role="popup" id="pop2" data-shadow="false" data-arrow="b">
                     <h2>アプリ説明</h2>
-                    <p>このWebアプリは福山大学人間文化学部 心理学科の研究室での実験用に<a href="http://buturi.heteml.jp/student/2015/" target="_blank">近畿大学工学部 情報システム工学科 2015年度 情報物理研究室</a>で制作したWebアプリです．そのため現在一般ユーザーの登録はできません．</p><p>このアプリの目的は，マインドフルネスを継続的に行ってもらうことです．そのために前後の感情や，その日の出来事を記録し，振り返ることができます．</p>
+                    <p>このWebアプリは福山大学人間文化学部 心理学科の研究室での実験用に<a href="http://buturi.heteml.jp/student/2015/" target="_blank">近畿大学工学部 情報システム工学科 2015年度 情報物理研究室</a>で制作したWebアプリです．今後，不具合の修正などを含めたアップデートの予定はありません．このアプリを利用することで，何らかの問題が発生した場合，本研究室では一切の責任を負いません．</p><p>このアプリの目的は，マインドフルネスを継続的に行ってもらうことです．そのために前後の感情や，その日の出来事を記録し，振り返ることができます．</p>
                 </div>
                 
                 <div id="index_menu">

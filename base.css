@@ -184,12 +184,44 @@ index
     padding: 4px;
 }
 
-#login {
+#signin_btn {
+    display: block;
+    width: 90px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: solid 2px;
+    //border-radius: 50px;
+    box-sizing: border-box;
+    color: aliceblue;
+    background-color: #7638eb;
+}
+
+#signin_btn a {
+    display: block;
+    
+    padding: 3px;
+    color: aliceblue;
+    line-height: 130%
+}
+
+#login,#signin {
     padding: 5px 10px;
     background: aliceblue;
 }
 
-#login h3 {
+#signin h4 {
+    text-align: center;
+    font-size: 95%;
+    color: red;
+    
+}
+
+#signin h4+p {
+    font-size: 90%;
+}
+
+#login h3,#signin h3 {
     text-align: center;
 }
 
